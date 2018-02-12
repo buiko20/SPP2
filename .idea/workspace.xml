@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="21424ace-22c0-4d63-80cf-8818a8f4c80c" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/dao/MyDAO.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/dao/impl/DbMyDAO.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dao/DAOFactory.java" afterPath="$PROJECT_DIR$/src/dao/DAOFactory.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -104,6 +101,12 @@
               <item name="tan_jobs" type="b2602c69:ProjectViewProjectNode" />
               <item name="labs" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tan_jobs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="labs" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -248,12 +251,12 @@
       <workItem from="1518364781195" duration="6217000" />
       <workItem from="1518373323424" duration="303000" />
       <workItem from="1518416595802" duration="4600000" />
-      <workItem from="1518433781427" duration="3763000" />
+      <workItem from="1518433781427" duration="3933000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14883000" />
+    <option name="totallyTimeSpent" value="15053000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">

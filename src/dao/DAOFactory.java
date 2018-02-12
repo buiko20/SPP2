@@ -1,8 +1,8 @@
 package dao;
 
-import dao.impl.DbMyDAO;
-
 // Note: you can use only domain.
+
+import dao.impl.DbAspirantAccountDAO;
 
 /**
  * Represents a simple DAO factory.
@@ -12,7 +12,7 @@ public class DAOFactory {
     private static final DAOFactory factory = new DAOFactory();
 
     // Do not make myDAO and other fields like this static. (delete this)
-    private final MyDAO MyDAO = new DbMyDAO();
+    private final AspirantAccountDAO AspirantAccountDAO = new DbAspirantAccountDAO();
 
     private DAOFactory() {
     }
@@ -26,11 +26,11 @@ public class DAOFactory {
     }
 
     /**
-     * Returns an instance of the {@link MyDAO} in singleton scope.
-     * @return instance of the {@link MyDAO}
+     * Returns an instance of the {@link AspirantAccountDAO} in singleton scope.
+     * @return instance of the {@link AspirantAccountDAO}
      */
-    public MyDAO getMyDAO() {
-        return MyDAO;
+    public AspirantAccountDAO getAspirantAccountDAO() {
+        return AspirantAccountDAO;
     }
 
     // TODO: refactor code, add DAO.

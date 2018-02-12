@@ -1,56 +1,96 @@
 package domain;
 
 /**
- * Represents a...
+ * Represents an aspirant account domain.
  */
 public class AspirantAccount implements Comparable<AspirantAccount> {
 
-    // TODO: write here necessary data and fields.
-    // TODO: implement Comparable<AspirantAccount>.
-    // TODO: override equals and hashCode. P.S. alt+insert or ctrl+o and idea will do it for you.
-    // Note: do not forget about javadoc.
-    // Note: for get methods use "Gets a...", for set methods - "Sets a...".
-    // For boolean and other similar types use "Gets/Sets a value indicating..."
-
     private int id;
-    private int data1;
-    private String field1;
+    private String email;
+    private String password;
+    private int aspirantProfileId;
 
+    public AspirantAccount(int id) {
+        this.id = id;
+    }
+
+    /**
+     * Gets an aspirant account id
+     * @return aspirant account id
+     */
     public int getId() {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    /**
+     * Gets an aspirant email
+     * @return aspirant email
+     */
+    public String getEmail() {
+        return email;
     }
 
-    // Example. Delete this.
+    /**
+     * Sets an aspirant email
+     * @param email aspirant email
+     */
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    /**
+     * Gets an aspirant password
+     * @return aspirant password
+     */
+    public String getPassword() {
+        return password;
+    }
+
+    /**
+     * Sets an aspirant password
+     * @param password aspirant password
+     */
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    /**
+     * Gets an aspirant profile id
+     * @return aspirant profile id
+     */
+    public int getAspirantProfileId() {
+        return aspirantProfileId;
+    }
+
+    /**
+     * Sets an aspirant profile id
+     * @param aspirantProfileId aspirant profile id
+     */
+    public void setAspirantProfileId(int aspirantProfileId) {
+        this.aspirantProfileId = aspirantProfileId;
+    }
+
     @Override
-    public int compareTo(AspirantAccount o) {
-        if (o == null) {
-            throw new NullPointerException("o is null");
+    public int compareTo(AspirantAccount obj) {
+        if (obj == null) {
+            throw new NullPointerException("Object is null");
         }
 
-        return Integer.compare(this.getId(), o.getId());
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || this.getClass() != o.getClass()) return false;
-
-        AspirantAccount that = (AspirantAccount) o;
-
-        if (this.getId() != that.getId()) return false;
-        if (data1 != that.data1) return false;
-        return field1.equals(that.field1);
+        return Integer.compare(this.getId(), obj.getId());
     }
 
     @Override
     public int hashCode() {
-        int result = this.getId();
-        result = 31 * result + data1;
-        result = 31 * result + field1.hashCode();
-        return result;
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || this.getClass() != obj.getClass()) return false;
+
+        AspirantAccount aspirantAccount = (AspirantAccount)obj;
+
+        return this.getId() == aspirantAccount.getId();
     }
 }

@@ -1,7 +1,7 @@
 package domain;
 
 /**
- * Represents an aspirant account domain.
+ * Represents an aspirant account domain model.
  */
 public class AspirantAccount implements Comparable<AspirantAccount> {
 
@@ -10,8 +10,26 @@ public class AspirantAccount implements Comparable<AspirantAccount> {
     private String password;
     private int aspirantProfileId;
 
+    /**
+     * Initializes a new instance of the {@link AspirantAccount model}
+     * @param id aspirant account id
+     */
     public AspirantAccount(int id) {
         this.id = id;
+    }
+
+    /**
+     * Initializes a new instance of the {@link AspirantAccount model}
+     * @param id aspirant account id
+     * @param email aspirant email
+     * @param password aspirant password
+     * @param aspirantProfileId aspirant profile id
+     */
+    public AspirantAccount(int id, String email, String password, int aspirantProfileId) {
+        this.id = id;
+        this.email = email;
+        this.password = password;
+        this.aspirantProfileId = aspirantProfileId;
     }
 
     /**

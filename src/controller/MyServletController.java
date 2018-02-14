@@ -1,12 +1,14 @@
 package controller;
 
 import controller.command.Command;
+import viewModel.Aspirant;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 // Note: you can use only domain and service.
@@ -25,18 +27,24 @@ public class MyServletController extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        this.doAction(request.toString());
+        this.doAction(request, response);
     }
 
-    private void doAction(String request) {
+    protected void doAction(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        String commandName = this.getCommandNameSomehow();
+        /*String commandName = this.getCommandNameSomehow();
 
         Command command = commandProvider.getCommand(commandName);
 
         String something = command.execute(request);
-
+*/
         // ...
+
+        //HttpSession userSession = request.getSession();
+        //получаю от сервиса domain.AspirantAccount
+        //генерирую из него viewModel.Aspirant
+        //userSession.setAttribute("aspirantInfo", aspirant);
+        //request.getRequestDispatcher("/index.jsp").forward(request, response);
     }
 
     private String getCommandNameSomehow(){

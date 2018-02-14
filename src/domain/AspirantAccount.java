@@ -8,7 +8,7 @@ public class AspirantAccount implements Comparable<AspirantAccount> {
     private int id;
     private String email;
     private String password;
-    private int aspirantProfileId;
+    private AspirantProfile aspirantProfile;
 
     /**
      * Initializes a new instance of the {@link AspirantAccount model}
@@ -23,13 +23,13 @@ public class AspirantAccount implements Comparable<AspirantAccount> {
      * @param id aspirant account id
      * @param email aspirant email
      * @param password aspirant password
-     * @param aspirantProfileId aspirant profile id
+     * @param aspirantProfile aspirant profile
      */
-    public AspirantAccount(int id, String email, String password, int aspirantProfileId) {
+    public AspirantAccount(int id, String email, String password, AspirantProfile aspirantProfile) {
         this.id = id;
         this.email = email;
         this.password = password;
-        this.aspirantProfileId = aspirantProfileId;
+        this.aspirantProfile = aspirantProfile;
     }
 
     /**
@@ -73,19 +73,19 @@ public class AspirantAccount implements Comparable<AspirantAccount> {
     }
 
     /**
-     * Gets an aspirant profile id
-     * @return aspirant profile id
+     * Gets an aspirant profile
+     * @return aspirant profile
      */
-    public int getAspirantProfileId() {
-        return aspirantProfileId;
+    public AspirantProfile getAspirantProfile() {
+        return aspirantProfile;
     }
 
     /**
-     * Sets an aspirant profile id
-     * @param aspirantProfileId aspirant profile id
+     * Sets an aspirant profile
+     * @param aspirantProfile aspirant profile
      */
-    public void setAspirantProfileId(int aspirantProfileId) {
-        this.aspirantProfileId = aspirantProfileId;
+    public void setAspirantProfile(AspirantProfile aspirantProfile) {
+        this.aspirantProfile = aspirantProfile;
     }
 
     @Override

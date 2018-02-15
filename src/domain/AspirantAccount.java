@@ -4,7 +4,6 @@ package domain;
  * Represents an aspirant account domain model.
  */
 public class AspirantAccount implements Comparable<AspirantAccount> {
-    // TODO: Resolve issue with id.
 
     private int id;
     private String email;
@@ -12,11 +11,16 @@ public class AspirantAccount implements Comparable<AspirantAccount> {
     private AspirantProfile aspirantProfile;
 
     /**
-     * Initializes a new instance of the {@link AspirantAccount model}
-     * @param id aspirant account id
+     * Initializes a new instance of the {@link AspirantAccount model
+     * @param email aspirant email
+     * @param password aspirant password
+     * @param aspirantProfile aspirant profile
      */
-    public AspirantAccount(int id) {
+    public AspirantAccount(String email, String password, AspirantProfile aspirantProfile) {
         this.id = id;
+        this.email = email;
+        this.password = password;
+        this.aspirantProfile = aspirantProfile;
     }
 
     /**
@@ -39,6 +43,14 @@ public class AspirantAccount implements Comparable<AspirantAccount> {
      */
     public int getId() {
         return id;
+    }
+
+    /**
+     * Sets an aspirant account id
+     * @param id aspirant account id
+     */
+    public void setId(int id) {
+        this.id = id;
     }
 
     /**

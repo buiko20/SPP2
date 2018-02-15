@@ -4,6 +4,7 @@ package domain;
  * Represents an aspirant account domain model.
  */
 public class AspirantAccount implements Comparable<AspirantAccount> {
+    // TODO: Resolve issue with id.
 
     private int id;
     private String email;

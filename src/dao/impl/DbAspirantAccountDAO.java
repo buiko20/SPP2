@@ -44,30 +44,18 @@ public class DbAspirantAccountDAO implements DAO<AspirantAccount>{
         }
     }
 
-    @Override
     public AspirantAccount getBy(Predicate<AspirantAccount> predicate) throws DAOException {
-        return null;
-    }
+        try {
+            AspirantAccount result = null;
+            List<AspirantAccount> list = this.getAll();
 
-    public AspirantAccount getById(int id) throws DAOException {
-        try{
-            setConnection();
-            Statement statement = connection.createStatement();
-
-            ResultSet resultSet = statement.executeQuery("SELECT FROM Aspirant WHERE id=" + id);
-
-            AspirantAccount aspirantAccount = null;
-            if(resultSet.next()){
-                aspirantAccount = new AspirantAccount(
-                        resultSet.getInt("id"),
-                        resultSet.getString("Email"),
-                        resultSet.getString("Password"),
-                        null
-                );
+            for (AspirantAccount aspirantAccount: list) {
+                if (predicate.test(aspirantAccount)) {
+                    result = aspirantAccount;
+                }
             }
 
-            connection.close();
-            return aspirantAccount;
+            return result;
         } catch (Exception e) {
             e.printStackTrace();
             return null;
@@ -79,22 +67,28 @@ public class DbAspirantAccountDAO implements DAO<AspirantAccount>{
             setConnection();
             Statement statement = connection.createStatement();
 
-            statement.execute("update Aspirant set Email='" +
+            statement.execute("UPDATE Aspirant SET Email='" +
                     aspirantAccount.getEmail() +
                     "', Password='" + aspirantAccount.getPassword() +
-                    "' where id=" + aspirantAccount.getId());
+                    "' WHERE id=" + aspirantAccount.getId());
 
             connection.close();
-           // return true;
         } catch (Exception e) {
             e.printStackTrace();
-            //return false;
         }
     }
 
-    @Override
-    public void delete(AspirantAccount entity) throws DAOException {
+    public void delete(int id) throws DAOException {
+        try {
+            setConnection();
 
+            Statement statement = connection.createStatement();
+            statement.execute("DELETE FROM Aspirant WHERE id=" + id);
+
+            connection.close();
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void create(AspirantAccount aspirantAccount) throws DAOException {
@@ -102,18 +96,21 @@ public class DbAspirantAccountDAO implements DAO<AspirantAccount>{
             setConnection();
             Statement statement = connection.createStatement();
 
-            statement.execute("INSERT INTO Aspirant (Email, Password, Aspirant_data_id)" +
+            statement.executeUpdate("INSERT INTO Aspirant (Email, Password, Aspirant_data_id)" +
                     "VALUES ('" + aspirantAccount.getEmail() + "', '" +
-                    aspirantAccount.getPassword() + "', NULL)");
+                    aspirantAccount.getPassword() + "', NULL)", Statement.RETURN_GENERATED_KEYS);
+
+            ResultSet rs = statement.getGeneratedKeys();
+            int id = -1;
+            if (rs != null && rs.next()) {
+                id = rs.getInt(1);
+            }
+            aspirantAccount.setId(id);
 
             connection.close();
-         //   return true;
         }
         catch (Exception e) {
             e.printStackTrace();
-         //   return false;
         }
     }
-
-
 }

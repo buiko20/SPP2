@@ -18,10 +18,23 @@ public class Invitation implements Comparable<Invitation> {
 
     /**
      * Initialize a new instance of the {@link Invitation model}
-     * @param id invitation id
+     * @param date date of the interview for which the invitation was sent
+     * @param address address of the interview for which the invitation was sent
+     * @param resume resume the invitation was sent to
+     * @param aspirantAccount aspirant account the invitation was sent to
+     * @param jobVacancy job vacancy the invitation was sent to
+     * @param hrManager HRManager who sent the invitation
+     * @param company company which HRManager sent the invitation
      */
-    public Invitation(int id){
-        this.id = id;
+    public Invitation(Timestamp date, String address, Resume resume, AspirantAccount aspirantAccount,
+                      JobVacancy jobVacancy, HRManager hrManager, Company company) {
+        this.date = date;
+        this.address = address;
+        this.resume = resume;
+        this.aspirantAccount = aspirantAccount;
+        this.jobVacancy = jobVacancy;
+        this.hrManager = hrManager;
+        this.company = company;
     }
 
     /**
@@ -53,6 +66,14 @@ public class Invitation implements Comparable<Invitation> {
      */
     public int getId() {
         return id;
+    }
+
+    /**
+     * Sets an invitation id
+     * @param id invitation id
+     */
+    public void setId(int id) {
+        this.id = id;
     }
 
     /**

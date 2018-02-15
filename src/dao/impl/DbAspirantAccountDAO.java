@@ -7,6 +7,7 @@ import domain.AspirantAccount;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 
 public class DbAspirantAccountDAO implements DAO<AspirantAccount>{
 
@@ -43,6 +44,11 @@ public class DbAspirantAccountDAO implements DAO<AspirantAccount>{
         }
     }
 
+    @Override
+    public AspirantAccount getBy(Predicate<AspirantAccount> predicate) throws DAOException {
+        return null;
+    }
+
     public AspirantAccount getById(int id) throws DAOException {
         try{
             setConnection();
@@ -68,7 +74,7 @@ public class DbAspirantAccountDAO implements DAO<AspirantAccount>{
         }
     }
 
-    public boolean update(AspirantAccount aspirantAccount) throws DAOException {
+    public void update(AspirantAccount aspirantAccount) throws DAOException {
         try{
             setConnection();
             Statement statement = connection.createStatement();
@@ -79,29 +85,19 @@ public class DbAspirantAccountDAO implements DAO<AspirantAccount>{
                     "' where id=" + aspirantAccount.getId());
 
             connection.close();
-            return true;
+           // return true;
         } catch (Exception e) {
             e.printStackTrace();
-            return false;
+            //return false;
         }
     }
 
-    public boolean delete(int id) throws DAOException {
-        try {
-            setConnection();
+    @Override
+    public void delete(AspirantAccount entity) throws DAOException {
 
-            Statement statement = connection.createStatement();
-            statement.execute("DELETE FROM Aspirant WHERE id=" + id);
-
-            connection.close();
-            return true;
-        }catch (Exception e) {
-            e.printStackTrace();
-            return false;
-        }
     }
 
-    public boolean create(AspirantAccount aspirantAccount) throws DAOException {
+    public void create(AspirantAccount aspirantAccount) throws DAOException {
         try {
             setConnection();
             Statement statement = connection.createStatement();
@@ -111,11 +107,13 @@ public class DbAspirantAccountDAO implements DAO<AspirantAccount>{
                     aspirantAccount.getPassword() + "', NULL)");
 
             connection.close();
-            return true;
+         //   return true;
         }
         catch (Exception e) {
             e.printStackTrace();
-            return false;
+         //   return false;
         }
     }
+
+
 }

@@ -4,17 +4,19 @@ import dao.exception.DAOException;
 import domain.AspirantAccount;
 
 import java.util.List;
+import java.util.function.Predicate;
 
-public interface DAO<Type> {
+public interface DAO<T> {
 
-    List<Type> getAll() throws DAOException;
+    List<T> getAll() throws DAOException;
 
-    Type getById(int id) throws DAOException;
+    // return null if not found.
+    T getBy(Predicate<T> predicate) throws DAOException;
 
-    boolean update(Type data) throws DAOException;
+    void update(T entity) throws DAOException;
 
-    boolean delete(int id) throws DAOException;
+    void delete(T entity) throws DAOException;
 
-    boolean create(Type data) throws DAOException;
+    void create(T entity) throws DAOException;
 
 }

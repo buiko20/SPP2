@@ -1,6 +1,7 @@
 package dao;
 
 import dao.impl.DbAspirantAccountDAO;
+import domain.AspirantAccount;
 
 /**
  * Represents a simple DAO factory.
@@ -9,7 +10,7 @@ public class DAOFactory {
 
     private static final DAOFactory factory = new DAOFactory();
 
-    private final DAO AspirantAccountDAO = new DbAspirantAccountDAO();
+    private final DAO<AspirantAccount> AspirantAccountDAO = new DbAspirantAccountDAO();
 
     private DAOFactory() {
     }
@@ -26,7 +27,7 @@ public class DAOFactory {
      * Returns an instance of the {@link DAO} in singleton scope.
      * @return instance of the {@link DAO}
      */
-    public DAO getAspirantAccountDAO() {
+    public DAO<AspirantAccount> getAspirantAccountDAO() {
         return AspirantAccountDAO;
     }
 }

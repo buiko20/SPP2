@@ -46,6 +46,7 @@ public class Invitation implements Comparable<Invitation> {
         this.hrManager = hrManager;
         this.company = company;
     }
+
     /**
      * Gets an invitation id
      * @return invitation id

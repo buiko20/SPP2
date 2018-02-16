@@ -5,7 +5,11 @@ package controller.command;
  */
 public interface Command {
 
-    // TODO: Add here command methods. Example is shown below
-     String execute(String request); // TODO: delete this or refactor.
+    /**
+     * Execute a command
+     * @param request param for command
+     * @return result of the command work
+     */
+     Object execute(String request);
 
 }

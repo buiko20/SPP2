@@ -23,6 +23,7 @@ public class MyAspirantService implements AspirantService {
 
             Predicate<AspirantAccount> mailPredicate =
                     aspirantAccount -> aspirantAccount.getEmail().equals(email);
+
             return aspirantAccountDao.getBy(mailPredicate);
 
         } catch (Exception e) {

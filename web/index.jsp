@@ -74,8 +74,14 @@
       </tr>
 
       <tr>
+        <td><b>City of residence: </b></td>
+        <td><c:out value = "${aspirantInfo.cityOfResidence}"/></td>
+      </tr>
+
+
+      <tr>
         <td></td>
-        <td><input type = "submit" name="action" align="center" value = "Get resume"/></td>
+        <td><input type = "submit" name="command" align="center" value = "Get aspirant info"/></td>
       </tr>
 
     </table>

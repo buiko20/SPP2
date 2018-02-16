@@ -8,13 +8,15 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <html>
+
   <head>
-    <title>Шаблон Bootstrap 101</title>
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <title>Resume view</title>
   </head>
+
   <body>
+
   <left><H2>Aspirant profile</H2></left>
+
   <form action = "control" method = "GET">
     <table border = "0">
       <tr>
@@ -40,10 +42,12 @@
         <td><b>Education: </b></td>
         <td><c:out value = "${aspirantInfo.education}"/></td>
       </tr>
+
       <tr>
         <td><b>Date of birth: </b></td>
         <td><c:out value = "${aspirantInfo.dateOfBirth}"/></td>
       </tr>
+
       <tr>
         <td><b>Phone number: </b></td>
         <td><c:out value = "${aspirantInfo.phoneNumber}"/></td>
@@ -53,22 +57,33 @@
         <td><b>Email: </b></td>
         <td><c:out value = "${aspirantInfo.email}"/></td>
       </tr>
+
       <tr>
         <td><b>Mailing address: </b></td>
         <td><c:out value = "${aspirantInfo.mailingAddress}"/></td>
       </tr>
+
       <tr>
         <td><b>English level: </b></td>
         <td><c:out value = "${aspirantInfo.englishLevel}"/></td>
       </tr>
+
       <tr>
         <td><b>About aspirant: </b></td>
         <td><c:out value = "${aspirantInfo.aboutMe}"/></td>
       </tr>
+
+      <tr>
+        <td><b>City of residence: </b></td>
+        <td><c:out value = "${aspirantInfo.cityOfResidence}"/></td>
+      </tr>
+
+
       <tr>
         <td></td>
-        <td><input type = "submit" name="action" align="center" value = "GetResume"/></td>
+        <td><input type = "submit" name="command" align="center" value = "Get aspirant info"/></td>
       </tr>
+
     </table>
   </form>
   </body>

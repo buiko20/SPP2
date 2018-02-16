@@ -16,7 +16,7 @@ import java.io.IOException;
 /**
  * Represents my super cool controller.
  */
-@WebServlet(name = "MyServletController")
+@WebServlet(name = "showAspirantInfoServlet", urlPatterns = "/control")
 public class MyServletController extends HttpServlet {
 
     private final CommandProvider commandProvider = new CommandProvider();
@@ -32,19 +32,12 @@ public class MyServletController extends HttpServlet {
 
     protected void doAction(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        /*String commandName = this.getCommandNameSomehow();
-
+        String commandName = request.getParameter("command");
         Command command = commandProvider.getCommand(commandName);
 
-        String something = command.execute(request);
-*/
-        // ...
-
-        //HttpSession userSession = request.getSession();
-        //получаю от сервиса domain.AspirantAccount
-        //генерирую из него viewModel.Aspirant
-        //userSession.setAttribute("aspirantInfo", aspirant);
-        //request.getRequestDispatcher("/index.jsp").forward(request, response);
+        HttpSession userSession = request.getSession();
+        userSession.setAttribute("aspirantInfo", (Aspirant)command.execute("user@gmail.com"));
+        request.getRequestDispatcher("/index.jsp").forward(request, response);
     }
 
     private String getCommandNameSomehow(){

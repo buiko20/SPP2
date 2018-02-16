@@ -1,7 +1,7 @@
 package controller;
 
 import controller.command.Command;
-import controller.command.impl.MyCommand;
+import controller.command.impl.ShowAspirantInfoCommand;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -9,14 +9,23 @@ import java.util.Map;
 /**
  * Represents a class supplying commands.
  */
-class CommandProvider {
+public class CommandProvider {
     private Map<String, Command> commands = new HashMap<>();
 
     /**
      * Initializes a new instance of the {@link CommandProvider}.
      */
-    CommandProvider() {
-        commands.put("my_command", new MyCommand());
+    public CommandProvider() {
+        addCommand(new ShowAspirantInfoCommand(), "Get aspirant info");
+    }
+
+    /**
+     * Adds the mapping of the command and command name
+     * @param command command
+     * @param commandName command name
+     */
+    private void addCommand(Command command, String commandName){
+        commands.put(commandName, command);
     }
 
     /**
@@ -25,7 +34,7 @@ class CommandProvider {
      * @return command corresponding to the commandName or
      * {@code null} if command does not exist.
      */
-    Command getCommand(String commandName) {
+    public Command getCommand(String commandName) {
         return commands.get(commandName);
     }
 }

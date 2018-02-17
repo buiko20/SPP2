@@ -80,7 +80,7 @@
       <Position>6</Position>
       <DataType>mediumtext|0</DataType>
     </column>
-    <column id="30" parent="9" name="Data_of_birth">
+    <column id="30" parent="9" name="Date_of_birth">
       <Position>7</Position>
       <DataType>date|0</DataType>
     </column>

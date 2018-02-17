@@ -1,8 +1,10 @@
 package dao.impl;
 
 import dao.DAO;
+import dao.DAOFactory;
 import dao.exception.DAOException;
 import domain.AspirantAccount;
+import domain.AspirantProfile;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -12,10 +14,15 @@ import java.util.function.Predicate;
 public class DbAspirantAccountDAO implements DAO<AspirantAccount>{
 
     private Connection connection = null;
+    private DAO<AspirantProfile> aspirantProfileDAO = null;
+
+    public void setAspirantProfileDAO(DAO<AspirantProfile> aspirantProfileDAO) {
+        this.aspirantProfileDAO = aspirantProfileDAO;
+    }
 
     private void setConnection() throws Exception {
         Class.forName("com.mysql.jdbc.Driver").newInstance();
-        connection =  DriverManager.getConnection("jdbc:mysql://localhost/jobs_db?user=root&password=root");
+        connection =  DriverManager.getConnection("jdbc:mysql://localhost:3307/jobs_db?user=root&password=root");
     }
 
     public List<AspirantAccount> getAll() throws DAOException {
@@ -26,12 +33,16 @@ public class DbAspirantAccountDAO implements DAO<AspirantAccount>{
 
             ResultSet resultSet = statement.executeQuery("SELECT * FROM Aspirant");
 
+
+
             while(resultSet.next()){
-                AspirantAccount aspirantAccount = new AspirantAccount(
+                int aspirantProfileId = resultSet.getInt("Aspirant_data_id");
+                Predicate<AspirantProfile> idPredicate = (ap) -> ap.getId() == aspirantProfileId;
+                        AspirantAccount aspirantAccount = new AspirantAccount(
                         resultSet.getInt("id"),
                         resultSet.getString("Email"),
                         resultSet.getString("Password"),
-                        null
+                        aspirantProfileDAO.getBy(idPredicate)
                 );
                 aspirantAccounts.add(aspirantAccount);
             }

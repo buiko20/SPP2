@@ -1,6 +1,7 @@
 package domain;
 
 import java.sql.Date;
+import java.sql.Timestamp;
 
 /**
  * Represents an aspirant profile domain model.

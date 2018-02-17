@@ -1,5 +1,7 @@
 package dao.impl;
 
+import dao.DAO;
+import dao.DAOFactory;
 import dao.exception.DAOException;
 import domain.AspirantProfile;
 
@@ -8,13 +10,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 
-public class DbAspirantProfileDAO {
+public class DbAspirantProfileDAO implements DAO<AspirantProfile> {
 
     private Connection connection = null;
 
     private void setConnection() throws Exception {
         Class.forName("com.mysql.jdbc.Driver").newInstance();
-        connection =  DriverManager.getConnection("jdbc:mysql://localhost/jobs_db?user=root&password=root");
+        connection =  DriverManager.getConnection("jdbc:mysql://localhost:3307/jobs_db?user=root&password=root");
     }
 
     public List<AspirantProfile> getAll() throws DAOException {

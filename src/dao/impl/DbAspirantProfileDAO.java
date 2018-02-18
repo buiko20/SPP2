@@ -1,7 +1,6 @@
 package dao.impl;
 
 import dao.DAO;
-import dao.DAOFactory;
 import dao.exception.DAOException;
 import domain.AspirantProfile;
 
@@ -72,7 +71,25 @@ public class DbAspirantProfileDAO implements DAO<AspirantProfile> {
     }
 
     public void update(AspirantProfile aspirantProfile) throws DAOException {
+        try {
+            setConnection();
+            Statement statement = connection.createStatement();
 
+            statement.execute("UPDATE Aspirant_data SET Surname='" + aspirantProfile.getSurname() +
+                    "', Name='" + aspirantProfile.getName() + "', Patronymic='" + aspirantProfile.getPatronymic() +
+                    "', Sex='" + aspirantProfile.getSex() + "', Education='" + aspirantProfile.getEducation() +
+                    "', Date_of_birth='" + aspirantProfile.getDateOfBirth() +
+                    "', Phone_number='" + aspirantProfile.getPhoneNumber() +
+                    "', English_level='" + aspirantProfile.getEnglishLevel() +
+                    "', About_me='" + aspirantProfile.getAboutMe() +
+                    "', City_of_residence='" + aspirantProfile.getCityOfResidence() +
+                    "', Mailing_address='" + aspirantProfile.getMailingAddress() +
+                    "' WHERE id=" + aspirantProfile.getId());
+
+            connection.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void delete(int id) throws DAOException {
@@ -93,13 +110,14 @@ public class DbAspirantProfileDAO implements DAO<AspirantProfile> {
             setConnection();
             Statement statement = connection.createStatement();
 
-            statement.executeUpdate("INSERT INTO Aspirant (Surname, Name, Patronymic, Sex, Education, Date_of_birth, " +
-                    "Phone_number, English_level, About_me, City_of_residence, Mailing_address)" +
+            statement.executeUpdate("INSERT INTO Aspirant_data (Surname, Name, Patronymic, Sex, Education, " +
+                    "Date_of_birth, Phone_number, English_level, About_me, City_of_residence, Mailing_address)" +
                     "VALUES ('" + aspirantProfile.getSurname() + "', '" + aspirantProfile.getName() + "', '" +
-                    aspirantProfile.getPatronymic() + "', '" + aspirantProfile.getSex() +
-                    aspirantProfile.getEducation() + aspirantProfile.getDateOfBirth() +
-                    aspirantProfile.getPhoneNumber() + aspirantProfile.getEnglishLevel() + aspirantProfile.getAboutMe() +
-                    aspirantProfile.getCityOfResidence() + aspirantProfile.getMailingAddress() + "')", Statement.RETURN_GENERATED_KEYS);
+                    aspirantProfile.getPatronymic() + "', '" + aspirantProfile.getSex() + "', '" +
+                    aspirantProfile.getEducation() + "', '" + aspirantProfile.getDateOfBirth() + "', '" +
+                    aspirantProfile.getPhoneNumber() + "', '" + aspirantProfile.getEnglishLevel() + "', '" +
+                    aspirantProfile.getAboutMe() + "', '" + aspirantProfile.getCityOfResidence() + "', '" +
+                    aspirantProfile.getMailingAddress() + "')", Statement.RETURN_GENERATED_KEYS);
 
             ResultSet rs = statement.getGeneratedKeys();
             int id = -1;

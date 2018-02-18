@@ -1,7 +1,6 @@
 package dao;
 
 import dao.exception.DAOException;
-import domain.AspirantAccount;
 
 import java.util.List;
 import java.util.function.Predicate;

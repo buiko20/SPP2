@@ -38,7 +38,6 @@ public class DAOFactory {
      * @return instance of the {@link DAO<AspirantAccount>}
      */
     public DAO<AspirantAccount> getAspirantAccountDAO() {
-        this.AspirantAccountDAO.setAspirantProfileDAO(this.AspirantProfileDAO);
         return AspirantAccountDAO;
     }
 

@@ -1,10 +1,8 @@
 package dao.impl;
 
 import dao.DAO;
-import dao.DAOFactory;
 import dao.exception.DAOException;
 import domain.AspirantAccount;
-import domain.AspirantProfile;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -14,11 +12,6 @@ import java.util.function.Predicate;
 public class DbAspirantAccountDAO implements DAO<AspirantAccount>{
 
     private Connection connection = null;
-    private DAO<AspirantProfile> aspirantProfileDAO = null;
-
-    public void setAspirantProfileDAO(DAO<AspirantProfile> aspirantProfileDAO) {
-        this.aspirantProfileDAO = aspirantProfileDAO;
-    }
 
     private void setConnection() throws Exception {
         Class.forName("com.mysql.jdbc.Driver").newInstance();
@@ -27,22 +20,18 @@ public class DbAspirantAccountDAO implements DAO<AspirantAccount>{
 
     public List<AspirantAccount> getAll() throws DAOException {
         ArrayList<AspirantAccount> aspirantAccounts = new ArrayList<>();
-        try{
+        try {
             setConnection();
             Statement statement = connection.createStatement();
 
             ResultSet resultSet = statement.executeQuery("SELECT * FROM Aspirant");
 
-
-
             while(resultSet.next()){
-                int aspirantProfileId = resultSet.getInt("Aspirant_data_id");
-                Predicate<AspirantProfile> idPredicate = (ap) -> ap.getId() == aspirantProfileId;
-                        AspirantAccount aspirantAccount = new AspirantAccount(
+                AspirantAccount aspirantAccount = new AspirantAccount(
                         resultSet.getInt("id"),
                         resultSet.getString("Email"),
                         resultSet.getString("Password"),
-                        aspirantProfileDAO.getBy(idPredicate)
+                        resultSet.getInt("Aspirant_data_id")
                 );
                 aspirantAccounts.add(aspirantAccount);
             }
@@ -74,13 +63,14 @@ public class DbAspirantAccountDAO implements DAO<AspirantAccount>{
     }
 
     public void update(AspirantAccount aspirantAccount) throws DAOException {
-        try{
+        try {
             setConnection();
             Statement statement = connection.createStatement();
 
             statement.execute("UPDATE Aspirant SET Email='" +
                     aspirantAccount.getEmail() +
                     "', Password='" + aspirantAccount.getPassword() +
+                    "', Aspirant_data_id='" + aspirantAccount.getAspirantProfileId() +
                     "' WHERE id=" + aspirantAccount.getId());
 
             connection.close();
@@ -97,7 +87,7 @@ public class DbAspirantAccountDAO implements DAO<AspirantAccount>{
             statement.execute("DELETE FROM Aspirant WHERE id=" + id);
 
             connection.close();
-        }catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -119,8 +109,7 @@ public class DbAspirantAccountDAO implements DAO<AspirantAccount>{
             aspirantAccount.setId(id);
 
             connection.close();
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

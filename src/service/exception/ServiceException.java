@@ -6,6 +6,13 @@ package service.exception;
 public class ServiceException extends Exception {
 
     /**
+     * @see Exception#Exception()
+     */
+    public ServiceException() {
+        super();
+    }
+
+    /**
      * @see Exception#Exception(String)
      */
     public ServiceException(String message) {

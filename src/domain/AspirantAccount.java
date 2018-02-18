@@ -8,7 +8,11 @@ public class AspirantAccount implements Comparable<AspirantAccount> {
     private int id;
     private String email;
     private String password;
+
+    @Deprecated
     private AspirantProfile aspirantProfile;
+
+    private int aspirantProfileId;
 
     /**
      * Initializes a new instance of the {@link AspirantAccount model
@@ -16,8 +20,8 @@ public class AspirantAccount implements Comparable<AspirantAccount> {
      * @param password aspirant password
      * @param aspirantProfile aspirant profile
      */
+    @Deprecated
     public AspirantAccount(String email, String password, AspirantProfile aspirantProfile) {
-        this.id = id;
         this.email = email;
         this.password = password;
         this.aspirantProfile = aspirantProfile;
@@ -30,11 +34,38 @@ public class AspirantAccount implements Comparable<AspirantAccount> {
      * @param password aspirant password
      * @param aspirantProfile aspirant profile
      */
+    @Deprecated
     public AspirantAccount(int id, String email, String password, AspirantProfile aspirantProfile) {
         this.id = id;
         this.email = email;
         this.password = password;
         this.aspirantProfile = aspirantProfile;
+    }
+
+    /**
+     * Initializes a new instance of the {@link AspirantAccount model
+     * @param email aspirant email
+     * @param password aspirant password
+     * @param aspirantProfileId aspirant profile id
+     */
+    public AspirantAccount(String email, String password, int aspirantProfileId) {
+        this.email = email;
+        this.password = password;
+        this.aspirantProfileId = aspirantProfileId;
+    }
+
+    /**
+     * Initializes a new instance of the {@link AspirantAccount model}
+     * @param id aspirant account id
+     * @param email aspirant email
+     * @param password aspirant password
+     * @param aspirantProfileId aspirant profile id
+     */
+    public AspirantAccount(int id, String email, String password, int aspirantProfileId) {
+        this.id = id;
+        this.email = email;
+        this.password = password;
+        this.aspirantProfileId = aspirantProfileId;
     }
 
     /**
@@ -89,6 +120,7 @@ public class AspirantAccount implements Comparable<AspirantAccount> {
      * Gets an aspirant profile
      * @return aspirant profile
      */
+    @Deprecated
     public AspirantProfile getAspirantProfile() {
         return aspirantProfile;
     }
@@ -97,8 +129,25 @@ public class AspirantAccount implements Comparable<AspirantAccount> {
      * Sets an aspirant profile
      * @param aspirantProfile aspirant profile
      */
+    @Deprecated
     public void setAspirantProfile(AspirantProfile aspirantProfile) {
         this.aspirantProfile = aspirantProfile;
+    }
+
+    /**
+     * Gets an aspirant profile id
+     * @return aspirant profile id
+     */
+    public int getAspirantProfileId() {
+        return aspirantProfileId;
+    }
+
+    /**
+     * Sets an aspirant profile id
+     * @param aspirantProfileId aspirant profile id
+     */
+    public void setAspirantProfileId(int aspirantProfileId) {
+        this.aspirantProfileId = aspirantProfileId;
     }
 
     @Override

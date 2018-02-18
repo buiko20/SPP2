@@ -4,6 +4,13 @@ import dao.impl.DbAspirantAccountDAO;
 import dao.impl.DbAspirantProfileDAO;
 import domain.AspirantAccount;
 import domain.AspirantProfile;
+import domain.AspirantResponse;
+import domain.Company;
+import domain.HRManager;
+import domain.Invitation;
+import domain.JobVacancy;
+import domain.Resume;
+import domain.ResumeView;
 
 /**
  * Represents a simple DAO factory.
@@ -41,5 +48,61 @@ public class DAOFactory {
      */
     public DAO<AspirantProfile> getAspirantProfileDAO() {
         return AspirantProfileDAO;
+    }
+
+    /**
+     * Returns an instance of the {@link DAO<AspirantResponse>} in singleton scope.
+     * @return instance of the {@link DAO<AspirantResponse>}
+     */
+    public DAO<AspirantResponse> getAspirantResponseDAO() {
+        return null;
+    }
+
+    /**
+     * Returns an instance of the {@link DAO<Company>} in singleton scope.
+     * @return instance of the {@link DAO<Company>}
+     */
+    public DAO<Company> getCompanyDAO() {
+        return null;
+    }
+
+    /**
+     * Returns an instance of the {@link DAO<HRManager>} in singleton scope.
+     * @return instance of the {@link DAO<HRManager>}
+     */
+    public DAO<HRManager> getHRManagerDAO() {
+        return null;
+    }
+
+    /**
+     * Returns an instance of the {@link DAO<Invitation>} in singleton scope.
+     * @return instance of the {@link DAO<Invitation>}
+     */
+    public DAO<Invitation> getInvitationDAO() {
+        return null;
+    }
+
+    /**
+     * Returns an instance of the {@link DAO<JobVacancy>} in singleton scope.
+     * @return instance of the {@link DAO<JobVacancy>}
+     */
+    public DAO<JobVacancy> getJobVacancyDAO() {
+        return null;
+    }
+
+    /**
+     * Returns an instance of the {@link DAO<Resume>} in singleton scope.
+     * @return instance of the {@link DAO<Resume>}
+     */
+    public DAO<Resume> getResumeDAO() {
+        return null;
+    }
+
+    /**
+     * Returns an instance of the {@link DAO<ResumeView>} in singleton scope.
+     * @return instance of the {@link DAO<ResumeView>}
+     */
+    public DAO<ResumeView> getResumeViewDAO() {
+        return null;
     }
 }

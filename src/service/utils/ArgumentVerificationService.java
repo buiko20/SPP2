@@ -1,14 +1,14 @@
-package service.impl;
+package service.utils;
 
-class ArgumentVerificationService {
+public class ArgumentVerificationService {
 
-    static void verifyNull(Object argument, String argumentName) {
+    public static void verifyNull(Object argument, String argumentName) {
         if (argument == null) {
             throw new IllegalArgumentException(argumentName + " is null.");
         }
     }
 
-    static void verifyString(String argument, String argumentName) {
+    public static void verifyString(String argument, String argumentName) {
         if (argument == null || argument.trim().isEmpty()) {
             throw new IllegalArgumentException(argumentName + " is null, empty or white space.");
         }

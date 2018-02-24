@@ -1,6 +1,7 @@
 package controller;
 
 import controller.command.Command;
+import controller.command.impl.RegisterAspirantCommand;
 import controller.command.impl.ShowAspirantInfoCommand;
 
 import java.util.HashMap;
@@ -17,6 +18,7 @@ public class CommandProvider {
      */
     public CommandProvider() {
         addCommand(new ShowAspirantInfoCommand(), "Get aspirant info");
+        addCommand(new RegisterAspirantCommand(), "Зарегистрироваться");
     }
 
     /**
@@ -34,7 +36,7 @@ public class CommandProvider {
      * @return command corresponding to the commandName or
      * {@code null} if command does not exist.
      */
-    public Command getCommand(String commandName) {
+    public Command getCommand(String commandName){
         return commands.get(commandName);
     }
 }

@@ -1,6 +1,7 @@
 package dao.impl;
 
 import dao.DAO;
+import dao.MysqlConnect;
 import dao.exception.DAOException;
 import domain.AspirantProfile;
 
@@ -11,19 +12,12 @@ import java.util.function.Predicate;
 
 public class DbAspirantProfileDAO implements DAO<AspirantProfile> {
 
-    private Connection connection = null;
-
-    private void setConnection() throws Exception {
-        Class.forName("com.mysql.jdbc.Driver").newInstance();
-        connection =  DriverManager.getConnection("jdbc:mysql://localhost:3307/jobs_db?user=root&password=root");
-    }
+    private MysqlConnect mysqlConnect = new MysqlConnect();
 
     public List<AspirantProfile> getAll() throws DAOException {
         ArrayList<AspirantProfile> aspirantProfiles = new ArrayList<>();
         try{
-            setConnection();
-            Statement statement = connection.createStatement();
-
+            Statement statement = mysqlConnect.connect().createStatement();
             ResultSet resultSet = statement.executeQuery("SELECT * FROM Aspirant_data");
 
             while(resultSet.next()){
@@ -44,11 +38,11 @@ public class DbAspirantProfileDAO implements DAO<AspirantProfile> {
                 aspirantProfiles.add(aspirantProfile);
             }
 
-            connection.close();
             return aspirantProfiles;
         } catch (Exception e) {
-            e.printStackTrace();
-            return null;
+            throw new DAOException(e.getMessage(), e);
+        } finally {
+            mysqlConnect.disconnect();
         }
     }
 
@@ -65,16 +59,13 @@ public class DbAspirantProfileDAO implements DAO<AspirantProfile> {
 
             return result;
         } catch (Exception e) {
-            e.printStackTrace();
-            return null;
+            throw new DAOException(e.getMessage(), e);
         }
     }
 
     public void update(AspirantProfile aspirantProfile) throws DAOException {
         try {
-            setConnection();
-            Statement statement = connection.createStatement();
-
+            Statement statement = mysqlConnect.connect().createStatement();
             statement.execute("UPDATE Aspirant_data SET Surname='" + aspirantProfile.getSurname() +
                     "', Name='" + aspirantProfile.getName() + "', Patronymic='" + aspirantProfile.getPatronymic() +
                     "', Sex='" + aspirantProfile.getSex() + "', Education='" + aspirantProfile.getEducation() +
@@ -85,31 +76,27 @@ public class DbAspirantProfileDAO implements DAO<AspirantProfile> {
                     "', City_of_residence='" + aspirantProfile.getCityOfResidence() +
                     "', Mailing_address='" + aspirantProfile.getMailingAddress() +
                     "' WHERE id=" + aspirantProfile.getId());
-
-            connection.close();
         } catch (Exception e) {
-            e.printStackTrace();
+            throw new DAOException(e.getMessage(), e);
+        } finally {
+            mysqlConnect.disconnect();
         }
     }
 
     public void delete(int id) throws DAOException {
         try {
-            setConnection();
-
-            Statement statement = connection.createStatement();
+            Statement statement = mysqlConnect.connect().createStatement();
             statement.execute("DELETE FROM Aspirant_data WHERE id=" + id);
-
-            connection.close();
-        }catch (Exception e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            throw new DAOException(e.getMessage(), e);
+        } finally {
+            mysqlConnect.disconnect();
         }
     }
 
     public void create(AspirantProfile aspirantProfile) throws DAOException {
         try {
-            setConnection();
-            Statement statement = connection.createStatement();
-
+            Statement statement = mysqlConnect.connect().createStatement();
             statement.executeUpdate("INSERT INTO Aspirant_data (Surname, Name, Patronymic, Sex, Education, " +
                     "Date_of_birth, Phone_number, English_level, About_me, City_of_residence, Mailing_address)" +
                     "VALUES ('" + aspirantProfile.getSurname() + "', '" + aspirantProfile.getName() + "', '" +
@@ -125,11 +112,10 @@ public class DbAspirantProfileDAO implements DAO<AspirantProfile> {
                 id = rs.getInt(1);
             }
             aspirantProfile.setId(id);
-
-            connection.close();
-        }
-        catch (Exception e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            throw new DAOException(e.getMessage(), e);
+        } finally {
+            mysqlConnect.disconnect();
         }
     }
 }

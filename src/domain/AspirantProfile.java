@@ -1,7 +1,6 @@
 package domain;
 
 import java.sql.Date;
-import java.sql.Timestamp;
 
 /**
  * Represents an aspirant profile domain model.
@@ -294,7 +293,7 @@ public class AspirantProfile implements Comparable<AspirantProfile>{
         if (this == obj) return true;
         if (obj == null || this.getClass() != obj.getClass()) return false;
 
-        AspirantProfile aspirantProfile = (AspirantProfile) obj;
+        AspirantProfile aspirantProfile = (AspirantProfile)obj;
 
         return this.getId() == aspirantProfile.getId();
     }

@@ -10,31 +10,31 @@ public class Invitation implements Comparable<Invitation> {
     private int id;
     private Timestamp date;
     private String address;
-    private Resume resume;
-    private AspirantAccount aspirantAccount;
-    private JobVacancy jobVacancy;
-    private HRManager hrManager;
-    private Company company;
+    private int resumeId;
+    private int aspirantAccountId;
+    private int jobVacancyId;
+    private int hrManagerId;
+    private int companyId;
 
     /**
      * Initialize a new instance of the {@link Invitation model}
      * @param date date of the interview for which the invitation was sent
      * @param address address of the interview for which the invitation was sent
-     * @param resume resume the invitation was sent to
-     * @param aspirantAccount aspirant account the invitation was sent to
-     * @param jobVacancy job vacancy the invitation was sent to
-     * @param hrManager HRManager who sent the invitation
-     * @param company company which HRManager sent the invitation
+     * @param resumeId id of the resume the invitation was sent to
+     * @param aspirantAccountId id of the aspirant account the invitation was sent to
+     * @param jobVacancyId id of the job vacancy the invitation was sent to
+     * @param hrManagerId id of the HRManager who sent the invitation
+     * @param companyId id of the company which HRManager sent the invitation
      */
-    public Invitation(Timestamp date, String address, Resume resume, AspirantAccount aspirantAccount,
-                      JobVacancy jobVacancy, HRManager hrManager, Company company) {
+    public Invitation(Timestamp date, String address, int resumeId, int aspirantAccountId, int jobVacancyId,
+                      int hrManagerId, int companyId) {
         this.date = date;
         this.address = address;
-        this.resume = resume;
-        this.aspirantAccount = aspirantAccount;
-        this.jobVacancy = jobVacancy;
-        this.hrManager = hrManager;
-        this.company = company;
+        this.resumeId = resumeId;
+        this.aspirantAccountId = aspirantAccountId;
+        this.jobVacancyId = jobVacancyId;
+        this.hrManagerId = hrManagerId;
+        this.companyId = companyId;
     }
 
     /**
@@ -42,22 +42,22 @@ public class Invitation implements Comparable<Invitation> {
      * @param id invitation id
      * @param date date of the interview for which the invitation was sent
      * @param address address of the interview for which the invitation was sent
-     * @param resume resume the invitation was sent to
-     * @param aspirantAccount aspirant account the invitation was sent to
-     * @param jobVacancy job vacancy the invitation was sent to
-     * @param hrManager HRManager who sent the invitation
-     * @param company company which HRManager sent the invitation
+     * @param resumeId id of the resume the invitation was sent to
+     * @param aspirantAccountId id of the aspirant account the invitation was sent to
+     * @param jobVacancyId id of the job vacancy the invitation was sent to
+     * @param hrManagerId id of the HRManager who sent the invitation
+     * @param companyId id of the company which HRManager sent the invitation
      */
-    public Invitation(int id, Timestamp date, String address, Resume resume, AspirantAccount aspirantAccount,
-                      JobVacancy jobVacancy, HRManager hrManager, Company company) {
+    public Invitation(int id, Timestamp date, String address, int resumeId, int aspirantAccountId, int jobVacancyId,
+                      int hrManagerId, int companyId) {
         this.id = id;
         this.date = date;
         this.address = address;
-        this.resume = resume;
-        this.aspirantAccount = aspirantAccount;
-        this.jobVacancy = jobVacancy;
-        this.hrManager = hrManager;
-        this.company = company;
+        this.resumeId = resumeId;
+        this.aspirantAccountId = aspirantAccountId;
+        this.jobVacancyId = jobVacancyId;
+        this.hrManagerId = hrManagerId;
+        this.companyId = companyId;
     }
 
     /**
@@ -109,83 +109,83 @@ public class Invitation implements Comparable<Invitation> {
     }
 
     /**
-     * Gets a resume the invitation was sent to
-     * @return resume the invitation was sent to
+     * Gets id of the resume the invitation was sent to
+     * @return id of the resume the invitation was sent to
      */
-    public Resume getResume() {
-        return resume;
+    public int getResumeId() {
+        return resumeId;
     }
 
     /**
-     * Sets a resume the invitation was sent to
-     * @param resume resume the invitation was sent to
+     * Sets id of the resume the invitation was sent to
+     * @param resumeId id of the resume the invitation was sent to
      */
-    public void setResume(Resume resume) {
-        this.resume = resume;
+    public void setResumeId(int resumeId) {
+        this.resumeId = resumeId;
     }
 
     /**
-     * Gets an aspirant account the invitation was sent to
-     * @return aspirant account the invitation was sent to
+     * Gets id of the aspirant account the invitation was sent to
+     * @return id of the aspirant account the invitation was sent to
      */
-    public AspirantAccount getAspirantAccount() {
-        return aspirantAccount;
+    public int getAspirantAccountId() {
+        return aspirantAccountId;
     }
 
     /**
-     * Sets an aspirant account the invitation was sent to
-     * @param aspirantAccount aspirant account the invitation was sent to
+     * Sets id of the aspirant account the invitation was sent to
+     * @param aspirantAccountId id of the aspirant account the invitation was sent to
      */
-    public void setAspirantAccount(AspirantAccount aspirantAccount) {
-        this.aspirantAccount = aspirantAccount;
+    public void setAspirantAccountId(int aspirantAccountId) {
+        this.aspirantAccountId = aspirantAccountId;
     }
 
     /**
-     * Gets a job vacancy the invitation was sent to
-     * @return job vacancy the invitation was sent to
+     * Gets id of the job vacancy the invitation was sent to
+     * @return id of the job vacancy the invitation was sent to
      */
-    public JobVacancy getJobVacancy() {
-        return jobVacancy;
+    public int getJobVacancyId() {
+        return jobVacancyId;
     }
 
     /**
-     * Sets a job vacancy the invitation was sent to
-     * @param jobVacancy job vacancy the invitation was sent to
+     * Sets id of the job vacancy the invitation was sent to
+     * @param jobVacancyId id of the job vacancy the invitation was sent to
      */
-    public void setJobVacancy(JobVacancy jobVacancy) {
-        this.jobVacancy = jobVacancy;
+    public void setJobVacancyId(int jobVacancyId) {
+        this.jobVacancyId = jobVacancyId;
     }
 
     /**
-     * Gets an HRManager who sent the invitation
-     * @return HRManager who sent the invitation
+     * Gets id of the HRManager who sent the invitation
+     * @return id of the HRManager who sent the invitation
      */
-    public HRManager getHrManager() {
-        return hrManager;
+    public int getHrManagerId() {
+        return hrManagerId;
     }
 
     /**
-     * Sets an HRManager who sent the invitation
-     * @param hrManager HRManager who sent the invitation
+     * Sets id of the HRManager who sent the invitation
+     * @param hrManagerId id of the HRManager who sent the invitation
      */
-    public void setHrManager(HRManager hrManager) {
-        this.hrManager = hrManager;
+    public void setHrManagerId(int hrManagerId) {
+        this.hrManagerId = hrManagerId;
     }
 
     /**
-     * Gets a company which HRManager was sent the invitation
-     * @return company which HRManager was sent the invitation
+     * Gets id of the company which HRManager was sent the invitation
+     * @return id of the company which HRManager was sent the invitation
      */
-    public Company getCompany() {
-        return company;
+    public int getCompanyId() {
+        return companyId;
     }
 
     /**
-     * Sets a company which HRManager was sent the invitation
-     * @param company company which HRManager was sent the invitation
+     * Sets id of the company which HRManager was sent the invitation
+     * @param companyId id of the company which HRManager was sent the invitation
      */
-    public void setCompany(Company company) {
-        this.company = company;
+    public void setCompanyId(int companyId) {
+        this.companyId = companyId;
     }
 
     @Override
@@ -198,7 +198,7 @@ public class Invitation implements Comparable<Invitation> {
         if (this == obj) return true;
         if (obj == null || this.getClass() != obj.getClass()) return false;
 
-        Invitation invitation = (Invitation) obj;
+        Invitation invitation = (Invitation)obj;
 
         return this.getId() == invitation.getId();
     }

@@ -1,21 +1,28 @@
 package service.impl;
 
 import dao.DAO;
-import dao.DAOFactory;
 import domain.AspirantAccount;
 import service.AspirantService;
 import service.exception.AspirantAlreadyExistsException;
 import service.exception.AspirantNotRegisteredException;
 import service.exception.ServiceException;
+import service.utils.ArgumentVerificationService;
 
 import java.util.function.Predicate;
 
 public class MyAspirantService implements AspirantService {
 
-    private DAO<AspirantAccount> aspirantAccountDao = DAOFactory.getInstance().getAspirantAccountDAO();
+    private DAO<AspirantAccount> aspirantAccountDao;
+
+    public MyAspirantService(DAO<AspirantAccount> aspirantAccountDao) throws IllegalArgumentException {
+
+        ArgumentVerificationService.verifyNull(aspirantAccountDao, "aspirantAccountDao");
+
+        this.aspirantAccountDao = aspirantAccountDao;
+    }
 
     @Override
-    public void register(AspirantAccount aspirantAccount) throws AspirantAlreadyExistsException, ServiceException {
+    public void register(AspirantAccount aspirantAccount) throws IllegalArgumentException, AspirantAlreadyExistsException, ServiceException {
 
         ArgumentVerificationService.verifyNull(aspirantAccount, "aspirantAccount");
 
@@ -37,7 +44,7 @@ public class MyAspirantService implements AspirantService {
     }
 
     @Override
-    public boolean isValidCredentials(String email, String password) throws AspirantNotRegisteredException, ServiceException {
+    public boolean isValidCredentials(String email, String password) throws IllegalArgumentException, AspirantNotRegisteredException, ServiceException {
 
         ArgumentVerificationService.verifyString(email, "email");
         ArgumentVerificationService.verifyString(password, "password");
@@ -51,6 +58,8 @@ public class MyAspirantService implements AspirantService {
 
             return password.equals(aspirantAccount.getPassword());
 
+        } catch (AspirantNotRegisteredException e) {
+            throw e;
         } catch (Exception e) {
             throw new ServiceException(e.getMessage(), e);
         }
@@ -65,6 +74,7 @@ public class MyAspirantService implements AspirantService {
 
             Predicate<AspirantAccount> mailPredicate =
                     aspirantAccount -> aspirantAccount.getEmail().equals(email);
+
             return aspirantAccountDao.getBy(mailPredicate);
 
         } catch (Exception e) {

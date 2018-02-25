@@ -2,13 +2,16 @@ package service.impl;
 
 import dao.DAO;
 import domain.AspirantAccount;
+import domain.AspirantProfile;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import service.AspirantService;
 import service.exception.AspirantAlreadyExistsException;
 import service.exception.AspirantNotRegisteredException;
+import service.exception.AspirantProfileNotFoundException;
 import service.fake.AspirantAccountDaoFake;
+import service.fake.AspirantProfileDaoFake;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -19,7 +22,8 @@ class MyAspirantServiceTest {
     @BeforeEach
     void setUp() {
         DAO<AspirantAccount> aspirantAccountDAOFake = new AspirantAccountDaoFake();
-        this.aspirantService = new MyAspirantService(aspirantAccountDAOFake);
+        DAO<AspirantProfile> aspirantAccountDaoFake = new AspirantProfileDaoFake();
+        this.aspirantService = new MyAspirantService(aspirantAccountDAOFake, aspirantAccountDaoFake);
     }
 
     @AfterEach
@@ -133,6 +137,133 @@ class MyAspirantServiceTest {
         assertThrows(IllegalArgumentException.class, () -> this.aspirantService.getAspirantAccountByEmail(""));
         assertThrows(IllegalArgumentException.class, () -> this.aspirantService.getAspirantAccountByEmail("     "));
         assertThrows(IllegalArgumentException.class, () -> this.aspirantService.getAspirantAccountByEmail(null));
+    }
+
+    @Test
+    void addAspirantProfile_nullEmptyWhitespaceArgs_throwsIllegalArgumentException() {
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.addAspirantProfile("", null));
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.addAspirantProfile("   ", null));
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.addAspirantProfile(null, null));
+
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.addAspirantProfile("email", null));
+
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.addAspirantProfile("", new AspirantProfile()));
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.addAspirantProfile("   ", new AspirantProfile()));
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.addAspirantProfile(null, new AspirantProfile()));
+    }
+
+    @Test
+    void addAspirantProfile_notExistingAspirant_throwsAspirantNotRegisteredException() {
+        assertThrows(AspirantNotRegisteredException.class, () -> this.aspirantService.addAspirantProfile("notExistingAspirantEmail", new AspirantProfile()));
+    }
+
+    @Test
+    void addAspirantProfile_aspirantProfile_aspirantProfileAdded() throws Exception {
+        // Arrange.
+        String aspirantEmail = "email";
+        int aspirantProfileId = 1;
+
+        AspirantProfile aspirantProfile = new AspirantProfile();
+        aspirantProfile.setId(aspirantProfileId);
+        AspirantAccount aspirantAccount = new AspirantAccount(aspirantEmail, "password", 0);
+
+        // Act.
+        this.aspirantService.register(aspirantAccount);
+        this.aspirantService.addAspirantProfile(aspirantEmail, aspirantProfile);
+
+        // Assert.
+        aspirantAccount = this.aspirantService.getAspirantAccountByEmail(aspirantEmail);
+        assertEquals(aspirantAccount.getAspirantProfileId(), aspirantProfileId);
+    }
+
+    @Test
+    void getAspirantProfile_nullEmptyWhitespaceArgs_throwsIllegalArgumentException() {
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.getAspirantProfile(""));
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.getAspirantProfile("     "));
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.getAspirantProfile(null));
+    }
+
+    @Test
+    void getAspirantProfile_notExistingAspirant_throwsAspirantNotRegisteredException() {
+        assertThrows(AspirantNotRegisteredException.class, () -> this.aspirantService.getAspirantProfile("notExistingAspirantEmail"));
+    }
+
+    @Test
+    void getAspirantProfile_aspirantProfile_aspirantProfileReturned() throws Exception {
+        // Arrange.
+        String aspirantEmail = "email";
+        int aspirantProfileId = 1;
+
+        AspirantProfile aspirantProfile = new AspirantProfile();
+        aspirantProfile.setId(aspirantProfileId);
+        AspirantAccount aspirantAccount = new AspirantAccount(aspirantEmail, "password", 0);
+
+        // Act.
+        this.aspirantService.register(aspirantAccount);
+        this.aspirantService.addAspirantProfile(aspirantEmail, aspirantProfile);
+
+        // Assert.
+        aspirantProfile = this.aspirantService.getAspirantProfile(aspirantEmail);
+        assertEquals(aspirantProfile.getId(), aspirantProfileId);
+    }
+
+    @Test
+    void updateAspirantProfile_nullEmptyWhitespaceArgs_throwsIllegalArgumentException() {
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.updateAspirantProfile("", null));
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.updateAspirantProfile("   ", null));
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.updateAspirantProfile(null, null));
+
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.updateAspirantProfile("email", null));
+
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.updateAspirantProfile("", new AspirantProfile()));
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.updateAspirantProfile("   ", new AspirantProfile()));
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.updateAspirantProfile(null, new AspirantProfile()));;
+    }
+
+    @Test
+    void updateAspirantProfile_notExistingAspirant_throwsAspirantNotRegisteredException() {
+        assertThrows(AspirantNotRegisteredException.class, () ->
+                this.aspirantService.updateAspirantProfile("notExistingAspirantEmail", new AspirantProfile()));
+    }
+
+    @Test
+    void updateAspirantProfile_notExistingProfile_throwsAspirantProfileNotFoundException() throws Exception {
+        // Arrange.
+        String aspirantEmail = "email";
+        int aspirantProfileId = 1;
+
+        AspirantProfile aspirantProfile = new AspirantProfile();
+        aspirantProfile.setId(aspirantProfileId);
+        AspirantAccount aspirantAccount = new AspirantAccount(aspirantEmail, "password", 0);
+
+        // Act.
+        this.aspirantService.register(aspirantAccount);
+
+        // Assert.
+        assertThrows(AspirantProfileNotFoundException.class, () -> this.aspirantService.updateAspirantProfile(aspirantEmail, aspirantProfile));
+    }
+
+    @Test
+    void updateAspirantProfile_aspirantProfile_aspirantProfileUpdated() throws Exception {
+        // Arrange.
+        String aspirantEmail = "email";
+        int aspirantProfileId = 1;
+        String aboutMe = "I am cool :)";
+
+        AspirantProfile aspirantProfile = new AspirantProfile();
+        aspirantProfile.setId(aspirantProfileId);
+        AspirantAccount aspirantAccount = new AspirantAccount(aspirantEmail, "password", 0);
+
+        // Act.
+        this.aspirantService.register(aspirantAccount);
+        this.aspirantService.addAspirantProfile(aspirantEmail, aspirantProfile);
+        aspirantProfile.setAboutMe(aboutMe);
+        this.aspirantService.updateAspirantProfile(aspirantEmail, aspirantProfile);
+
+        // Assert.
+        aspirantProfile = this.aspirantService.getAspirantProfile(aspirantEmail);
+        assertEquals(aspirantProfile.getId(), aspirantProfileId);
+        assertEquals(aspirantProfile.getAboutMe(), aboutMe);
     }
 
 }

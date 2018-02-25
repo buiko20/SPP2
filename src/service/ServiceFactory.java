@@ -3,6 +3,7 @@ package service;
 import dao.DAO;
 import dao.DAOFactory;
 import domain.AspirantAccount;
+import domain.AspirantProfile;
 import service.impl.MyAspirantService;
 
 /**
@@ -12,8 +13,9 @@ public class ServiceFactory {
     private static final ServiceFactory factory = new ServiceFactory();
 
     private final DAO<AspirantAccount> AspirantAccountDao = DAOFactory.getInstance().getAspirantAccountDAO();
+    private final DAO<AspirantProfile> AspirantProfileDao = DAOFactory.getInstance().getAspirantProfileDAO();
 
-    private final AspirantService aspirantService = new MyAspirantService(AspirantAccountDao);
+    private final AspirantService aspirantService = new MyAspirantService(AspirantAccountDao, AspirantProfileDao);
 
     private ServiceFactory() {
     }

@@ -21,6 +21,12 @@ public class AspirantProfile implements Comparable<AspirantProfile>{
     private String cityOfResidence;
 
     /**
+     * Initializes a new instance of the {@link AspirantProfile}.
+     */
+    public AspirantProfile() {
+    }
+
+    /**
      * Initializes a new instance of the {@link AspirantProfile model}
      * @param name aspirant name
      * @param surname aspirant surname

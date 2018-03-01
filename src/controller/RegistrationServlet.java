@@ -1,14 +1,19 @@
 package controller;
 
 import controller.command.Command;
+import service.exception.AspirantAlreadyExistsException;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
+/**
+ * Represents an aspirant registration servlet.
+ */
 @WebServlet(name = "RegistrationServlet", urlPatterns = "/Register")
 public class RegistrationServlet extends HttpServlet {
 
@@ -30,8 +35,26 @@ public class RegistrationServlet extends HttpServlet {
         String password = request.getParameter("Password");
 
         Command command = commandProvider.getCommand(commandName);
-        command.execute(email + ";" + password);
+        try{
+            command.execute(email + ";" + password);
 
-        request.getRequestDispatcher("/index.jsp").forward(request, response);
+            HttpSession userSession = request.getSession();
+
+            userSession.setAttribute("userEmail", email);
+
+            request.getRequestDispatcher("/HomePage.jsp").forward(request, response);
+        }
+        catch(Exception incorrectEmail)
+        {
+            HttpSession userSession = request.getSession();
+
+            userSession.setAttribute("registrationEmailIncorrect", "Аккаунт с таким Email уже существует.");
+            userSession.setAttribute("registrationEmail", email);
+            userSession.setAttribute("registrationPassword", password);
+
+            request.getRequestDispatcher("/AspirantRegistration.jsp").forward(request, response);
+
+            userSession.invalidate();
+        }
     }
 }

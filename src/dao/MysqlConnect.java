@@ -43,7 +43,7 @@ public class MysqlConnect {
             properties = new Properties();
             properties.setProperty("user", USERNAME);
             properties.setProperty("password", PASSWORD);
-            properties.setProperty("useSSL", "false");
+            properties.setProperty("useSSL", "true");
             properties.setProperty("autoReconnect", "true");
         }
         return properties;

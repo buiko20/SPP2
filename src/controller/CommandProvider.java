@@ -1,8 +1,8 @@
 package controller;
 
 import controller.command.Command;
+import controller.command.impl.LoginAspirantCommand;
 import controller.command.impl.RegisterAspirantCommand;
-import controller.command.impl.ShowAspirantInfoCommand;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -17,8 +17,8 @@ public class CommandProvider {
      * Initializes a new instance of the {@link CommandProvider}.
      */
     public CommandProvider() {
-        addCommand(new ShowAspirantInfoCommand(), "Get aspirant info");
         addCommand(new RegisterAspirantCommand(), "Зарегистрироваться");
+        addCommand(new LoginAspirantCommand(), "Выполнить вход");
     }
 
     /**

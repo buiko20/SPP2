@@ -8,7 +8,7 @@ import java.util.Properties;
 public class MysqlConnect {
 
     private static final String DATABASE_DRIVER = "com.mysql.jdbc.Driver";
-    private static final String DATABASE_URL = "jdbc:mysql://localhost:3306/jobs_db";
+    private static final String DATABASE_URL = "jdbc:mysql://localhost:3307/jobs_db";
     private static final String USERNAME = "root";
     private static final String PASSWORD = "root";
 

@@ -47,7 +47,7 @@
       <div class="col-md-4">
         <h2>1</h2>
         <p>Создай резюме, чтобы работодатель узнал о тебе</p>
-        <p><a class="btn btn-success" href="/Home/About">Создать резюме</a></p>
+        <p><a class="btn btn-success" href="AspirantLogin.jsp">Создать резюме</a></p>
       </div>
       <div class="col-md-4">
         <h2>2</h2>

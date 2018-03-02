@@ -48,7 +48,7 @@
             <h4>Создайте новую учетную запись</h4>
             <hr />
             <div class="form-group">
-                <label class="control-label col-md-2" for="Email">Адрес электронной почты:</label>
+                <label class="control-label col-md-2" for="Email">Адрес электронной почты</label>
                 <div class="col-md-10">
                     <input class="form-control text-box single-line" data-val="true" data-val-email="Адрес электронной почты содержит недопустимые символы." data-val-required="Введите адрес электронной почты." id="Email" name="Email" type="email" value="<c:out value="${registrationEmail}"/>" />
                     <span class="field-validation-valid text-danger" data-valmsg-for="Email" data-valmsg-replace="true"></span>
@@ -57,7 +57,7 @@
             </div>
 
             <div class="form-group">
-                <label class="control-label col-md-2" for="Password">Пароль:</label>
+                <label class="control-label col-md-2" for="Password">Пароль</label>
                 <div class="col-md-10">
                     <input class="form-control text-box single-line password" data-val="true" data-val-length="Пароль должен содержать не менее 6 символов." data-val-length-max="20" data-val-length-min="6" data-val-required="Введите пароль." id="Password" name="Password" type="password" value="<c:out value="${registrationPassword}"/>" />
                     <span class="field-validation-valid text-danger" data-valmsg-for="Password" data-valmsg-replace="true"></span>
@@ -65,7 +65,7 @@
             </div>
 
             <div class="form-group">
-                <label class="control-label col-md-2" for="ConfirmPassword">Подтверждение пароля:</label>
+                <label class="control-label col-md-2" for="ConfirmPassword">Подтверждение пароля</label>
                 <div class="col-md-10">
                     <input class="form-control text-box single-line password" data-val="true" data-val-equalto="Пароль и его подтверждение не совпадают." data-val-equalto-other="*.Password" id="ConfirmPassword" name="ConfirmPassword" type="password" value="<c:out value="${registrationPassword}"/>" />
                     <span class="field-validation-valid text-danger" data-valmsg-for="ConfirmPassword" data-valmsg-replace="true"></span>

@@ -1,6 +1,7 @@
 package controller;
 
 import controller.command.Command;
+import controller.command.impl.CreateResumeCommand;
 import controller.command.impl.LoginAspirantCommand;
 import controller.command.impl.RegisterAspirantCommand;
 
@@ -19,6 +20,7 @@ public class CommandProvider {
     public CommandProvider() {
         addCommand(new RegisterAspirantCommand(), "Зарегистрироваться");
         addCommand(new LoginAspirantCommand(), "Выполнить вход");
+        addCommand(new CreateResumeCommand(), "CreateResume");
     }
 
     /**

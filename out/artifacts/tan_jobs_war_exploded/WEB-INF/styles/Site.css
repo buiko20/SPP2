@@ -48,5 +48,9 @@ footer {
 }
 
 .thumb {
-    padding: 5px;
+    padding: 5 px;
+}
+
+a{
+    color: darkslategrey;
 }

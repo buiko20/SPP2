@@ -1,6 +1,7 @@
 package controller;
 
 import controller.command.Command;
+import domain.Resume;
 import service.exception.AspirantAlreadyExistsException;
 import service.exception.AspirantNotRegisteredException;
 import service.exception.ServiceException;
@@ -13,6 +14,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Represents an resume creation servlet.
@@ -33,7 +37,7 @@ public class ResumeServlet extends HttpServlet {
     protected void doAction(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         request.setCharacterEncoding("UTF-8");
-        String commandName = request.getParameter("command");
+        String commandName = request.getParameter("action");
 
         switch (commandName)
         {
@@ -52,15 +56,23 @@ public class ResumeServlet extends HttpServlet {
                 String englishLevel = request.getParameter("English_level");
                 String aboutMe = request.getParameter("About_me");
                 String cityOfResidence = request.getParameter("City_of_residence");
+                String careerObjective = request.getParameter("Position");
+                String isTripPossible = request.getParameter("Business_trip");
+                if(isTripPossible == null)
+                    isTripPossible = "false";
+                String isRelocationPossible= request.getParameter("Relocation");
+                if(isRelocationPossible == null)
+                    isRelocationPossible = "false";
 
                 Command command = commandProvider.getCommand(commandName);
                 try {
                     command.execute(email + ";" + name + ";" + surname + ";" + patronymic + ";" + sex + ";" + education + ";" +
-                            dateOfBirth + ";" + phoneNumber + ";" + mailingAddress + ";" +englishLevel + ";" + aboutMe + ";" + cityOfResidence);
+                            dateOfBirth + ";" + phoneNumber + ";" + mailingAddress + ";" +englishLevel + ";" + aboutMe + ";" + cityOfResidence +
+                            ";" + careerObjective + ";" + isTripPossible + ";" + isRelocationPossible);
                 } catch (Exception e) {
 
                 }
-                //Skills, Relocation, Business_trip, Email, Photo, Salary, Position
+                //TODO: add get of Skills, Email, Salary
                 break;
             }
             default:{

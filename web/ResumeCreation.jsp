@@ -13,7 +13,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Создание резюме</title>
+    <title>TanJobs.by</title>
 </head>
 <body>
 <style>
@@ -28,11 +28,11 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">TanJobs.by</a>
+            <a class="navbar-brand" href="HomePage.jsp">TanJobs.by</a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li><a href="ResumeDisplay.jsp">Резюме</a></li>
+                <li><a href="/ResumeList">Резюме</a></li>
             </ul>
             <ul class="nav navbar-nav">
                 <li><a href="">Вакансии</a></li>
@@ -189,16 +189,16 @@
                 <label class="control-label col-md-2" for="Business_trip">Готовность к командировкам</label>
                 <div class="col-md-10">
                     <label class="checkbox">
-                        <input id="Business_trip" name="Business_trip" type="checkbox" value="" />
+                        <input id="Business_trip" name="Business_trip" type="checkbox" value="true" />
                     </label>
                     <span class="field-validation-valid text-danger" data-valmsg-for="Business_trip" data-valmsg-replace="true"></span>
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label col-md-2" for="Relocation">Готовность к переезду:</label>
+                <label class="control-label col-md-2" for="Relocation">Готовность к переезду</label>
                 <div class="col-md-10">
                     <label class="checkbox">
-                        <input id="Relocation" name="Relocation" type="checkbox" value="" />
+                        <input id="Relocation" name="Relocation" type="checkbox" value="true" />
                     </label>
                     <span class="field-validation-valid text-danger" data-valmsg-for="Relocation" data-valmsg-replace="true"></span>
                 </div>

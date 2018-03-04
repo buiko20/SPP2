@@ -12,6 +12,8 @@ public class Resume implements Comparable<Resume> {
     private String careerObjective;
     private Boolean isTripPossible;
     private Boolean isRelocationPossible;
+    private String skills;
+    private Float salary;
     private int numberOfViews;
     private int aspirantId;
 
@@ -21,15 +23,19 @@ public class Resume implements Comparable<Resume> {
      * @param careerObjective aspirant career objective
      * @param isTripPossible value indicating the possibility of a business trip
      * @param isRelocationPossible value indicating the possibility of a relocation
+     * @param skills aspirant skills
+     * @param salary desired salary of an aspirant
      * @param numberOfViews number of resume views
      * @param aspirantId id of the aspirant to which the resume belongs
      */
     public Resume(Date date, String careerObjective, Boolean isTripPossible, Boolean isRelocationPossible,
-                  int numberOfViews, int aspirantId) {
+                  String skills, Float salary, int numberOfViews, int aspirantId) {
         this.date = date;
         this.careerObjective = careerObjective;
         this.isTripPossible = isTripPossible;
         this.isRelocationPossible = isRelocationPossible;
+        this.skills = skills;
+        this.salary = salary;
         this.numberOfViews = numberOfViews;
         this.aspirantId = aspirantId;
     }
@@ -41,16 +47,20 @@ public class Resume implements Comparable<Resume> {
      * @param careerObjective aspirant career objective
      * @param isTripPossible value indicating the possibility of a business trip
      * @param isRelocationPossible value indicating the possibility of a relocation
+     * @param skills aspirant skills
+     * @param salary desired salary of an aspirant
      * @param numberOfViews number of resume views
      * @param aspirantId id of the aspirant to which the resume belongs
      */
     public Resume(int id, Date date, String careerObjective, Boolean isTripPossible, Boolean isRelocationPossible,
-                  int numberOfViews, int aspirantId) {
+                  String skills, Float salary, int numberOfViews, int aspirantId) {
         this.id = id;
         this.date = date;
         this.careerObjective = careerObjective;
         this.isTripPossible = isTripPossible;
         this.isRelocationPossible = isRelocationPossible;
+        this.skills = skills;
+        this.salary = salary;
         this.numberOfViews = numberOfViews;
         this.aspirantId = aspirantId;
     }
@@ -133,6 +143,38 @@ public class Resume implements Comparable<Resume> {
      */
     public void setRelocationPossible(Boolean relocationPossible) {
         isRelocationPossible = relocationPossible;
+    }
+
+    /**
+     * Gets aspirant skills
+     * @return aspirant skills
+     */
+    public String getSkills() {
+        return skills;
+    }
+
+    /**
+     * Sets aspirant skills
+     * @param skills aspirant skills
+     */
+    public void setSkills(String skills) {
+        this.skills = skills;
+    }
+
+    /**
+     * Gets desired salary of the aspirant
+     * @return desired salary of the aspirant
+     */
+    public Float getSalary() {
+        return salary;
+    }
+
+    /**
+     * Sets desired salary of the aspirant
+     * @param salary desired salary of the aspirant
+     */
+    public void setSalary(Float salary) {
+        this.salary = salary;
     }
 
     /**

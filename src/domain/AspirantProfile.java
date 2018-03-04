@@ -10,6 +10,7 @@ public class AspirantProfile implements Comparable<AspirantProfile>{
     private int id;
     private String name;
     private String surname;
+    private String email;
     private String patronymic;
     private String sex;
     private String education;
@@ -30,6 +31,7 @@ public class AspirantProfile implements Comparable<AspirantProfile>{
      * Initializes a new instance of the {@link AspirantProfile model}
      * @param name aspirant name
      * @param surname aspirant surname
+     * @param email aspirant email
      * @param patronymic aspirant patronymic
      * @param sex aspirant sex
      * @param education aspirant education
@@ -40,11 +42,12 @@ public class AspirantProfile implements Comparable<AspirantProfile>{
      * @param aboutMe aspirant self-description
      * @param cityOfResidence aspirant city of residence
      */
-    public AspirantProfile(String name, String surname, String patronymic, String sex, String education,
+    public AspirantProfile(String name, String surname, String email, String patronymic, String sex, String education,
                            Date dateOfBirth, String phoneNumber, String mailingAddress, String englishLevel,
                            String aboutMe, String cityOfResidence) {
         this.name = name;
         this.surname = surname;
+        this.email = email;
         this.patronymic = patronymic;
         this.sex = sex;
         this.education = education;
@@ -61,6 +64,7 @@ public class AspirantProfile implements Comparable<AspirantProfile>{
      * @param id aspirant profile id
      * @param name aspirant name
      * @param surname aspirant surname
+     * @param email aspirant email
      * @param patronymic aspirant patronymic
      * @param sex aspirant sex
      * @param education aspirant education
@@ -71,12 +75,13 @@ public class AspirantProfile implements Comparable<AspirantProfile>{
      * @param aboutMe aspirant self-description
      * @param cityOfResidence aspirant city of residence
      */
-    public AspirantProfile(int id, String name, String surname, String patronymic, String sex, String education,
+    public AspirantProfile(int id, String name, String surname, String email, String patronymic, String sex, String education,
                            Date dateOfBirth, String phoneNumber, String mailingAddress, String englishLevel,
                            String aboutMe, String cityOfResidence) {
         this.id = id;
         this.name = name;
         this.surname = surname;
+        this.email = email;
         this.patronymic = patronymic;
         this.sex = sex;
         this.education = education;
@@ -134,6 +139,22 @@ public class AspirantProfile implements Comparable<AspirantProfile>{
      */
     public void setSurname(String surname) {
         this.surname = surname;
+    }
+
+    /**
+     * Gets an aspirant email
+     * @return aspirant email
+     */
+    public String getEmail() {
+        return email;
+    }
+
+    /**
+     * Sets an aspirant email
+     * @param email aspirant email
+     */
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     /**

@@ -30,6 +30,8 @@ public class DbResumeDAO implements DAO<Resume> {
                         resultSet.getString("Career_objective"),
                         isTripPossible,
                         isRelocationPossible,
+                        resultSet.getString("Skills"),
+                        resultSet.getFloat("Salary"),
                         resultSet.getInt("Number_of_view"),
                         resultSet.getInt("Aspirant_id")
                 );
@@ -70,6 +72,7 @@ public class DbResumeDAO implements DAO<Resume> {
                     "', Career_objective='" + resume.getCareerObjective() +
                     "', Business_trip='" + isTripPossible +
                     "', Relocation='" + isRelocationPossible +
+                    "', Skills='" + resume.getSkills() + "', Salary='" + resume.getSalary() +
                     "', Number_of_view='" + resume.getNumberOfViews() +
                     "', Aspirant_id='" + resume.getAspirantId() + "' WHERE id=" + resume.getId());
         } catch (Exception e) {
@@ -94,9 +97,10 @@ public class DbResumeDAO implements DAO<Resume> {
         try {
             Statement statement = mysqlConnect.connect().createStatement();
             statement.executeUpdate("INSERT INTO Resume (Date, Career_objective, Business_trip, Relocation, " +
-                    "Number_of_view, Aspirant_id) VALUES ('" + resume.getDate() + "', '" +
+                    "Skills, Salary, Number_of_view, Aspirant_id) VALUES ('" + resume.getDate() + "', '" +
                     resume.getCareerObjective() + "', '" + resume.getTripPossible() + "', '" +
-                    resume.getRelocationPossible() + "', '" + resume.getNumberOfViews() + "', '" +
+                    resume.getRelocationPossible() + "', '" + resume.getSkills() + "', '" +
+                    resume.getSalary() + "', '" + resume.getNumberOfViews() + "', '" +
                     resume.getAspirantId() + "')", Statement.RETURN_GENERATED_KEYS);
 
             ResultSet rs = statement.getGeneratedKeys();

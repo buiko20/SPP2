@@ -25,6 +25,7 @@ public class DbAspirantProfileDAO implements DAO<AspirantProfile> {
                         resultSet.getInt("id"),
                         resultSet.getString("Name"),
                         resultSet.getString("Surname"),
+                        resultSet.getString("Email"),
                         resultSet.getString("Patronymic"),
                         resultSet.getString("Sex"),
                         resultSet.getString("Education"),
@@ -69,7 +70,7 @@ public class DbAspirantProfileDAO implements DAO<AspirantProfile> {
             statement.execute("UPDATE Aspirant_data SET Surname='" + aspirantProfile.getSurname() +
                     "', Name='" + aspirantProfile.getName() + "', Patronymic='" + aspirantProfile.getPatronymic() +
                     "', Sex='" + aspirantProfile.getSex() + "', Education='" + aspirantProfile.getEducation() +
-                    "', Date_of_birth='" + aspirantProfile.getDateOfBirth() +
+                    "', Date_of_birth='" + aspirantProfile.getDateOfBirth() + "', Email='" + aspirantProfile.getEmail() +
                     "', Phone_number='" + aspirantProfile.getPhoneNumber() +
                     "', English_level='" + aspirantProfile.getEnglishLevel() +
                     "', About_me='" + aspirantProfile.getAboutMe() +
@@ -97,10 +98,10 @@ public class DbAspirantProfileDAO implements DAO<AspirantProfile> {
     public void create(AspirantProfile aspirantProfile) throws DAOException {
         try {
             Statement statement = mysqlConnect.connect().createStatement();
-            statement.executeUpdate("INSERT INTO Aspirant_data (Surname, Name, Patronymic, Sex, Education, " +
+            statement.executeUpdate("INSERT INTO Aspirant_data (Surname, Name, Email, Patronymic, Sex, Education, " +
                     "Date_of_birth, Phone_number, English_level, About_me, City_of_residence, Mailing_address)" +
                     "VALUES ('" + aspirantProfile.getSurname() + "', '" + aspirantProfile.getName() + "', '" +
-                    aspirantProfile.getPatronymic() + "', '" + aspirantProfile.getSex() + "', '" +
+                    aspirantProfile.getEmail() + aspirantProfile.getPatronymic() + "', '" + aspirantProfile.getSex() + "', '" +
                     aspirantProfile.getEducation() + "', '" + aspirantProfile.getDateOfBirth() + "', '" +
                     aspirantProfile.getPhoneNumber() + "', '" + aspirantProfile.getEnglishLevel() + "', '" +
                     aspirantProfile.getAboutMe() + "', '" + aspirantProfile.getCityOfResidence() + "', '" +

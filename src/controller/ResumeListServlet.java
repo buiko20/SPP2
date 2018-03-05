@@ -21,10 +21,10 @@ public class ResumeListServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
         HttpSession session = request.getSession();
         //TODO: получить список резюме
-        //session.setAttribute("resumeList", resumeList);
+        ArrayList<Resume> resumeList = new ArrayList<>();
+        session.setAttribute("resumeList", resumeList);
         request.getRequestDispatcher("/ResumeListDisplay.jsp").forward(request, response);
     }
 }

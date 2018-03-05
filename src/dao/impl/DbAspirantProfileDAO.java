@@ -101,7 +101,7 @@ public class DbAspirantProfileDAO implements DAO<AspirantProfile> {
             statement.executeUpdate("INSERT INTO Aspirant_data (Surname, Name, Email, Patronymic, Sex, Education, " +
                     "Date_of_birth, Phone_number, English_level, About_me, City_of_residence, Mailing_address)" +
                     "VALUES ('" + aspirantProfile.getSurname() + "', '" + aspirantProfile.getName() + "', '" +
-                    aspirantProfile.getEmail() + aspirantProfile.getPatronymic() + "', '" + aspirantProfile.getSex() + "', '" +
+                    aspirantProfile.getEmail() + "', '" + aspirantProfile.getPatronymic() + "', '" + aspirantProfile.getSex() + "', '" +
                     aspirantProfile.getEducation() + "', '" + aspirantProfile.getDateOfBirth() + "', '" +
                     aspirantProfile.getPhoneNumber() + "', '" + aspirantProfile.getEnglishLevel() + "', '" +
                     aspirantProfile.getAboutMe() + "', '" + aspirantProfile.getCityOfResidence() + "', '" +

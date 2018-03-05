@@ -51,17 +51,22 @@
     <h2>Ваши резюме</h2>
     <form action="/Resume" method="post"><input name="__RequestVerificationToken" type="hidden" value="RjfiaDeksEmAHGtSU-2HgMr1exVppGtfOgrdB4XrXjcUJsg1G9WPQj8lNMQqCzUAnEUufPSMW0im1iVtmSWczIQb9BS6Hvh7q6nFDn1R43c1" />
         <div class="form-horizontal">
-            <h4>Выберите резюме для просмотра/редактирования</h4>
+            <h4>Выберите резюме для просмотра</h4>
             <hr />
             <c:if test="${resumeList.size() != 0}">
             <c:forEach var = "i" begin = "0" end = "${resumeList.size()-1}">
             <div class="form-group">
                 <div class="col-md-10">
                     <h6>Дата последнего обновления: <c:out value = "${resumeList.get(i).date}"/></h6>
-                    <h3><a href=""><c:out value = "${resumeList.get(i).careerObjective}"/></a></h3>
+                    <h3><a href="/Resume"><c:out value = "${resumeList.get(i).careerObjective}"/></a></h3>
                     <h5>Количество просмотров: <c:out value = "${resumeList.get(i).numberOfViews}"/></h5>
                     <span class="field-validation-valid text-danger" data-valmsg-for="Position" data-valmsg-replace="true"></span>
                 </div>
+            </div>
+            <div class="form-group form-right">
+                <button class="btn" name="command" value="EditResume">Редактировать</button>
+                <button class="btn" name="command" value="UpdateResumeDate">Обновить дату</button>
+                <button class="btn btn-danger" name="command" value="DeleteResume">Удалить</button>
             </div>
             <hr/>
             </c:forEach>

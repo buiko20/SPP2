@@ -224,7 +224,7 @@
 
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
-                    <button class="btn" name="command" value="CreateResume">Создание резюме</button>
+                    <button class="btn" name="command" value="CreateResume">Создать резюме</button>
                 </div>
             </div>
         </div>

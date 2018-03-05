@@ -37,7 +37,7 @@ public class ResumeServlet extends HttpServlet {
     protected void doAction(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         request.setCharacterEncoding("UTF-8");
-        String commandName = request.getParameter("action");
+        String commandName = request.getParameter("command");
 
         switch (commandName)
         {
@@ -47,6 +47,7 @@ public class ResumeServlet extends HttpServlet {
                 String email = (String)session.getAttribute("userEmail");
                 String name = request.getParameter("Name");
                 String surname = request.getParameter("Surname");
+                String feedbackEmail = request.getParameter("Email");
                 String patronymic = request.getParameter("Patronymic");
                 String sex = request.getParameter("Sex");
                 String education = request.getParameter("Education");
@@ -63,19 +64,30 @@ public class ResumeServlet extends HttpServlet {
                 String isRelocationPossible= request.getParameter("Relocation");
                 if(isRelocationPossible == null)
                     isRelocationPossible = "false";
+                String skills = request.getParameter("Skills");
+                String salary = request.getParameter("Salary");
 
                 Command command = commandProvider.getCommand(commandName);
                 try {
-                    command.execute(email + ";" + name + ";" + surname + ";" + patronymic + ";" + sex + ";" + education + ";" +
+                    command.execute(email + ";" + name + ";" + surname + ";" + feedbackEmail + ";" + patronymic + ";" + sex + ";" + education + ";" +
                             dateOfBirth + ";" + phoneNumber + ";" + mailingAddress + ";" +englishLevel + ";" + aboutMe + ";" + cityOfResidence +
-                            ";" + careerObjective + ";" + isTripPossible + ";" + isRelocationPossible);
+                            ";" + careerObjective + ";" + isTripPossible + ";" + isRelocationPossible + ";" + skills + ";" + salary);
                 } catch (Exception e) {
 
                 }
-                //TODO: add get of Skills, Email, Salary
+                break;
+            }
+            case("EditResume"):{
+                break;
+            }
+            case("DeleteResume"):{
+                break;
+            }
+            case("UpdateResumeDate"):{
                 break;
             }
             default:{
+                //TODO: отображение конкретного резюме
             }
         }
     }

@@ -25,13 +25,13 @@ public class CreateResumeCommand implements Command{
         String[] aspirant = request.split(";");
 
         AspirantProfile aspirantProfile = new AspirantProfile(aspirant[1], aspirant[2], aspirant[3], aspirant[4], aspirant[5],
-                Date.valueOf(aspirant[6]), aspirant[7], aspirant[8], aspirant[9], aspirant[10], aspirant[11]);
+                aspirant[6], Date.valueOf(aspirant[7]), aspirant[8], aspirant[9], aspirant[10], aspirant[11], aspirant[12]);
 
         java.util.Date curDate = new java.util.Date();
         String curStringDate = new SimpleDateFormat("yyyy-MM-dd hh-mm-ss").format(curDate);
 
-        Resume resume = new Resume(Date.valueOf(curStringDate), aspirant[12], Boolean.valueOf(aspirant[13]),
-                Boolean.valueOf(aspirant[14]), 0, aspirantService.getAspirantAccountByEmail(aspirant[0]).getId());
+        Resume resume = new Resume(Date.valueOf(curStringDate), aspirant[13], Boolean.valueOf(aspirant[14]),
+                Boolean.valueOf(aspirant[15]), aspirant[16], Float.valueOf(aspirant[1]),0, aspirantService.getAspirantAccountByEmail(aspirant[0]).getId());
 
         aspirantService.addAspirantProfile(aspirant[0], aspirantProfile);
         //TODO: вызвать метод добавления резюме

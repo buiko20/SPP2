@@ -17,6 +17,9 @@ public class Resume implements Comparable<Resume> {
     private int numberOfViews;
     private int aspirantId;
 
+    public Resume() {
+    }
+
     /**
      * Initializes a new instance of the {@link Resume model}
      * @param date date of the resume update

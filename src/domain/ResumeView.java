@@ -14,6 +14,9 @@ public class ResumeView implements Comparable<ResumeView> {
     private int hrManagerId;
     private int companyId;
 
+    public ResumeView() {
+    }
+
     /**
      * Initializes a new instance of the {@link ResumeView model}
      * @param date resume view date

@@ -4,6 +4,8 @@ import dao.DAO;
 import dao.DAOFactory;
 import domain.AspirantAccount;
 import domain.AspirantProfile;
+import domain.Resume;
+import domain.ResumeView;
 import service.impl.MyAspirantService;
 
 /**
@@ -14,8 +16,10 @@ public class ServiceFactory {
 
     private final DAO<AspirantAccount> AspirantAccountDao = DAOFactory.getInstance().getAspirantAccountDAO();
     private final DAO<AspirantProfile> AspirantProfileDao = DAOFactory.getInstance().getAspirantProfileDAO();
+    private final DAO<Resume> resumeDAO = DAOFactory.getInstance().getResumeDAO();
+    private final DAO<ResumeView> resumeViewDAO = DAOFactory.getInstance().getResumeViewDAO();
 
-    private final AspirantService aspirantService = new MyAspirantService(AspirantAccountDao, AspirantProfileDao);
+    private final AspirantService aspirantService = new MyAspirantService(AspirantAccountDao, AspirantProfileDao, resumeDAO, resumeViewDAO);
 
     private ServiceFactory() {
     }

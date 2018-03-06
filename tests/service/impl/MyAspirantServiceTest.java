@@ -1,8 +1,11 @@
 package service.impl;
 
+import com.sun.org.apache.regexp.internal.RE;
 import dao.DAO;
 import domain.AspirantAccount;
 import domain.AspirantProfile;
+import domain.Resume;
+import domain.ResumeView;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -10,8 +13,14 @@ import service.AspirantService;
 import service.exception.AspirantAlreadyExistsException;
 import service.exception.AspirantNotRegisteredException;
 import service.exception.AspirantProfileNotFoundException;
+import service.exception.ResumeNotFoundException;
 import service.fake.AspirantAccountDaoFake;
 import service.fake.AspirantProfileDaoFake;
+import service.fake.AspirantResumeDaoFake;
+import service.fake.AspirantResumeViewDaoFake;
+
+import java.util.ArrayList;
+import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -23,7 +32,9 @@ class MyAspirantServiceTest {
     void setUp() {
         DAO<AspirantAccount> aspirantAccountDAOFake = new AspirantAccountDaoFake();
         DAO<AspirantProfile> aspirantAccountDaoFake = new AspirantProfileDaoFake();
-        this.aspirantService = new MyAspirantService(aspirantAccountDAOFake, aspirantAccountDaoFake);
+        DAO<Resume> resumeDAO = new AspirantResumeDaoFake();
+        DAO<ResumeView> resumeViewDAO = new AspirantResumeViewDaoFake();
+        this.aspirantService = new MyAspirantService(aspirantAccountDAOFake, aspirantAccountDaoFake, resumeDAO, resumeViewDAO);
     }
 
     @AfterEach
@@ -248,6 +259,229 @@ class MyAspirantServiceTest {
         aspirantProfile = this.aspirantService.getAspirantProfile(aspirantEmail);
         assertEquals(aspirantProfile.getId(), aspirantProfileId);
         assertEquals(aspirantProfile.getAboutMe(), aboutMe);
+    }
+
+    @Test
+    void addAspirantResume_nullEmptyWhitespaceArgs_throwsIllegalArgumentException() {
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.addAspirantResume("", null));
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.addAspirantResume("   ", null));
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.addAspirantResume(null, null));
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.addAspirantResume("email", null));
+    }
+
+    @Test
+    void addAspirantResume_resume_resumeAdded() throws Exception {
+        // Arrange.
+        AspirantAccount aspirantAccount = new AspirantAccount("email", "password", 0);
+        Resume resume = new Resume();
+        resume.setCareerObjective("setCareerObjective");
+
+        // Act.
+        this.aspirantService.register(aspirantAccount);
+        this.aspirantService.addAspirantResume("email",resume );
+
+        // Assert.
+        resume = this.aspirantService.getAspirantResume("email", "setCareerObjective");
+        assertEquals("setCareerObjective", resume.getCareerObjective());
+    }
+
+    @Test
+    void getAllAspirantResume_nullEmptyWhitespaceArgs_throwsIllegalArgumentException() {
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.getAllAspirantResume(""));
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.getAllAspirantResume("   "));
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.getAllAspirantResume(null));
+    }
+
+    @Test
+    void getAllAspirantResume_email_resumeReturned() throws Exception {
+        // Arrange.
+        AspirantAccount aspirantAccount = new AspirantAccount("email", "password", 0);
+        Resume resume = new Resume();
+
+        // Act.
+        this.aspirantService.register(aspirantAccount);
+        this.aspirantService.addAspirantResume("email",resume);
+
+        // Assert.
+        ArrayList<Resume> result = this.aspirantService.getAllAspirantResume("email");
+        assertEquals(1, result.size());
+    }
+
+    @Test
+    void getAspirantResume_nullEmptyWhitespaceArgs_throwsIllegalArgumentException() {
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.getAspirantResume("", "fwef"));
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.getAspirantResume("   ", "wef"));
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.getAspirantResume(null, "wef"));
+
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.getAspirantResume("wef", ""));
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.getAspirantResume("wef", "   "));
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.getAspirantResume("wef", null));
+    }
+
+    @Test
+    void getAspirantResume_emailCareerObjective_resumeReturned() throws Exception {
+        // Arrange.
+        AspirantAccount aspirantAccount = new AspirantAccount("email", "password", 0);
+        Resume resume = new Resume();
+        resume.setCareerObjective("setCareerObjective");
+
+        // Act.
+        this.aspirantService.register(aspirantAccount);
+        this.aspirantService.addAspirantResume("email",resume);
+
+        // Assert.
+        resume = this.aspirantService.getAspirantResume("email", "setCareerObjective");
+        assertEquals("setCareerObjective", resume.getCareerObjective());
+    }
+
+    @Test
+    void getAspirantResume_notCreatedResume_resumeNull() throws Exception {
+        // Arrange.
+        AspirantAccount aspirantAccount = new AspirantAccount("email", "password", 0);
+        Resume resume = new Resume();
+        resume.setCareerObjective("setCareerObjective");
+
+        // Act.
+        this.aspirantService.register(aspirantAccount);
+
+        // Assert.
+        resume = this.aspirantService.getAspirantResume("email", "setCareerObjective");
+        assertEquals(null, resume);
+    }
+
+    @Test
+    void deleteAspirantResume_nullEmptyWhitespaceArgs_throwsIllegalArgumentException() {
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.deleteAspirantResume("", "fwef"));
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.deleteAspirantResume("   ", "wef"));
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.deleteAspirantResume(null, "wef"));
+
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.deleteAspirantResume("wef", ""));
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.deleteAspirantResume("wef", "   "));
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.deleteAspirantResume("wef", null));
+    }
+
+    @Test
+    void deleteAspirantResume_emailCareerObjective_resumeReturned() throws Exception {
+        // Arrange.
+        AspirantAccount aspirantAccount = new AspirantAccount("email", "password", 0);
+        Resume resume = new Resume();
+        resume.setCareerObjective("setCareerObjective");
+
+        // Act.
+        this.aspirantService.register(aspirantAccount);
+        this.aspirantService.addAspirantResume("email",resume);
+        this.aspirantService.deleteAspirantResume("email", "setCareerObjective");
+
+        // Assert.
+        resume = this.aspirantService.getAspirantResume("email", "setCareerObjective");
+        assertEquals(null, resume);
+    }
+
+    @Test
+    void updateAspirantResume_nullEmptyWhitespaceArgs_throwsIllegalArgumentException() {
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.updateAspirantResume("", "fwef", new Resume()));
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.updateAspirantResume("   ", "wef", new Resume()));
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.updateAspirantResume(null, "wef", new Resume()));
+
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.updateAspirantResume("wef", "", new Resume()));
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.updateAspirantResume("wef", "   ", new Resume()));
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.updateAspirantResume("wef", null, new Resume()));
+
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.updateAspirantResume("wef", "wefwef", null));
+    }
+
+    @Test
+    void updateAspirantResume_notExistingResume_throwsResumeNotFoundException() throws Exception {
+        // Arrange.
+        AspirantAccount aspirantAccount = new AspirantAccount("email", "password", 0);
+
+        // Act.
+        this.aspirantService.register(aspirantAccount);
+
+        // Assert.
+        assertThrows(ResumeNotFoundException.class, () -> this.aspirantService.updateAspirantResume("email", "wef", new Resume()));
+    }
+
+    @Test
+    void updateAspirantResume_emailCareerObjective_resumeReturned() throws Exception {
+        // Arrange.
+        AspirantAccount aspirantAccount = new AspirantAccount("email", "password", 0);
+        Resume resume = new Resume();
+        resume.setCareerObjective("setCareerObjective");
+
+        // Act.
+        this.aspirantService.register(aspirantAccount);
+        this.aspirantService.addAspirantResume("email",resume);
+        resume.setNumberOfViews(10);
+        this.aspirantService.updateAspirantResume("email", "setCareerObjective", resume);
+
+        // Assert.
+        resume = this.aspirantService.getAspirantResume("email", "setCareerObjective");
+        assertEquals(10, resume.getNumberOfViews());
+    }
+
+    @Test
+    void updateAspirantResumeDate_nullEmptyWhitespaceArgs_throwsIllegalArgumentException() {
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.updateAspirantResumeDate("", "fwef", new Date()));
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.updateAspirantResumeDate("   ", "wef", new Date()));
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.updateAspirantResumeDate(null, "wef", new Date()));
+
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.updateAspirantResumeDate("wef", "", new Date()));
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.updateAspirantResumeDate("wef", "   ", new Date()));
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.updateAspirantResumeDate("wef", null, new Date()));
+
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.updateAspirantResumeDate("wef", "wefwef", null));
+    }
+
+    @Test
+    void updateAspirantResumeDate_notExistingResume_throwsResumeNotFoundException() throws Exception {
+        // Arrange.
+        AspirantAccount aspirantAccount = new AspirantAccount("email", "password", 0);
+
+        // Act.
+        this.aspirantService.register(aspirantAccount);
+
+        // Assert.
+        assertThrows(ResumeNotFoundException.class, () -> this.aspirantService.updateAspirantResumeDate("email", "wef", new Date()));
+    }
+
+    @Test
+    void getAllAspirantResumeView_nullEmptyWhitespaceArgs_throwsIllegalArgumentException() {
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.getAllAspirantResumeView("", "fwef"));
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.getAllAspirantResumeView("   ", "wef"));
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.getAllAspirantResumeView(null, "wef"));
+
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.getAllAspirantResumeView("wef", ""));
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.getAllAspirantResumeView("wef", "   "));
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.getAllAspirantResumeView("wef", null));
+    }
+
+    @Test
+    void getAllAspirantResumeView_emailCareerObjective_resumeReturned() throws Exception {
+        // Arrange.
+        AspirantAccount aspirantAccount = new AspirantAccount("email", "password", 0);
+        Resume resume = new Resume();
+        resume.setCareerObjective("setCareerObjective");
+
+        // Act.
+        this.aspirantService.register(aspirantAccount);
+        this.aspirantService.addAspirantResume("email", resume);
+
+        // Assert.
+        ArrayList<ResumeView> result = this.aspirantService.getAllAspirantResumeView("email", "setCareerObjective");
+        assertNotNull(result);
+        assertTrue(result.isEmpty());
+    }
+
+    @Test
+    void getAspirantResumeView_nullEmptyWhitespaceArgs_throwsIllegalArgumentException() {
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.getAllAspirantResumeView("", "fwef"));
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.getAllAspirantResumeView("   ", "wef"));
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.getAllAspirantResumeView(null, "wef"));
+
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.getAllAspirantResumeView("wef", ""));
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.getAllAspirantResumeView("wef", "   "));
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.getAllAspirantResumeView("wef", null));
     }
 
 }

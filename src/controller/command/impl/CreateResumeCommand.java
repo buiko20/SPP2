@@ -23,7 +23,9 @@ public class CreateResumeCommand implements Command{
     public Object execute(String request) throws AspirantAlreadyExistsException, ServiceException, AspirantNotRegisteredException {
 
         String[] aspirant = request.split(";");
-
+        //TODO: проверить, существует ли aspirantProfile
+        //если нет, создать
+        //если да - UPDATE
         AspirantProfile aspirantProfile = new AspirantProfile(aspirant[1], aspirant[2], aspirant[3], aspirant[4], aspirant[5],
                 aspirant[6], Date.valueOf(aspirant[7]), aspirant[8], aspirant[9], aspirant[10], aspirant[11], aspirant[12]);
 

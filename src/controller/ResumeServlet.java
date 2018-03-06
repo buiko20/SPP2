@@ -5,6 +5,7 @@ import domain.Resume;
 import service.exception.AspirantAlreadyExistsException;
 import service.exception.AspirantNotRegisteredException;
 import service.exception.ServiceException;
+import viewModel.AspirantResume;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -31,13 +32,16 @@ public class ResumeServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        doAction(request, response);
     }
 
     protected void doAction(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         request.setCharacterEncoding("UTF-8");
         String commandName = request.getParameter("command");
+
+        if(commandName == null)
+            commandName = "GetResume";
 
         switch (commandName)
         {
@@ -72,9 +76,8 @@ public class ResumeServlet extends HttpServlet {
                     command.execute(email + ";" + name + ";" + surname + ";" + feedbackEmail + ";" + patronymic + ";" + sex + ";" + education + ";" +
                             dateOfBirth + ";" + phoneNumber + ";" + mailingAddress + ";" +englishLevel + ";" + aboutMe + ";" + cityOfResidence +
                             ";" + careerObjective + ";" + isTripPossible + ";" + isRelocationPossible + ";" + skills + ";" + salary);
-                } catch (Exception e) {
-
-                }
+                } catch (Exception e) { }
+                request.getRequestDispatcher("/ResumeList").forward(request, response);
                 break;
             }
             case("EditResume"):{
@@ -86,8 +89,21 @@ public class ResumeServlet extends HttpServlet {
             case("UpdateResumeDate"):{
                 break;
             }
+            case("GetResume"):{
+                HttpSession session = request.getSession();
+
+                String email = (String)session.getAttribute("userEmail");
+                String careerObjective = request.getParameter("careerObjective");
+
+                Command command = commandProvider.getCommand(commandName);
+                try {
+                    session.setAttribute("resume", (AspirantResume)command.execute(email + ";" + careerObjective));
+                } catch (Exception e) { }
+
+                request.getRequestDispatcher("/ResumeDisplay.jsp").forward(request, response);
+                break;
+            }
             default:{
-                //TODO: отображение конкретного резюме
             }
         }
     }

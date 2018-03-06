@@ -75,7 +75,7 @@
                     </div>
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
-                            <input type="submit" name="command" value="Выполнить вход" class="btn btn-default" />
+                            <button class="btn" name="command" value="Login">Выполнить вход</button>
                         </div>
                     </div>
                     <p>

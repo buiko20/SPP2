@@ -74,9 +74,9 @@
 
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" name="command" value="Зарегистрироваться" class="btn btn-default" />
+                    <button class="btn" name="command" value="Register">Зарегистрироваться</button>
                 </div>
-            </div>
+            </div>>
         </div>
         </form>
         <hr />

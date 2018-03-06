@@ -3,6 +3,8 @@ package service.impl;
 import dao.DAO;
 import domain.AspirantAccount;
 import domain.AspirantProfile;
+import domain.Resume;
+import domain.ResumeView;
 import service.AspirantService;
 import service.exception.AspirantAlreadyExistsException;
 import service.exception.AspirantNotRegisteredException;
@@ -10,6 +12,7 @@ import service.exception.AspirantProfileNotFoundException;
 import service.exception.ServiceException;
 import service.utils.ArgumentVerificationService;
 
+import java.util.ArrayList;
 import java.util.function.Predicate;
 
 public class MyAspirantService implements AspirantService {
@@ -88,7 +91,7 @@ public class MyAspirantService implements AspirantService {
     }
 
     @Override
-    public void addAspirantProfile(String email, AspirantProfile aspirantProfile) throws IllegalArgumentException, AspirantNotRegisteredException, ServiceException {
+    public void addAspirantProfile(String email, AspirantProfile aspirantProfile) throws IllegalArgumentException, ServiceException {
 
         ArgumentVerificationService.verifyString(email, "email");
         ArgumentVerificationService.verifyNull(aspirantProfile, "aspirantProfile");
@@ -96,9 +99,6 @@ public class MyAspirantService implements AspirantService {
         try {
 
             AspirantAccount aspirantAccount = this.getAspirantAccountByEmail(email);
-            if (aspirantAccount == null) {
-                throw new AspirantNotRegisteredException(email);
-            }
 
             // After calling this method aspirantProfileId will be set by dao.
             this.aspirantProfileDAO.create(aspirantProfile);
@@ -106,7 +106,7 @@ public class MyAspirantService implements AspirantService {
             aspirantAccount.setAspirantProfileId(aspirantProfile.getId());
             this.aspirantAccountDao.update(aspirantAccount);
 
-        } catch (AspirantNotRegisteredException | ServiceException e) {
+        } catch (ServiceException e) {
             throw e;
         } catch (Exception e) {
             throw new ServiceException(e.getMessage(), e);
@@ -114,20 +114,17 @@ public class MyAspirantService implements AspirantService {
     }
 
     @Override
-    public AspirantProfile getAspirantProfile(String email) throws IllegalArgumentException, AspirantNotRegisteredException, ServiceException {
+    public AspirantProfile getAspirantProfile(String email) throws IllegalArgumentException, ServiceException {
 
         ArgumentVerificationService.verifyString(email, "email");
 
         try {
 
             AspirantAccount aspirantAccount = this.getAspirantAccountByEmail(email);
-            if (aspirantAccount == null) {
-                throw new AspirantNotRegisteredException(email);
-            }
 
             return this.aspirantProfileDAO.getBy(aspirantProfile -> aspirantProfile.getId() == aspirantAccount.getAspirantProfileId());
 
-        } catch (AspirantNotRegisteredException | ServiceException e) {
+        } catch (ServiceException e) {
             throw e;
         } catch (Exception e) {
             throw new ServiceException(e.getMessage(), e);
@@ -136,7 +133,7 @@ public class MyAspirantService implements AspirantService {
 
     @Override
     public void updateAspirantProfile(String email, AspirantProfile aspirantProfile)
-            throws IllegalArgumentException, AspirantNotRegisteredException, AspirantProfileNotFoundException, ServiceException {
+            throws IllegalArgumentException, AspirantProfileNotFoundException, ServiceException {
 
         ArgumentVerificationService.verifyString(email, "email");
         ArgumentVerificationService.verifyNull(aspirantProfile, "aspirantProfile");
@@ -151,11 +148,46 @@ public class MyAspirantService implements AspirantService {
             aspirantProfile.setId(temp.getId());
             this.aspirantProfileDAO.update(aspirantProfile);
 
-        } catch (AspirantNotRegisteredException | AspirantProfileNotFoundException | ServiceException e) {
+        } catch (AspirantProfileNotFoundException | ServiceException e) {
             throw e;
         } catch (Exception e) {
             throw new ServiceException(e.getMessage(), e);
         }
 
+    }
+
+    @Override
+    public void addAspirantResume(String email, Resume resume) throws IllegalArgumentException, ServiceException {
+
+    }
+
+    @Override
+    public ArrayList<Resume> getAllAspirantResume(String email) throws IllegalArgumentException, ServiceException {
+        return null;
+    }
+
+    @Override
+    public Resume getAspirantResume(String email, String careerObjective) throws IllegalArgumentException, ServiceException {
+        return null;
+    }
+
+    @Override
+    public void deleteAspirantResume(String email, String careerObjective) throws IllegalArgumentException, ServiceException {
+
+    }
+
+    @Override
+    public void updateAspirantResume(String email, String careerObjective) throws IllegalArgumentException, ServiceException {
+
+    }
+
+    @Override
+    public void updateResumeDate(String email, String careerObjective) throws IllegalArgumentException, ServiceException {
+
+    }
+
+    @Override
+    public ArrayList<ResumeView> getAllAspirantResumeView(String email, String careerObjective) throws IllegalArgumentException, ServiceException {
+        return null;
     }
 }

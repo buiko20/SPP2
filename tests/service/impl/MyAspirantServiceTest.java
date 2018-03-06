@@ -153,11 +153,6 @@ class MyAspirantServiceTest {
     }
 
     @Test
-    void addAspirantProfile_notExistingAspirant_throwsAspirantNotRegisteredException() {
-        assertThrows(AspirantNotRegisteredException.class, () -> this.aspirantService.addAspirantProfile("notExistingAspirantEmail", new AspirantProfile()));
-    }
-
-    @Test
     void addAspirantProfile_aspirantProfile_aspirantProfileAdded() throws Exception {
         // Arrange.
         String aspirantEmail = "email";
@@ -181,11 +176,6 @@ class MyAspirantServiceTest {
         assertThrows(IllegalArgumentException.class, () -> this.aspirantService.getAspirantProfile(""));
         assertThrows(IllegalArgumentException.class, () -> this.aspirantService.getAspirantProfile("     "));
         assertThrows(IllegalArgumentException.class, () -> this.aspirantService.getAspirantProfile(null));
-    }
-
-    @Test
-    void getAspirantProfile_notExistingAspirant_throwsAspirantNotRegisteredException() {
-        assertThrows(AspirantNotRegisteredException.class, () -> this.aspirantService.getAspirantProfile("notExistingAspirantEmail"));
     }
 
     @Test
@@ -218,12 +208,6 @@ class MyAspirantServiceTest {
         assertThrows(IllegalArgumentException.class, () -> this.aspirantService.updateAspirantProfile("", new AspirantProfile()));
         assertThrows(IllegalArgumentException.class, () -> this.aspirantService.updateAspirantProfile("   ", new AspirantProfile()));
         assertThrows(IllegalArgumentException.class, () -> this.aspirantService.updateAspirantProfile(null, new AspirantProfile()));;
-    }
-
-    @Test
-    void updateAspirantProfile_notExistingAspirant_throwsAspirantNotRegisteredException() {
-        assertThrows(AspirantNotRegisteredException.class, () ->
-                this.aspirantService.updateAspirantProfile("notExistingAspirantEmail", new AspirantProfile()));
     }
 
     @Test

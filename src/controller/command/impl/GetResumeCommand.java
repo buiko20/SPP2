@@ -13,7 +13,7 @@ import viewModel.AspirantResume;
 import java.sql.Date;
 
 /**
- * Represents a resume getting command.
+ * Represents a resume get command.
  */
 public class GetResumeCommand implements Command {
 

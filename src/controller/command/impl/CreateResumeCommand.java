@@ -15,7 +15,7 @@ import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 
 /**
- * Represents an resume creation command.
+ * Represents an resume create command.
  */
 public class CreateResumeCommand implements Command{
 

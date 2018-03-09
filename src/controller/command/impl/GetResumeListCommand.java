@@ -12,7 +12,7 @@ import java.sql.Date;
 import java.util.ArrayList;
 
 /**
- * Represents a resume list getting command.
+ * Represents a resume list get command.
  */
 public class GetResumeListCommand implements Command {
 

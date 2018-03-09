@@ -10,6 +10,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="shortcut icon" href="favicon.png" type="image/png">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -66,11 +67,14 @@
             <div class="form-group form-right">
                 <button class="btn" name="command" value="EditResume">Редактировать</button>
                 <button class="btn" name="command" value="UpdateResumeDate">Обновить дату</button>
-                <button class="btn btn-danger" name="command" value="DeleteResume">Удалить</button>
+                <button  class="btn btn-danger" name="command" value="DeleteResume">Удалить</button>
             </div>
             <hr/>
             </c:forEach>
             </c:if>
+            <div class="form-group form-right">
+                <a class="btn btn-success" href="ResumeCreation.jsp">Создать резюме</a>
+            </div>
         </div>
     </form>
 </div>

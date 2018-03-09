@@ -10,7 +10,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="shortcut icon" href="/WEB-INF/images/favicon.png" type="image/png">
+    <link rel="shortcut icon" href="favicon.png" type="image/png">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

@@ -10,6 +10,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="shortcut icon" href="favicon.png" type="image/png">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -62,7 +63,7 @@
             <div class="form-group">
                 <label class="control-label col-md-2">Зарплата</label>
                 <div class="col-md-10">
-                    <h4><c:out value = "${resume.salary}"/></h4>
+                    <h4><c:out value = "${resume.salary}"/>$</h4>
                 </div>
             </div>
 
@@ -186,7 +187,7 @@
             </div>
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
-                    <button class="btn" name="command" value="EditResume">Редактировать</button>
+                    <a class="btn" href="ResumeUpdate.jsp">Редактировать</a>
                     <button class="btn btn-danger" name="command" value="DeleteResume">Удалить</button>
                 </div>
             </div>

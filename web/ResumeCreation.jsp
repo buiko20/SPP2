@@ -10,6 +10,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="shortcut icon" href="favicon.png" type="image/png">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -63,8 +64,7 @@
             <div class="form-group">
                 <label class="control-label col-md-2" for="Salary">Зарплата</label>
                 <div class="col-md-10">
-                    <input class="form-control text-box single-line" id="Salary" name="Salary" type="text" value="" />
-                    <span class="field-validation-valid text-danger" data-valmsg-for="Salary" data-valmsg-replace="true"></span>
+                    <input  class="form-control text-box single-line"  id="Salary" name="Salary" type="text" value="" />
                 </div>
             </div>
 
@@ -75,7 +75,6 @@
                 <label class="control-label col-md-2" for="Photo">Фото</label>
                 <div class="col-md-10">
                     <input class="input-file" id="Photo" name="Photo" type="file" value="" />
-                    <span class="field-validation-valid text-danger" data-valmsg-for="Photo" data-valmsg-replace="true"></span>
                 </div>
             </div>
 
@@ -117,7 +116,7 @@
             <div class="form-group">
                 <label class="control-label col-md-2" for="Date_of_birth">Дата рождения</label>
                 <div class="col-md-10">
-                    <input class="form-control text-box single-line" data-val="true" data-val-date="Поле Дата рождения должно содержать дату." id="Date_of_birth" name="Date_of_birth" type="date" value="" />
+                    <input class="form-control text-box single-line" data-val="true" data-val-date="Поле Дата рождения должно содержать дату." id="Date_of_birth" name="Date_of_birth" type="date" value="2001-01-01"/>
                     <span class="field-validation-valid text-danger" data-valmsg-for="Date_of_birth" data-valmsg-replace="true"></span>
                 </div>
             </div>
@@ -143,7 +142,6 @@
                 <label class="control-label col-md-2" for="Mailing_address">Почтовый адрес</label>
                 <div class="col-md-10">
                     <input class="form-control text-box single-line" id="Mailing_address" name="Mailing_address" type="text" value="" />
-                    <span class="field-validation-valid text-danger" data-valmsg-for="Mailing_address" data-valmsg-replace="true"></span>
                 </div>
             </div>
 
@@ -154,7 +152,6 @@
                 <label class="control-label col-md-2" for="City_of_residence">Город проживания</label>
                 <div class="col-md-10">
                     <input class="form-control text-box single-line" id="City_of_residence" name="City_of_residence" type="text" value="" />
-                    <span class="field-validation-valid text-danger" data-valmsg-for="City_of_residence" data-valmsg-replace="true"></span>
                 </div>
             </div>
 
@@ -165,7 +162,6 @@
                 <label class="control-label col-md-2" for="Education">Образование</label>
                 <div class="col-md-10">
                     <input class="form-control text-box single-line" id="Education" name="Education" type="text" value="" />
-                    <span class="field-validation-valid text-danger" data-valmsg-for="Education" data-valmsg-replace="true"></span>
                 </div>
             </div>
             <div class="form-group">
@@ -191,7 +187,6 @@
                     <label class="checkbox">
                         <input id="Business_trip" name="Business_trip" type="checkbox" value="true" />
                     </label>
-                    <span class="field-validation-valid text-danger" data-valmsg-for="Business_trip" data-valmsg-replace="true"></span>
                 </div>
             </div>
             <div class="form-group">
@@ -200,7 +195,6 @@
                     <label class="checkbox">
                         <input id="Relocation" name="Relocation" type="checkbox" value="true" />
                     </label>
-                    <span class="field-validation-valid text-danger" data-valmsg-for="Relocation" data-valmsg-replace="true"></span>
                 </div>
             </div>
 
@@ -210,23 +204,21 @@
             <div class="form-group">
                 <label class="control-label col-md-2" for="Skills">Ключевые навыки</label>
                 <div class="col-md-10">
-                    <textarea class="input-xlarge valid" id="Skills" rows="1"></textarea>
-                    <span class="field-validation-valid text-danger" data-valmsg-for="Skills" data-valmsg-replace="true"></span>
+                    <textarea class="input-xlarge valid" id="Skills" name="Skills" rows="1"></textarea>
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-2" for="About_me">Обо мне</label>
                 <div class="col-md-10">
                     <textarea class="input-xlarge valid" id="About_me" name="About_me" rows="3"></textarea>
-                    <span class="field-validation-valid text-danger" data-valmsg-for="About_me" data-valmsg-replace="true"></span>
                 </div>
             </div>
 
             <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <button class="btn" name="command" value="CreateResume">Создать резюме</button>
-                </div>
+            <div class="col-md-offset-2 col-md-10">
+                <button class="btn" name="command" value="CreateResume">Создать резюме</button>
             </div>
+        </div>
         </div>
         </form>
     </div>

@@ -1,6 +1,8 @@
 package controller.command.impl;
 
 import controller.command.Command;
+import domain.AspirantProfile;
+import domain.Resume;
 import service.AspirantService;
 import service.ServiceFactory;
 import service.exception.AspirantAlreadyExistsException;
@@ -19,12 +21,31 @@ public class GetResumeCommand implements Command {
 
     @Override
     public Object execute(String request) throws AspirantAlreadyExistsException, ServiceException, AspirantNotRegisteredException {
-        String[] aspirantResume = request.split(";");
-        AspirantResume resume = new AspirantResume("Крутой парень", Float.valueOf(1), "Иванов",
-                "Иван", "Иванович" ,"Мужской", Date.valueOf("1998-05-10"), "user@gmail.com",
-                "123123123", "Космотнавтов 11-130", "Минск","БГУИР",
-                "A2", "Да", "Нет", "", "Я крут");
-        //TODO: получить резюме
-        return resume;
+
+        String[] requestData = request.split(";");
+
+        Resume resume = aspirantService.getAspirantResume(requestData[0], requestData[1]);
+        AspirantProfile aspirantProfile = aspirantService.getAspirantProfile(requestData[0]);
+
+        String isTripPossible, isRelocationPossible;
+
+        if(resume.getTripPossible())
+            isTripPossible = "Да";
+        else
+            isTripPossible = "Нет";
+
+        if(resume.getRelocationPossible())
+            isRelocationPossible = "Да";
+        else
+            isRelocationPossible = "Нет";
+
+        AspirantResume aspirantResume = new AspirantResume(resume.getCareerObjective(), resume.getSalary(),
+                aspirantProfile.getSurname(), aspirantProfile.getName(), aspirantProfile.getPatronymic() ,
+                aspirantProfile.getSex(), aspirantProfile.getDateOfBirth(), aspirantProfile.getEmail(),
+                aspirantProfile.getPhoneNumber(), aspirantProfile.getMailingAddress(), aspirantProfile.getCityOfResidence(),
+                aspirantProfile.getEducation(), aspirantProfile.getEnglishLevel(), isTripPossible, isRelocationPossible,
+                resume.getSkills(), aspirantProfile.getAboutMe());
+
+        return aspirantResume;
     }
 }

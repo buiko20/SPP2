@@ -7,9 +7,11 @@ import service.AspirantService;
 import service.ServiceFactory;
 import service.exception.AspirantAlreadyExistsException;
 import service.exception.AspirantNotRegisteredException;
+import service.exception.AspirantProfileNotFoundException;
 import service.exception.ServiceException;
 
 import java.sql.Date;
+import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 
 /**
@@ -20,24 +22,27 @@ public class CreateResumeCommand implements Command{
     private final AspirantService aspirantService = ServiceFactory.getInstance().getAspirantService();
 
     @Override
-    public Object execute(String request) throws AspirantAlreadyExistsException, ServiceException, AspirantNotRegisteredException {
+    public Object execute(String request) throws AspirantAlreadyExistsException, ServiceException, AspirantNotRegisteredException, AspirantProfileNotFoundException {
 
         String[] aspirant = request.split(";");
-        //TODO: проверить, существует ли aspirantProfile
-        //если нет, создать
-        //если да - UPDATE
-        AspirantProfile aspirantProfile = new AspirantProfile(aspirant[1], aspirant[2], aspirant[3], aspirant[4], aspirant[5],
-                aspirant[6], Date.valueOf(aspirant[7]), aspirant[8], aspirant[9], aspirant[10], aspirant[11], aspirant[12]);
 
-        java.util.Date curDate = new java.util.Date();
-        String curStringDate = new SimpleDateFormat("yyyy-MM-dd hh-mm-ss").format(curDate);
+        if(aspirantService.getAspirantProfile(aspirant[0]) == null){
+            AspirantProfile aspirantProfile = new AspirantProfile(aspirant[1], aspirant[2], aspirant[3], aspirant[4], aspirant[5],
+                   aspirant[6], Date.valueOf(aspirant[7]), aspirant[8], aspirant[9], aspirant[10], aspirant[11], aspirant[12]);
+            aspirantService.addAspirantProfile(aspirant[0], aspirantProfile);
+        } else{
+            AspirantProfile aspirantProfile = new AspirantProfile(aspirant[1], aspirant[2], aspirant[3], aspirant[4], aspirant[5],
+                    aspirant[6], Date.valueOf(aspirant[7]), aspirant[8], aspirant[9], aspirant[10], aspirant[11], aspirant[12]);
+            aspirantService.updateAspirantProfile(aspirant[0], aspirantProfile);
+        }
 
-        Resume resume = new Resume(Date.valueOf(curStringDate), aspirant[13], Boolean.valueOf(aspirant[14]),
-                Boolean.valueOf(aspirant[15]), aspirant[16], Float.valueOf(aspirant[1]),0, aspirantService.getAspirantAccountByEmail(aspirant[0]).getId());
+        java.util.Date currentDate = new java.util.Date();
+        String curStringDate = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").format(currentDate);
 
-        aspirantService.addAspirantProfile(aspirant[0], aspirantProfile);
-        //TODO: вызвать метод добавления резюме
+        Resume resume = new Resume(Timestamp.valueOf(curStringDate), aspirant[13], Boolean.valueOf(aspirant[14]),
+                Boolean.valueOf(aspirant[15]), aspirant[16], Float.valueOf(aspirant[17]),0, aspirantService.getAspirantAccountByEmail(aspirant[0]).getId());
 
+        aspirantService.addAspirantResume(aspirant[0], resume);
         return null;
     }
 }

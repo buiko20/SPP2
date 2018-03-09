@@ -21,10 +21,8 @@ public class GetResumeListCommand implements Command {
     @Override
     public Object execute(String request) throws AspirantAlreadyExistsException, ServiceException, AspirantNotRegisteredException {
 
-        //TODO: получить список резюме
-        Resume r = new Resume(Date.valueOf("1998-05-10"), "Крутой парень", true, false, "", Float.valueOf(1), 0, 1);
-        ArrayList<Resume> resumes = new ArrayList<>();
-        resumes.add(r);
+        ArrayList<Resume> resumes = aspirantService.getAllAspirantResume(request);
+
         return resumes;
     }
 }

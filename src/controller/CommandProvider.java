@@ -22,6 +22,7 @@ public class CommandProvider {
         addCommand(new GetResumeListCommand(), "GetResumeList");
         addCommand(new GetResumeCommand(), "GetResume");
         addCommand(new UpdateResumeCommand(), "UpdateResume");
+        addCommand(new DeleteResumeCommand(), "DeleteResume");
     }
 
     /**

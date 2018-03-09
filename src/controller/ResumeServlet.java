@@ -40,9 +40,6 @@ public class ResumeServlet extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         String commandName = request.getParameter("command");
 
-        if(commandName == null)
-            commandName = "GetResume";
-
         switch (commandName)
         {
             case("CreateResume"):
@@ -50,16 +47,7 @@ public class ResumeServlet extends HttpServlet {
                 GetNewResume(request, response, commandName);
                 break;
             }
-            case("UpdateResume"):{
-                GetNewResume(request, response, commandName);
-                break;
-            }
-            case("DeleteResume"):{
-                break;
-            }
-            case("UpdateResumeDate"):{
-                break;
-            }
+
             case("GetResume"):{
                 HttpSession session = request.getSession();
 
@@ -74,6 +62,31 @@ public class ResumeServlet extends HttpServlet {
                 request.getRequestDispatcher("/ResumeDisplay.jsp").forward(request, response);
                 break;
             }
+
+            case("UpdateResume"):{
+                GetNewResume(request, response, commandName);
+                break;
+            }
+
+            case("DeleteResume"):{
+                HttpSession session = request.getSession();
+
+                String email = (String)session.getAttribute("userEmail");
+                String careerObjective = request.getParameter("careerObjective");
+
+                Command command = commandProvider.getCommand(commandName);
+                try {
+                    command.execute(email + ";" + careerObjective);
+                } catch (Exception e) { }
+
+                request.getRequestDispatcher("/ResumeListDisplay.jsp").forward(request, response);
+                break;
+            }
+
+            case("UpdateResumeDate"):{
+                break;
+            }
+            
             default:{
             }
         }

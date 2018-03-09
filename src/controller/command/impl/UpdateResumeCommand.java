@@ -28,7 +28,7 @@ public class UpdateResumeCommand implements Command {
         aspirantService.updateAspirantProfile(aspirant[0], aspirantProfile);
 
         java.util.Date currentDate = new java.util.Date();
-        String curStringDate = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").format(currentDate);
+        String curStringDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(currentDate);
 
         Resume resume = new Resume(Timestamp.valueOf(curStringDate), aspirant[13], Boolean.valueOf(aspirant[14]),
                 Boolean.valueOf(aspirant[15]), aspirant[16], Float.valueOf(aspirant[17]),0, aspirantService.getAspirantAccountByEmail(aspirant[0]).getId());

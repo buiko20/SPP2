@@ -47,40 +47,11 @@ public class ResumeServlet extends HttpServlet {
         {
             case("CreateResume"):
             {
-                HttpSession session = request.getSession();
-                String email = (String)session.getAttribute("userEmail");
-                String name = request.getParameter("Name");
-                String surname = request.getParameter("Surname");
-                String feedbackEmail = request.getParameter("Email");
-                String patronymic = request.getParameter("Patronymic");
-                String sex = request.getParameter("Sex");
-                String education = request.getParameter("Education");
-                String dateOfBirth = request.getParameter("Date_of_birth");
-                String phoneNumber = request.getParameter("Phone_number");
-                String mailingAddress= request.getParameter("Mailing_address");
-                String englishLevel = request.getParameter("English_level");
-                String aboutMe = request.getParameter("About_me");
-                String cityOfResidence = request.getParameter("City_of_residence");
-                String careerObjective = request.getParameter("Position");
-                String isTripPossible = request.getParameter("Business_trip");
-                if(isTripPossible == null)
-                    isTripPossible = "false";
-                String isRelocationPossible= request.getParameter("Relocation");
-                if(isRelocationPossible == null)
-                    isRelocationPossible = "false";
-                String skills = request.getParameter("Skills");
-                String salary = request.getParameter("Salary");
-
-                Command command = commandProvider.getCommand(commandName);
-                try {
-                    command.execute(email + ";" + name + ";" + surname + ";" + feedbackEmail + ";" + patronymic + ";" + sex + ";" + education + ";" +
-                            dateOfBirth + ";" + phoneNumber + ";" + mailingAddress + ";" +englishLevel + ";" + aboutMe + ";" + cityOfResidence +
-                            ";" + careerObjective + ";" + isTripPossible + ";" + isRelocationPossible + ";" + skills + ";" + salary);
-                } catch (Exception e) { }
-                request.getRequestDispatcher("/ResumeList").forward(request, response);
+                GetNewResume(request, response, commandName);
                 break;
             }
-            case("EditResume"):{
+            case("UpdateResume"):{
+                GetNewResume(request, response, commandName);
                 break;
             }
             case("DeleteResume"):{
@@ -106,5 +77,42 @@ public class ResumeServlet extends HttpServlet {
             default:{
             }
         }
+    }
+
+    protected void GetNewResume(HttpServletRequest request, HttpServletResponse response, String commandName) throws ServletException, IOException {
+        HttpSession session = request.getSession();
+        String email = (String)session.getAttribute("userEmail");
+        String name = request.getParameter("Name");
+        String surname = request.getParameter("Surname");
+        String feedbackEmail = request.getParameter("Email");
+        String patronymic = request.getParameter("Patronymic");
+        String sex = request.getParameter("Sex");
+        String education = request.getParameter("Education");
+        String dateOfBirth = request.getParameter("Date_of_birth");
+        String phoneNumber = request.getParameter("Phone_number");
+        String mailingAddress= request.getParameter("Mailing_address");
+        String englishLevel = request.getParameter("English_level");
+        String aboutMe = request.getParameter("About_me");
+        String cityOfResidence = request.getParameter("City_of_residence");
+        String careerObjective = request.getParameter("Position");
+        String isTripPossible = request.getParameter("Business_trip");
+        if(isTripPossible == null)
+            isTripPossible = "false";
+        String isRelocationPossible= request.getParameter("Relocation");
+        if(isRelocationPossible == null)
+            isRelocationPossible = "false";
+        String skills = request.getParameter("Skills");
+        String salary = request.getParameter("Salary");
+        if(salary.equals(""))
+            salary = "0.0";
+
+        Command command = commandProvider.getCommand(commandName);
+        try {
+            command.execute(email + ";" + name + ";" + surname + ";" + feedbackEmail + ";" + patronymic + ";" + sex + ";" + education + ";" +
+                    dateOfBirth + ";" + phoneNumber + ";" + mailingAddress + ";" +englishLevel + ";" + aboutMe + ";" + cityOfResidence +
+                    ";" + careerObjective + ";" + isTripPossible + ";" + isRelocationPossible + ";" + skills + ";" + salary);
+        } catch (Exception e) { }
+
+        request.getRequestDispatcher("/ResumeList").forward(request, response);
     }
 }

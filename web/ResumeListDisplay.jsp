@@ -59,21 +59,16 @@
             <div class="form-group">
                 <div class="col-md-10">
                     <h6>Дата последнего обновления: <c:out value = "${resumeList.get(i).date}"/></h6>
-                    <h3><a href="/Resume?careerObjective=${resumeList.get(i).careerObjective}"><c:out value = "${resumeList.get(i).careerObjective}"/></a></h3>
+                    <h3><a href="/Resume?careerObjective=${resumeList.get(i).careerObjective}&command=GetResume"><c:out value = "${resumeList.get(i).careerObjective}"/></a></h3>
                     <h5>Количество просмотров: <c:out value = "${resumeList.get(i).numberOfViews}"/></h5>
-                    <span class="field-validation-valid text-danger" data-valmsg-for="Position" data-valmsg-replace="true"></span>
+                    <h6><a href="/Resume?careerObjective=${resumeList.get(i).careerObjective}&command=UpdateResumeDate">Обновить дату</a></h6>
                 </div>
-            </div>
-            <div class="form-group form-right">
-                <button class="btn" name="command" value="EditResume">Редактировать</button>
-                <button class="btn" name="command" value="UpdateResumeDate">Обновить дату</button>
-                <button  class="btn btn-danger" name="command" value="DeleteResume">Удалить</button>
             </div>
             <hr/>
             </c:forEach>
             </c:if>
             <div class="form-group form-right">
-                <a class="btn btn-success" href="ResumeCreation.jsp">Создать резюме</a>
+                <a class="btn btn-success resume-btn" href="ResumeCreation.jsp">Создать резюме</a>
             </div>
         </div>
     </form>

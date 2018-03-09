@@ -187,8 +187,8 @@
             </div>
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
-                    <a class="btn" href="ResumeUpdate.jsp">Редактировать</a>
-                    <button class="btn btn-danger" name="command" value="DeleteResume">Удалить</button>
+                    <a class="btn btn-default" href="ResumeUpdate.jsp">Редактировать</a>
+                    <a class="btn btn-danger" href="/Resume?careerObjective=${resume.careerObjective}&command=DeleteResume">Удалить</a>
                 </div>
             </div>
         </div>

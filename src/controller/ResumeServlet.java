@@ -44,7 +44,7 @@ public class ResumeServlet extends HttpServlet {
         {
             case("CreateResume"):
             {
-                GetNewResume(request, response, commandName);
+                SetNewResume(request, response, commandName);
                 break;
             }
 
@@ -64,35 +64,42 @@ public class ResumeServlet extends HttpServlet {
             }
 
             case("UpdateResume"):{
-                GetNewResume(request, response, commandName);
+                SetNewResume(request, response, commandName);
                 break;
             }
 
             case("DeleteResume"):{
-                HttpSession session = request.getSession();
-
-                String email = (String)session.getAttribute("userEmail");
-                String careerObjective = request.getParameter("careerObjective");
-
-                Command command = commandProvider.getCommand(commandName);
-                try {
-                    command.execute(email + ";" + careerObjective);
-                } catch (Exception e) { }
-
+                GetAndSetSessionAttributes(request, response,commandName);
                 request.getRequestDispatcher("/ResumeListDisplay.jsp").forward(request, response);
                 break;
             }
 
             case("UpdateResumeDate"):{
+                GetAndSetSessionAttributes(request, response,commandName);
+                request.getRequestDispatcher("/ResumeListDisplay.jsp").forward(request, response);
                 break;
             }
-            
+
             default:{
             }
         }
     }
 
-    protected void GetNewResume(HttpServletRequest request, HttpServletResponse response, String commandName) throws ServletException, IOException {
+    protected void GetAndSetSessionAttributes(HttpServletRequest request, HttpServletResponse response, String commandName)
+    {
+        HttpSession session = request.getSession();
+
+        String email = (String)session.getAttribute("userEmail");
+        String careerObjective = request.getParameter("careerObjective");
+
+        Command command = commandProvider.getCommand(commandName);
+        try {
+            command.execute(email + ";" + careerObjective);
+        } catch (Exception e) { }
+
+    }
+
+    protected void SetNewResume(HttpServletRequest request, HttpServletResponse response, String commandName) throws ServletException, IOException {
         HttpSession session = request.getSession();
         String email = (String)session.getAttribute("userEmail");
         String name = request.getParameter("Name");

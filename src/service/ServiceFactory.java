@@ -6,6 +6,10 @@ import domain.AspirantAccount;
 import domain.AspirantProfile;
 import domain.Resume;
 import domain.ResumeView;
+import service.fake.AspirantAccountDaoFake;
+import service.fake.AspirantProfileDaoFake;
+import service.fake.AspirantResumeDaoFake;
+import service.fake.AspirantResumeViewDaoFake;
 import service.impl.MyAspirantService;
 
 /**

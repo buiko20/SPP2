@@ -2,6 +2,8 @@ package dao;
 
 import dao.impl.DbAspirantAccountDAO;
 import dao.impl.DbAspirantProfileDAO;
+import dao.impl.DbResumeDAO;
+import dao.impl.DbResumeViewDAO;
 import domain.AspirantAccount;
 import domain.AspirantProfile;
 import domain.AspirantResponse;

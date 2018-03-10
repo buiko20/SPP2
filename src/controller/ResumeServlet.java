@@ -6,6 +6,7 @@ import service.exception.AspirantAlreadyExistsException;
 import service.exception.AspirantNotRegisteredException;
 import service.exception.ServiceException;
 import viewModel.AspirantResume;
+import viewModel.ResumeView;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -70,13 +71,28 @@ public class ResumeServlet extends HttpServlet {
 
             case("DeleteResume"):{
                 GetAndSetSessionAttributes(request, response,commandName);
-                request.getRequestDispatcher("/ResumeListDisplay.jsp").forward(request, response);
+                request.getRequestDispatcher("/ResumeList").forward(request, response);
                 break;
             }
 
             case("UpdateResumeDate"):{
                 GetAndSetSessionAttributes(request, response,commandName);
                 request.getRequestDispatcher("/ResumeListDisplay.jsp").forward(request, response);
+                break;
+            }
+
+            case("GetResumeViewList"):{
+                HttpSession session = request.getSession();
+
+                String email = (String)session.getAttribute("userEmail");
+                String careerObjective = request.getParameter("careerObjective");
+
+                Command command = commandProvider.getCommand(commandName);
+                try {
+                    session.setAttribute("viewList", (ArrayList<ResumeView>)command.execute(email + ";" + careerObjective));
+                } catch (Exception e) { }
+
+                request.getRequestDispatcher("/ResumeViewList.jsp").forward(request, response);
                 break;
             }
 

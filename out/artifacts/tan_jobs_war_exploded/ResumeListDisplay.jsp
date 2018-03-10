@@ -60,7 +60,7 @@
                 <div class="col-md-10">
                     <h6>Дата последнего обновления: <c:out value = "${resumeList.get(i).date}"/></h6>
                     <h3><a href="/Resume?careerObjective=${resumeList.get(i).careerObjective}&command=GetResume"><c:out value = "${resumeList.get(i).careerObjective}"/></a></h3>
-                    <h5>Количество просмотров: <c:out value = "${resumeList.get(i).numberOfViews}"/></h5>
+                    <h5>Количество просмотров: <a href="/Resume?careerObjective=${resumeList.get(i).careerObjective}&command=GetResumeViewList"><c:out value = "${resumeList.get(i).numberOfViews}"/></a></h5>
                     <h6><a href="/Resume?careerObjective=${resumeList.get(i).careerObjective}&command=UpdateResumeDate">Обновить дату</a></h6>
                 </div>
             </div>

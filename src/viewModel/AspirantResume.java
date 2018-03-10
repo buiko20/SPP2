@@ -23,7 +23,7 @@ public class AspirantResume {
     public String aboutMe;
 
     /**
-     * Initializes a new instance of the {@link Aspirant model}
+     * Initializes a new instance of the {@link AspirantResume model}
      * @param careerObjective aspirant career objective
      * @param salary salary that aspirant want
      * @param surname aspirant surname

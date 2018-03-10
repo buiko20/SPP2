@@ -24,6 +24,7 @@ public class CommandProvider {
         addCommand(new UpdateResumeCommand(), "UpdateResume");
         addCommand(new DeleteResumeCommand(), "DeleteResume");
         addCommand(new UpdateResumeDateCommand(), "UpdateResumeDate");
+        addCommand(new GetResumeViewListCommand(), "GetResumeViewList");
     }
 
     /**

@@ -1,9 +1,6 @@
 package dao;
 
-import dao.impl.DbAspirantAccountDAO;
-import dao.impl.DbAspirantProfileDAO;
-import dao.impl.DbResumeDAO;
-import dao.impl.DbResumeViewDAO;
+import dao.impl.*;
 import domain.AspirantAccount;
 import domain.AspirantProfile;
 import domain.AspirantResponse;
@@ -23,6 +20,13 @@ public class DAOFactory {
 
     private final DbAspirantProfileDAO AspirantProfileDAO = new DbAspirantProfileDAO();
     private final DbAspirantAccountDAO AspirantAccountDAO = new DbAspirantAccountDAO();
+    private final DbAspirantResponseDAO AspirantResponseDAO = new DbAspirantResponseDAO();
+    private final DbCompanyDAO CompanyDAO = new DbCompanyDAO();
+    private final DbHRManagerDAO HRManagerDAO = new DbHRManagerDAO();
+    private final DbInvitationDAO InvitationDAO = new DbInvitationDAO();
+    private final DbJobVacancyDAO JobVacancyDAO = new DbJobVacancyDAO();
+    private final DbResumeDAO ResumeDAO = new DbResumeDAO();
+    private final DbResumeViewDAO ResumeViewDAO = new DbResumeViewDAO();
 
     private DAOFactory() {
     }
@@ -56,7 +60,7 @@ public class DAOFactory {
      * @return instance of the {@link DAO<AspirantResponse>}
      */
     public DAO<AspirantResponse> getAspirantResponseDAO() {
-        return null;
+        return AspirantResponseDAO;
     }
 
     /**
@@ -64,7 +68,7 @@ public class DAOFactory {
      * @return instance of the {@link DAO<Company>}
      */
     public DAO<Company> getCompanyDAO() {
-        return null;
+        return CompanyDAO;
     }
 
     /**
@@ -72,7 +76,7 @@ public class DAOFactory {
      * @return instance of the {@link DAO<HRManager>}
      */
     public DAO<HRManager> getHRManagerDAO() {
-        return null;
+        return HRManagerDAO;
     }
 
     /**
@@ -80,7 +84,7 @@ public class DAOFactory {
      * @return instance of the {@link DAO<Invitation>}
      */
     public DAO<Invitation> getInvitationDAO() {
-        return null;
+        return InvitationDAO;
     }
 
     /**
@@ -88,7 +92,7 @@ public class DAOFactory {
      * @return instance of the {@link DAO<JobVacancy>}
      */
     public DAO<JobVacancy> getJobVacancyDAO() {
-        return null;
+        return JobVacancyDAO;
     }
 
     /**
@@ -96,7 +100,7 @@ public class DAOFactory {
      * @return instance of the {@link DAO<Resume>}
      */
     public DAO<Resume> getResumeDAO() {
-        return null;
+        return ResumeDAO;
     }
 
     /**
@@ -104,6 +108,6 @@ public class DAOFactory {
      * @return instance of the {@link DAO<ResumeView>}
      */
     public DAO<ResumeView> getResumeViewDAO() {
-        return null;
+        return ResumeViewDAO;
     }
 }

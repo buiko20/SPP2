@@ -12,11 +12,14 @@
   <component name="ChangeListManager">
     <list default="true" id="21424ace-22c0-4d63-80cf-8818a8f4c80c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/tan_jobs_war_exploded/ResumeListDisplay.jsp" afterPath="$PROJECT_DIR$/out/artifacts/tan_jobs_war_exploded/ResumeListDisplay.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/CommandProvider.java" afterPath="$PROJECT_DIR$/src/controller/CommandProvider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/ResumeServlet.java" afterPath="$PROJECT_DIR$/src/controller/ResumeServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/viewModel/AspirantResume.java" afterPath="$PROJECT_DIR$/src/viewModel/AspirantResume.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/ResumeListDisplay.jsp" afterPath="$PROJECT_DIR$/web/ResumeListDisplay.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/command/impl/GetResumeViewListCommand.java" afterPath="$PROJECT_DIR$/src/controller/command/impl/GetResumeViewListCommand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/domain/Company.java" afterPath="$PROJECT_DIR$/src/domain/Company.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/domain/Invitation.java" afterPath="$PROJECT_DIR$/src/domain/Invitation.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/domain/JobVacancy.java" afterPath="$PROJECT_DIR$/src/domain/JobVacancy.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/service/AspirantService.java" afterPath="$PROJECT_DIR$/src/service/AspirantService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/service/ServiceFactory.java" afterPath="$PROJECT_DIR$/src/service/ServiceFactory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/service/impl/MyAspirantService.java" afterPath="$PROJECT_DIR$/src/service/impl/MyAspirantService.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tests/service/impl/MyAspirantServiceTest.java" afterPath="$PROJECT_DIR$/tests/service/impl/MyAspirantServiceTests.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -61,115 +64,27 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ResumeServlet.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controller/ResumeServlet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-142">
-              <caret line="90" column="21" lean-forward="true" selection-start-line="90" selection-start-column="21" selection-end-line="90" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GetResumeViewListCommand.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controller/command/impl/GetResumeViewListCommand.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="106">
-              <caret line="20" column="47" lean-forward="true" selection-start-line="20" selection-start-column="47" selection-end-line="20" selection-end-column="47" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MyAspirantService.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MyAspirantService.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/service/impl/MyAspirantService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="35" column="16" lean-forward="true" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
+            <state relative-caret-position="432">
+              <caret line="386" column="13" lean-forward="true" selection-start-line="386" selection-start-column="13" selection-end-line="386" selection-end-column="13" />
               <folding>
+                <element signature="method#MyAspirantService#0;class#MyAspirantService#0" expanded="false" />
                 <element signature="method#register#0;class#MyAspirantService#0" expanded="false" />
+                <element signature="method#isValidCredentials#0;class#MyAspirantService#0" expanded="false" />
                 <element signature="method#getAspirantAccountByEmail#0;class#MyAspirantService#0" expanded="false" />
+                <element signature="method#addAspirantProfile#0;class#MyAspirantService#0" expanded="false" />
+                <element signature="method#getAspirantProfile#0;class#MyAspirantService#0" expanded="false" />
+                <element signature="method#updateAspirantProfile#0;class#MyAspirantService#0" expanded="false" />
+                <element signature="method#addAspirantResume#0;class#MyAspirantService#0" expanded="false" />
                 <element signature="method#getAllAspirantResume#0;class#MyAspirantService#0" expanded="false" />
+                <element signature="method#getAspirantResume#0;class#MyAspirantService#0" expanded="false" />
+                <element signature="method#deleteAspirantResume#0;class#MyAspirantService#0" expanded="false" />
+                <element signature="method#updateAspirantResume#0;class#MyAspirantService#0" expanded="false" />
                 <element signature="method#updateAspirantResumeDate#0;class#MyAspirantService#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ServiceFactory.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/service/ServiceFactory.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="27" column="30" lean-forward="true" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ResumeViewList.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/ResumeViewList.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="178">
-              <caret line="60" column="48" lean-forward="false" selection-start-line="56" selection-start-column="16" selection-end-line="64" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ResumeView.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/viewModel/ResumeView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-153">
-              <caret line="9" column="26" lean-forward="true" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
-              <folding>
-                <element signature="e#548#549#0" expanded="true" />
-                <element signature="e#575#576#0" expanded="true" />
-                <element signature="e#708#709#0" expanded="true" />
-                <element signature="e#742#743#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ResumeUpdate.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/ResumeUpdate.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="148" column="18" lean-forward="false" selection-start-line="148" selection-start-column="18" selection-end-line="148" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CommandProvider.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controller/CommandProvider.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-60">
-              <caret line="26" column="69" lean-forward="false" selection-start-line="26" selection-start-column="69" selection-end-line="26" selection-end-column="69" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ResumeListDisplay.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/ResumeListDisplay.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="62" column="47" lean-forward="false" selection-start-line="62" selection-start-column="47" selection-end-line="62" selection-end-column="47" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Resume.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/domain/Resume.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
-              <folding>
-                <element signature="e#2754#2755#0" expanded="true" />
+                <marker date="1520783658867" expanded="false" signature="10652:11522" ph="{...}" />
+                <marker date="1520783658867" expanded="false" signature="12582:12893" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -181,9 +96,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="Interface" />
         <option value="JUnit5 Test Class" />
         <option value="Jsp File" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -207,19 +122,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/service/fake/AspirantAccountDaoFake.java" />
-        <option value="$PROJECT_DIR$/src/service/fake/AspirantProfileDaoFake.java" />
-        <option value="$PROJECT_DIR$/src/domain/AspirantProfile.java" />
-        <option value="$PROJECT_DIR$/src/service/exception/AspirantProfileNotFoundException.java" />
-        <option value="$PROJECT_DIR$/src/dao/MysqlConnect.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/HomePage.jsp" />
-        <option value="$PROJECT_DIR$/src/main.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/ResumeDisplay.jsp" />
-        <option value="$PROJECT_DIR$/src/controller/command/impl/LoginAspirantCommand.java" />
-        <option value="$PROJECT_DIR$/src/controller/command/impl/RegisterAspirantCommand.java" />
-        <option value="$PROJECT_DIR$/src/controller/RegistrationServlet.java" />
-        <option value="$PROJECT_DIR$/src/controller/LoginServlet.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/styles/bootstrap.css" />
         <option value="$PROJECT_DIR$/web/WEB-INF/ResumeListDisplay.jsp" />
         <option value="$PROJECT_DIR$/web/index.jsp" />
         <option value="$PROJECT_DIR$/src/viewModel/Resume.java" />
@@ -227,10 +129,8 @@
         <option value="$PROJECT_DIR$/src/service/fake/AspirantResumeDaoFake.java" />
         <option value="$PROJECT_DIR$/src/domain/Resume.java" />
         <option value="$PROJECT_DIR$/src/service/exception/ResumeNotFoundException.java" />
-        <option value="$PROJECT_DIR$/src/service/AspirantService.java" />
         <option value="$PROJECT_DIR$/src/service/fake/AspirantResumeViewDaoFake.java" />
         <option value="$PROJECT_DIR$/src/domain/ResumeView.java" />
-        <option value="$PROJECT_DIR$/tests/service/impl/MyAspirantServiceTest.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/ResumeUpdate.jsp" />
         <option value="$PROJECT_DIR$/web/ResumeEdit.jsp" />
         <option value="$PROJECT_DIR$/src/dao/DAOFactory.java" />
@@ -255,9 +155,24 @@
         <option value="$PROJECT_DIR$/web/ResumeViewList.jsp" />
         <option value="$PROJECT_DIR$/src/controller/ResumeServlet.java" />
         <option value="$PROJECT_DIR$/src/controller/command/impl/GetResumeViewListCommand.java" />
+        <option value="$PROJECT_DIR$/tests/service/impl/MyAspirantServiceTest.java" />
+        <option value="$PROJECT_DIR$/src/service/JobVacancyService.java" />
+        <option value="$PROJECT_DIR$/src/service/impl/MyJobVacancyService.java" />
+        <option value="$PROJECT_DIR$/src/domain/JobVacancy.java" />
+        <option value="$PROJECT_DIR$/tests/service/impl/MyJobVacancyServiceTests.java" />
+        <option value="$PROJECT_DIR$/src/domain/Company.java" />
+        <option value="$PROJECT_DIR$/src/service/impl/MyCompanyService.java" />
+        <option value="$PROJECT_DIR$/src/service/fake/JobVacancyDaoFake.java" />
+        <option value="$PROJECT_DIR$/src/service/fake/CompanyDaoFake.java" />
+        <option value="$PROJECT_DIR$/tests/service/impl/MyCompanyServiceTests.java" />
+        <option value="$PROJECT_DIR$/src/service/utils/CompanyService.java" />
+        <option value="$PROJECT_DIR$/src/service/AspirantService.java" />
+        <option value="$PROJECT_DIR$/src/domain/Invitation.java" />
         <option value="$PROJECT_DIR$/src/service/impl/MyAspirantService.java" />
         <option value="$PROJECT_DIR$/src/service/impl/MyAspirantService.java" />
         <option value="$PROJECT_DIR$/src/service/ServiceFactory.java" />
+        <option value="$PROJECT_DIR$/src/service/fake/InvitationDaoFake.java" />
+        <option value="$PROJECT_DIR$/tests/service/impl/MyAspirantServiceTests.java" />
       </list>
     </option>
   </component>
@@ -300,6 +215,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -311,33 +228,6 @@
               <item name="tan_jobs" type="b2602c69:ProjectViewProjectNode" />
               <item name="SPP2" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tan_jobs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SPP2" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tan_jobs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SPP2" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-              <item name="command" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tan_jobs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SPP2" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-              <item name="command" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tan_jobs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SPP2" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="domain" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tan_jobs" type="b2602c69:ProjectViewProjectNode" />
@@ -362,35 +252,27 @@
             <path>
               <item name="tan_jobs" type="b2602c69:ProjectViewProjectNode" />
               <item name="SPP2" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="viewModel" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tan_jobs" type="b2602c69:ProjectViewProjectNode" />
               <item name="SPP2" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tan_jobs" type="b2602c69:ProjectViewProjectNode" />
               <item name="SPP2" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tan_jobs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SPP2" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="styles" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="AndroidView" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -409,17 +291,20 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="service.impl" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Hamelioniya\university\3 курс\СПП(Java)\Лаб№2-8\SPP2\web" />
-    </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Hamelioniya\university\3 курс\СПП(Java)\Лаб№2-8\SPP2\web" />
       <recent name="D:\Hamelioniya\university\3 курс\СПП(Java)\Лаб№2-8\SPP2\web\WEB-INF\images" />
       <recent name="D:\Hamelioniya\university\3 курс\СПП(Java)\Лаб№2-8\SPP2\web\WEB-INF" />
       <recent name="D:\Hamelioniya\university\3 курс\СПП(Java)\Лаб№2-8\SPP2\web\WEB-INF\styles" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="service" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Hamelioniya\university\3 курс\СПП(Java)\Лаб№2-8\SPP2\web" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -434,8 +319,28 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat">
-    <configuration name="MyAspirantServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.All in tan_jobs">
+    <configuration name="All in tan_jobs" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="tan_jobs" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="MyAspirantServiceTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="service.impl.*" />
@@ -446,7 +351,7 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="service.impl" />
-      <option name="MAIN_CLASS_NAME" value="service.impl.MyAspirantServiceTest" />
+      <option name="MAIN_CLASS_NAME" value="service.impl.MyAspirantServiceTests" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -460,7 +365,7 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="MyAspirantServiceTest.getAllAspirantResumeView_emailCareerObjective_resumeReturned" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MyCompanyServiceTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="service.impl.*" />
@@ -471,9 +376,9 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="service.impl" />
-      <option name="MAIN_CLASS_NAME" value="service.impl.MyAspirantServiceTest" />
-      <option name="METHOD_NAME" value="getAllAspirantResumeView_emailCareerObjective_resumeReturned" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="service.impl.MyCompanyServiceTests" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -485,7 +390,7 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="MyAspirantServiceTest.getAspirantResumeView_nullEmptyWhitespaceArgs_throwsIllegalArgumentException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MyJobVacancyServiceTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="service.impl.*" />
@@ -496,9 +401,9 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="service.impl" />
-      <option name="MAIN_CLASS_NAME" value="service.impl.MyAspirantServiceTest" />
-      <option name="METHOD_NAME" value="getAspirantResumeView_nullEmptyWhitespaceArgs_throwsIllegalArgumentException" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="service.impl.MyJobVacancyServiceTests" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -510,7 +415,7 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="MyAspirantServiceTest.updateAspirantResumeDate_notExistingResume_throwsResumeNotFoundException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MyJobVacancyServiceTests.addJobVacancy_jobVacancy_addedJobVacancy" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="service.impl.*" />
@@ -521,33 +426,8 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="service.impl" />
-      <option name="MAIN_CLASS_NAME" value="service.impl.MyAspirantServiceTest" />
-      <option name="METHOD_NAME" value="updateAspirantResumeDate_notExistingResume_throwsResumeNotFoundException" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
-    <configuration name="MyAspirantServiceTest.updateAspirantResumeDate_nullEmptyWhitespaceArgs_throwsIllegalArgumentException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="service.impl.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="tan_jobs" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="service.impl" />
-      <option name="MAIN_CLASS_NAME" value="service.impl.MyAspirantServiceTest" />
-      <option name="METHOD_NAME" value="updateAspirantResumeDate_nullEmptyWhitespaceArgs_throwsIllegalArgumentException" />
+      <option name="MAIN_CLASS_NAME" value="service.impl.MyJobVacancyServiceTests" />
+      <option name="METHOD_NAME" value="addJobVacancy_jobVacancy_addedJobVacancy" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -717,19 +597,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Tomcat Server.Tomcat" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.MyAspirantServiceTest.updateAspirantResumeDate_nullEmptyWhitespaceArgs_throwsIllegalArgumentException" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.MyAspirantServiceTest.updateAspirantResumeDate_notExistingResume_throwsResumeNotFoundException" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.MyAspirantServiceTest.getAllAspirantResumeView_emailCareerObjective_resumeReturned" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.MyAspirantServiceTest.getAspirantResumeView_nullEmptyWhitespaceArgs_throwsIllegalArgumentException" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.MyAspirantServiceTest" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.MyAspirantServiceTests" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.MyJobVacancyServiceTests.addJobVacancy_jobVacancy_addedJobVacancy" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.MyJobVacancyServiceTests" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.MyCompanyServiceTests" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.All in tan_jobs" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.MyAspirantServiceTest" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.MyAspirantServiceTest.getAspirantResumeView_nullEmptyWhitespaceArgs_throwsIllegalArgumentException" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.MyAspirantServiceTest.getAllAspirantResumeView_emailCareerObjective_resumeReturned" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.MyAspirantServiceTest.updateAspirantResumeDate_notExistingResume_throwsResumeNotFoundException" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.MyAspirantServiceTest.updateAspirantResumeDate_nullEmptyWhitespaceArgs_throwsIllegalArgumentException" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.All in tan_jobs" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.MyAspirantServiceTests" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.MyCompanyServiceTests" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.MyJobVacancyServiceTests" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.MyJobVacancyServiceTests.addJobVacancy_jobVacancy_addedJobVacancy" />
       </list>
     </recent_temporary>
   </component>
@@ -786,30 +666,19 @@
       <workItem from="1520411081790" duration="10996000" />
       <workItem from="1520578961772" duration="17181000" />
       <workItem from="1520676406816" duration="4503000" />
+      <workItem from="1520771056661" duration="12139000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="MyAspirantServiceTest - 2018.03.07 at 11h 36m 25s.xml">
+    <history-entry file="All_in_tan_jobs - 2018.03.11 at 18h 58m 53s.xml">
+      <configuration name="All in tan_jobs" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MyAspirantServiceTest - 2018.03.11 at 16h 09m 21s.xml">
       <configuration name="MyAspirantServiceTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MyAspirantServiceTest_getAllAspirantResumeView_emailCareerObjective_resumeReturned - 2018.03.06 at 23h 47m 28s.xml">
-      <configuration name="MyAspirantServiceTest.getAllAspirantResumeView_emailCareerObjective_resumeReturned" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MyAspirantServiceTest_getAllAspirantResumeView_emailCareerObjective_resumeReturned - 2018.03.06 at 23h 48m 00s.xml">
-      <configuration name="MyAspirantServiceTest.getAllAspirantResumeView_emailCareerObjective_resumeReturned" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MyAspirantServiceTest_getAllAspirantResumeView_emailCareerObjective_resumeReturned - 2018.03.06 at 23h 48m 47s.xml">
-      <configuration name="MyAspirantServiceTest.getAllAspirantResumeView_emailCareerObjective_resumeReturned" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MyAspirantServiceTest_getAllAspirantResumeView_emailCareerObjective_resumeReturned - 2018.03.06 at 23h 49m 35s.xml">
-      <configuration name="MyAspirantServiceTest.getAllAspirantResumeView_emailCareerObjective_resumeReturned" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MyAspirantServiceTest_getAllAspirantResumeView_emailCareerObjective_resumeReturned - 2018.03.06 at 23h 49m 58s.xml">
-      <configuration name="MyAspirantServiceTest.getAllAspirantResumeView_emailCareerObjective_resumeReturned" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MyAspirantServiceTest_getAllAspirantResumeView_emailCareerObjective_resumeReturned - 2018.03.06 at 23h 50m 27s.xml">
-      <configuration name="MyAspirantServiceTest.getAllAspirantResumeView_emailCareerObjective_resumeReturned" configurationId="JUnit" />
+    <history-entry file="MyAspirantServiceTest_getAllAspirantJobVacancy_returnedAllAspirantJobVacancy - 2018.03.11 at 15h 49m 47s.xml">
+      <configuration name="MyAspirantServiceTest.getAllAspirantJobVacancy_returnedAllAspirantJobVacancy" configurationId="JUnit" />
     </history-entry>
     <history-entry file="MyAspirantServiceTest_getAspirantResumeView_nullEmptyWhitespaceArgs_throwsIllegalArgumentException - 2018.03.06 at 23h 50m 37s.xml">
       <configuration name="MyAspirantServiceTest.getAspirantResumeView_nullEmptyWhitespaceArgs_throwsIllegalArgumentException" configurationId="JUnit" />
@@ -820,9 +689,21 @@
     <history-entry file="MyAspirantServiceTest_updateAspirantResumeDate_nullEmptyWhitespaceArgs_throwsIllegalArgumentException - 2018.03.06 at 23h 28m 17s.xml">
       <configuration name="MyAspirantServiceTest.updateAspirantResumeDate_nullEmptyWhitespaceArgs_throwsIllegalArgumentException" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="MyAspirantServiceTests - 2018.03.11 at 18h 58m 45s.xml">
+      <configuration name="MyAspirantServiceTests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MyCompanyServiceTests - 2018.03.11 at 17h 04m 14s.xml">
+      <configuration name="MyCompanyServiceTests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MyJobVacancyServiceTests - 2018.03.11 at 16h 26m 59s.xml">
+      <configuration name="MyJobVacancyServiceTests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MyJobVacancyServiceTests_addJobVacancy_jobVacancy_addedJobVacancy - 2018.03.11 at 16h 26m 53s.xml">
+      <configuration name="MyJobVacancyServiceTests.addJobVacancy_jobVacancy_addedJobVacancy" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="181162000" />
+    <option name="totallyTimeSpent" value="193301000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -834,31 +715,33 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17377399" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.272578" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3234811" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3228261" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3497537" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34891304" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.00821018" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2685325" sideWeight="0.7766831" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27132195" sideWeight="0.7766831" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24054463" sideWeight="0.22331691" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17397882" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32826087" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.272578" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -867,7 +750,6 @@
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" x="92" y="92" width="1182" height="544" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32840723" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -965,154 +847,8 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/dao/MysqlConnect.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="44" column="57" lean-forward="false" selection-start-line="44" selection-start-column="57" selection-end-line="44" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/impl/DbAspirantProfileDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="116" column="0" lean-forward="false" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/favicon.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/viewModel/Aspirant.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1007">
-          <caret line="142" column="41" lean-forward="true" selection-start-line="142" selection-start-column="41" selection-end-line="142" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/service/fake/AspirantProfileDaoFake.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="692">
-          <caret line="64" column="5" lean-forward="true" selection-start-line="13" selection-start-column="4" selection-end-line="64" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/service/exception/AspirantProfileNotFoundException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="6" lean-forward="false" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/service/exception/ResumeNotFoundException.java" />
-    <entry file="file://$PROJECT_DIR$/src/service/AspirantService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="692">
-          <caret line="145" column="70" lean-forward="false" selection-start-line="145" selection-start-column="70" selection-end-line="145" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/service/utils/ArgumentVerificationService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="9" lean-forward="true" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/impl/DbAspirantAccountDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1301">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/impl/DbResumeDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding>
-            <marker date="1520234872773" expanded="true" signature="630:650" ph="SELECT * FRO... Resume" />
-            <marker date="1520234872773" expanded="true" signature="2415:2905" ph="UPDATE Resum... " />
-            <marker date="1520234872773" expanded="true" signature="3263:3291" ph="DELETE FROM " />
-            <marker date="1520234872773" expanded="true" signature="3650:4154" ph="INSERT INTO Resume... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/79170a09/3a72b50c-c309-495d-b0e8-7beff6bdd944/jobs_db.resume">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/79170a09/3a72b50c-c309-495d-b0e8-7beff6bdd944/jobs_db.company">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/79170a09/3a72b50c-c309-495d-b0e8-7beff6bdd944/jobs_db.aspirant">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/79170a09/3a72b50c-c309-495d-b0e8-7beff6bdd944/jobs_db.aspirant_data">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/service/impl/MyAspirantServiceTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-329">
-          <caret line="336" column="9" lean-forward="true" selection-start-line="336" selection-start-column="9" selection-end-line="336" selection-end-column="9" />
-          <folding>
-            <element signature="method#setUp#0;class#MyAspirantServiceTest#0" expanded="false" />
-            <element signature="method#tearDown#0;class#MyAspirantServiceTest#0" expanded="false" />
-            <element signature="method#register_aspirant_aspirantAdded#0;class#MyAspirantServiceTest#0" expanded="false" />
-            <element signature="method#register_nullAspirant_throwsIllegalArgumentException#0;class#MyAspirantServiceTest#0" expanded="false" />
-            <element signature="method#register_registeredAspirant_throwsAspirantAlreadyExistsException#0;class#MyAspirantServiceTest#0" expanded="false" />
-            <element signature="method#isValidCredentials_nullEmptyWhitespaceArgs_throwsIllegalArgumentException#0;class#MyAspirantServiceTest#0" expanded="false" />
-            <element signature="method#isValidCredentials_notExistingAspirant_throwsAspirantNotRegisteredException#0;class#MyAspirantServiceTest#0" expanded="false" />
-            <element signature="method#isValidCredentials_existingAspirant_trueReturned#0;class#MyAspirantServiceTest#0" expanded="false" />
-            <element signature="method#isValidCredentials_existingAspirant_falseReturned#0;class#MyAspirantServiceTest#0" expanded="false" />
-            <element signature="method#getAspirantAccountByEmail_email_aspirantAccountReturned#0;class#MyAspirantServiceTest#0" expanded="false" />
-            <element signature="method#getAspirantAccountByEmail_nullEmptyWhitespaceArgs_throwsIllegalArgumentException#0;class#MyAspirantServiceTest#0" expanded="false" />
-            <element signature="method#addAspirantProfile_nullEmptyWhitespaceArgs_throwsIllegalArgumentException#0;class#MyAspirantServiceTest#0" expanded="false" />
-            <element signature="method#addAspirantProfile_aspirantProfile_aspirantProfileAdded#0;class#MyAspirantServiceTest#0" expanded="false" />
-            <element signature="method#getAspirantProfile_nullEmptyWhitespaceArgs_throwsIllegalArgumentException#0;class#MyAspirantServiceTest#0" expanded="false" />
-            <element signature="method#getAspirantProfile_aspirantProfile_aspirantProfileReturned#0;class#MyAspirantServiceTest#0" expanded="false" />
-            <element signature="method#updateAspirantProfile_nullEmptyWhitespaceArgs_throwsIllegalArgumentException#0;class#MyAspirantServiceTest#0" expanded="false" />
-            <element signature="method#updateAspirantProfile_notExistingProfile_throwsAspirantProfileNotFoundException#0;class#MyAspirantServiceTest#0" expanded="false" />
-            <element signature="method#updateAspirantProfile_aspirantProfile_aspirantProfileUpdated#0;class#MyAspirantServiceTest#0" expanded="false" />
-            <element signature="method#addAspirantResume_nullEmptyWhitespaceArgs_throwsIllegalArgumentException#0;class#MyAspirantServiceTest#0" expanded="false" />
-            <element signature="method#addAspirantResume_resume_resumeAdded#0;class#MyAspirantServiceTest#0" expanded="false" />
-            <element signature="method#getAllAspirantResume_nullEmptyWhitespaceArgs_throwsIllegalArgumentException#0;class#MyAspirantServiceTest#0" expanded="false" />
-            <element signature="method#getAllAspirantResume_email_resumeReturned#0;class#MyAspirantServiceTest#0" expanded="false" />
-            <element signature="method#getAspirantResume_nullEmptyWhitespaceArgs_throwsIllegalArgumentException#0;class#MyAspirantServiceTest#0" expanded="false" />
-            <element signature="method#getAspirantResume_emailCareerObjective_resumeReturned#0;class#MyAspirantServiceTest#0" expanded="false" />
-            <element signature="method#getAspirantResume_notCreatedResume_resumeNull#0;class#MyAspirantServiceTest#0" expanded="false" />
-            <element signature="method#deleteAspirantResume_nullEmptyWhitespaceArgs_throwsIllegalArgumentException#0;class#MyAspirantServiceTest#0" expanded="false" />
-            <element signature="method#deleteAspirantResume_emailCareerObjective_resumeReturned#0;class#MyAspirantServiceTest#0" expanded="false" />
-            <element signature="method#updateAspirantResume_nullEmptyWhitespaceArgs_throwsIllegalArgumentException#0;class#MyAspirantServiceTest#0" expanded="false" />
-            <element signature="method#updateAspirantResume_notExistingResume_throwsResumeNotFoundException#0;class#MyAspirantServiceTest#0" expanded="false" />
-            <element signature="method#updateAspirantResume_emailCareerObjective_resumeReturned#0;class#MyAspirantServiceTest#0" expanded="false" />
-            <element signature="method#updateAspirantResumeDate_nullEmptyWhitespaceArgs_throwsIllegalArgumentException#0;class#MyAspirantServiceTest#0" expanded="false" />
-            <element signature="method#updateAspirantResumeDate_notExistingResume_throwsResumeNotFoundException#0;class#MyAspirantServiceTest#0" expanded="false" />
-            <element signature="method#getAllAspirantResumeView_nullEmptyWhitespaceArgs_throwsIllegalArgumentException#0;class#MyAspirantServiceTest#0" expanded="false" />
-            <element signature="method#getAllAspirantResumeView_emailCareerObjective_resumeReturned#0;class#MyAspirantServiceTest#0" expanded="false" />
-            <element signature="method#getAspirantResumeView_nullEmptyWhitespaceArgs_throwsIllegalArgumentException#0;class#MyAspirantServiceTest#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="das://table:/79170a09/3a72b50c-c309-495d-b0e8-7beff6bdd944/jobs_db.aspirant" />
+    <entry file="das://table:/79170a09/3a72b50c-c309-495d-b0e8-7beff6bdd944/jobs_db.aspirant_data" />
     <entry file="file://$PROJECT_DIR$/web/ResumeEdit.jsp" />
     <entry file="file://$PROJECT_DIR$/src/dao/DAOFactory.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1239,14 +975,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/service/fake/AspirantResumeViewDaoFake.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/service/fake/AspirantResumeDaoFake.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="629">
@@ -1305,7 +1033,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/CommandProvider.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-60">
+        <state relative-caret-position="440">
           <caret line="26" column="69" lean-forward="false" selection-start-line="26" selection-start-column="69" selection-end-line="26" selection-end-column="69" />
           <folding />
         </state>
@@ -1313,7 +1041,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/ResumeListDisplay.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
+        <state relative-caret-position="1240">
           <caret line="62" column="47" lean-forward="false" selection-start-line="62" selection-start-column="47" selection-end-line="62" selection-end-column="47" />
           <folding />
         </state>
@@ -1321,30 +1049,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/domain/Resume.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
+        <state relative-caret-position="1500">
           <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
           <folding>
-            <element signature="e#2754#2755#0" expanded="true" />
+            <element signature="e#2754#2755#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/viewModel/ResumeView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-153">
-          <caret line="9" column="26" lean-forward="true" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+        <state relative-caret-position="180">
+          <caret line="9" column="26" lean-forward="false" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
           <folding>
-            <element signature="e#548#549#0" expanded="true" />
-            <element signature="e#575#576#0" expanded="true" />
-            <element signature="e#708#709#0" expanded="true" />
-            <element signature="e#742#743#0" expanded="true" />
+            <element signature="e#548#549#0" expanded="false" />
+            <element signature="e#575#576#0" expanded="false" />
+            <element signature="e#708#709#0" expanded="false" />
+            <element signature="e#742#743#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/ResumeUpdate.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
+        <state relative-caret-position="2960">
           <caret line="148" column="18" lean-forward="false" selection-start-line="148" selection-start-column="18" selection-end-line="148" selection-end-column="18" />
           <folding />
         </state>
@@ -1352,7 +1080,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/ResumeViewList.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
+        <state relative-caret-position="1200">
           <caret line="60" column="48" lean-forward="false" selection-start-line="56" selection-start-column="16" selection-end-line="64" selection-end-column="28" />
           <folding />
         </state>
@@ -1360,40 +1088,234 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/ResumeServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-142">
-          <caret line="90" column="21" lean-forward="true" selection-start-line="90" selection-start-column="21" selection-end-line="90" selection-end-column="21" />
+        <state relative-caret-position="1440">
+          <caret line="90" column="21" lean-forward="false" selection-start-line="90" selection-start-column="21" selection-end-line="90" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/command/impl/GetResumeViewListCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="20" column="47" lean-forward="true" selection-start-line="20" selection-start-column="47" selection-end-line="20" selection-end-column="47" />
+        <state relative-caret-position="260">
+          <caret line="20" column="47" lean-forward="false" selection-start-line="20" selection-start-column="47" selection-end-line="20" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/service/fake/AspirantResumeViewDaoFake.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="692">
+          <caret line="64" column="5" lean-forward="true" selection-start-line="13" selection-start-column="4" selection-end-line="64" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/domain/JobVacancy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/service/impl/MyJobVacancyService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="14" column="38" lean-forward="true" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#MyJobVacancyService#0;class#MyJobVacancyService#0" expanded="false" />
+            <element signature="method#getAllAspirantJobVacancy#0;class#MyJobVacancyService#0" expanded="false" />
+            <element signature="method#getJobVacancy#0;class#MyJobVacancyService#0" expanded="false" />
+            <element signature="method#addJobVacancy#0;class#MyJobVacancyService#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/domain/Company.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/service/impl/MyCompanyService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="23" column="45" lean-forward="false" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#MyCompanyService#0;class#MyCompanyService#0" expanded="false" />
+            <element signature="method#getAllCompanies#0;class#MyCompanyService#0" expanded="false" />
+            <element signature="method#getCompanyById#0;class#MyCompanyService#0" expanded="false" />
+            <element signature="method#getCompanyByName#0;class#MyCompanyService#0" expanded="false" />
+            <element signature="method#addCompany#0;class#MyCompanyService#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/service/CompanyService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/service/impl/MyAspirantService.java">
+    <entry file="file://$PROJECT_DIR$/src/service/AspirantService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="35" column="16" lean-forward="true" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
+        <state relative-caret-position="672">
+          <caret line="165" column="12" lean-forward="false" selection-start-line="165" selection-start-column="12" selection-end-line="165" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/domain/Invitation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="16" column="21" lean-forward="true" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/service/JobVacancyService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="26" column="4" lean-forward="false" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="4" />
           <folding>
-            <element signature="method#register#0;class#MyAspirantService#0" expanded="false" />
-            <element signature="method#getAspirantAccountByEmail#0;class#MyAspirantService#0" expanded="false" />
-            <element signature="method#getAllAspirantResume#0;class#MyAspirantService#0" expanded="false" />
-            <element signature="method#updateAspirantResumeDate#0;class#MyAspirantService#0" expanded="false" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/service/ServiceFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="27" column="30" lean-forward="true" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
+        <state relative-caret-position="480">
+          <caret line="35" column="60" lean-forward="false" selection-start-line="35" selection-start-column="60" selection-end-line="35" selection-end-column="60" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/service/impl/MyCompanyServiceTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="21" column="58" lean-forward="true" selection-start-line="20" selection-start-column="8" selection-end-line="21" selection-end-column="58" />
+          <folding>
+            <element signature="method#tearDown#0;class#MyCompanyServiceTests#0" expanded="false" />
+            <element signature="method#getAllCompanies_returnedAllCompanies#0;class#MyCompanyServiceTests#0" expanded="false" />
+            <element signature="method#addJobVacancy_jobVacancy_addedJobVacancy#0;class#MyCompanyServiceTests#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/service/impl/MyJobVacancyServiceTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="22" column="67" lean-forward="true" selection-start-line="21" selection-start-column="8" selection-end-line="22" selection-end-column="67" />
+          <folding>
+            <element signature="method#tearDown#0;class#MyJobVacancyServiceTests#0" expanded="false" />
+            <element signature="method#getAllAspirantJobVacancy_returnedAllAspirantJobVacancy#0;class#MyJobVacancyServiceTests#0" expanded="false" />
+            <element signature="method#addJobVacancy_jobVacancy_addedJobVacancy#0;class#MyJobVacancyServiceTests#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/service/fake/CompanyDaoFake.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="692">
+          <caret line="63" column="5" lean-forward="true" selection-start-line="12" selection-start-column="4" selection-end-line="63" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/service/fake/JobVacancyDaoFake.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="43" column="0" lean-forward="true" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/service/fake/InvitationDaoFake.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="14" column="28" lean-forward="false" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/service/impl/MyAspirantServiceTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1060">
+          <caret line="96" column="0" lean-forward="true" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
+          <folding>
+            <element signature="method#setUp#0;class#MyAspirantServiceTests#0" expanded="false" />
+            <element signature="method#tearDown#0;class#MyAspirantServiceTests#0" expanded="false" />
+            <element signature="method#register_aspirant_aspirantAdded#0;class#MyAspirantServiceTests#0" expanded="false" />
+            <element signature="method#register_nullAspirant_throwsIllegalArgumentException#0;class#MyAspirantServiceTests#0" expanded="false" />
+            <element signature="method#register_registeredAspirant_throwsAspirantAlreadyExistsException#0;class#MyAspirantServiceTests#0" expanded="false" />
+            <element signature="method#isValidCredentials_nullEmptyWhitespaceArgs_throwsIllegalArgumentException#0;class#MyAspirantServiceTests#0" expanded="false" />
+            <element signature="method#isValidCredentials_notExistingAspirant_throwsAspirantNotRegisteredException#0;class#MyAspirantServiceTests#0" expanded="false" />
+            <element signature="method#isValidCredentials_existingAspirant_trueReturned#0;class#MyAspirantServiceTests#0" expanded="false" />
+            <element signature="method#isValidCredentials_existingAspirant_falseReturned#0;class#MyAspirantServiceTests#0" expanded="false" />
+            <element signature="method#getAspirantAccountByEmail_email_aspirantAccountReturned#0;class#MyAspirantServiceTests#0" expanded="false" />
+            <element signature="method#getAspirantAccountByEmail_nullEmptyWhitespaceArgs_throwsIllegalArgumentException#0;class#MyAspirantServiceTests#0" expanded="false" />
+            <element signature="method#addAspirantProfile_nullEmptyWhitespaceArgs_throwsIllegalArgumentException#0;class#MyAspirantServiceTests#0" expanded="false" />
+            <element signature="method#addAspirantProfile_aspirantProfile_aspirantProfileAdded#0;class#MyAspirantServiceTests#0" expanded="false" />
+            <element signature="method#getAspirantProfile_nullEmptyWhitespaceArgs_throwsIllegalArgumentException#0;class#MyAspirantServiceTests#0" expanded="false" />
+            <element signature="method#getAspirantProfile_aspirantProfile_aspirantProfileReturned#0;class#MyAspirantServiceTests#0" expanded="false" />
+            <element signature="method#updateAspirantProfile_nullEmptyWhitespaceArgs_throwsIllegalArgumentException#0;class#MyAspirantServiceTests#0" expanded="false" />
+            <element signature="method#updateAspirantProfile_notExistingProfile_throwsAspirantProfileNotFoundException#0;class#MyAspirantServiceTests#0" expanded="false" />
+            <element signature="method#updateAspirantProfile_aspirantProfile_aspirantProfileUpdated#0;class#MyAspirantServiceTests#0" expanded="false" />
+            <element signature="method#addAspirantResume_nullEmptyWhitespaceArgs_throwsIllegalArgumentException#0;class#MyAspirantServiceTests#0" expanded="false" />
+            <element signature="method#addAspirantResume_resume_resumeAdded#0;class#MyAspirantServiceTests#0" expanded="false" />
+            <element signature="method#getAllAspirantResume_nullEmptyWhitespaceArgs_throwsIllegalArgumentException#0;class#MyAspirantServiceTests#0" expanded="false" />
+            <element signature="method#getAllAspirantResume_email_resumeReturned#0;class#MyAspirantServiceTests#0" expanded="false" />
+            <element signature="method#getAspirantResume_nullEmptyWhitespaceArgs_throwsIllegalArgumentException#0;class#MyAspirantServiceTests#0" expanded="false" />
+            <element signature="method#getAspirantResume_emailCareerObjective_resumeReturned#0;class#MyAspirantServiceTests#0" expanded="false" />
+            <element signature="method#getAspirantResume_notCreatedResume_resumeNull#0;class#MyAspirantServiceTests#0" expanded="false" />
+            <element signature="method#deleteAspirantResume_nullEmptyWhitespaceArgs_throwsIllegalArgumentException#0;class#MyAspirantServiceTests#0" expanded="false" />
+            <element signature="method#deleteAspirantResume_emailCareerObjective_resumeReturned#0;class#MyAspirantServiceTests#0" expanded="false" />
+            <element signature="method#updateAspirantResume_nullEmptyWhitespaceArgs_throwsIllegalArgumentException#0;class#MyAspirantServiceTests#0" expanded="false" />
+            <element signature="method#updateAspirantResume_notExistingResume_throwsResumeNotFoundException#0;class#MyAspirantServiceTests#0" expanded="false" />
+            <element signature="method#updateAspirantResume_emailCareerObjective_resumeReturned#0;class#MyAspirantServiceTests#0" expanded="false" />
+            <element signature="method#updateAspirantResumeDate_nullEmptyWhitespaceArgs_throwsIllegalArgumentException#0;class#MyAspirantServiceTests#0" expanded="false" />
+            <element signature="method#updateAspirantResumeDate_notExistingResume_throwsResumeNotFoundException#0;class#MyAspirantServiceTests#0" expanded="false" />
+            <element signature="method#getAllAspirantResumeView_nullEmptyWhitespaceArgs_throwsIllegalArgumentException#0;class#MyAspirantServiceTests#0" expanded="false" />
+            <element signature="method#getAllAspirantResumeView_emailCareerObjective_resumeReturned#0;class#MyAspirantServiceTests#0" expanded="false" />
+            <element signature="method#getAspirantResumeView_nullEmptyWhitespaceArgs_throwsIllegalArgumentException#0;class#MyAspirantServiceTests#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/service/impl/MyAspirantService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="386" column="13" lean-forward="true" selection-start-line="386" selection-start-column="13" selection-end-line="386" selection-end-column="13" />
+          <folding>
+            <element signature="method#MyAspirantService#0;class#MyAspirantService#0" expanded="false" />
+            <element signature="method#register#0;class#MyAspirantService#0" expanded="false" />
+            <element signature="method#isValidCredentials#0;class#MyAspirantService#0" expanded="false" />
+            <element signature="method#getAspirantAccountByEmail#0;class#MyAspirantService#0" expanded="false" />
+            <element signature="method#addAspirantProfile#0;class#MyAspirantService#0" expanded="false" />
+            <element signature="method#getAspirantProfile#0;class#MyAspirantService#0" expanded="false" />
+            <element signature="method#updateAspirantProfile#0;class#MyAspirantService#0" expanded="false" />
+            <element signature="method#addAspirantResume#0;class#MyAspirantService#0" expanded="false" />
+            <element signature="method#getAllAspirantResume#0;class#MyAspirantService#0" expanded="false" />
+            <element signature="method#getAspirantResume#0;class#MyAspirantService#0" expanded="false" />
+            <element signature="method#deleteAspirantResume#0;class#MyAspirantService#0" expanded="false" />
+            <element signature="method#updateAspirantResume#0;class#MyAspirantService#0" expanded="false" />
+            <element signature="method#updateAspirantResumeDate#0;class#MyAspirantService#0" expanded="false" />
+            <marker date="1520783658867" expanded="false" signature="10652:11522" ph="{...}" />
+            <marker date="1520783658867" expanded="false" signature="12582:12893" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>

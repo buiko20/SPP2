@@ -11,6 +11,9 @@ public class Company implements Comparable<Company> {
     private String mailingAddress;
     private String email;
 
+    public Company() {
+    }
+
     /**
      * Initializes a new instance of the {@link Company model}
      * @param name company name

@@ -16,6 +16,9 @@ public class Invitation implements Comparable<Invitation> {
     private int hrManagerId;
     private int companyId;
 
+    public Invitation() {
+    }
+
     /**
      * Initialize a new instance of the {@link Invitation model}
      * @param date date of the interview for which the invitation was sent

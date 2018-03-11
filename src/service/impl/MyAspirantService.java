@@ -3,9 +3,14 @@ package service.impl;
 import dao.DAO;
 import domain.AspirantAccount;
 import domain.AspirantProfile;
+import domain.Company;
+import domain.Invitation;
+import domain.JobVacancy;
 import domain.Resume;
 import domain.ResumeView;
 import service.AspirantService;
+import service.CompanyService;
+import service.JobVacancyService;
 import service.exception.AspirantAlreadyExistsException;
 import service.exception.AspirantNotRegisteredException;
 import service.exception.AspirantProfileNotFoundException;
@@ -24,23 +29,35 @@ public class MyAspirantService implements AspirantService {
     private DAO<AspirantProfile> aspirantProfileDAO;
     private DAO<Resume> resumeDAO;
     private DAO<ResumeView> resumeViewDAO;
+    private DAO<Invitation> invitationDAO;
+    private JobVacancyService jobVacancyService;
+    private CompanyService companyService;
 
-    public MyAspirantService(DAO<AspirantAccount> aspirantAccountDao, DAO<AspirantProfile> aspirantProfileDAO, DAO<Resume> resumeDAO,
-                             DAO<ResumeView> resumeViewDAO) throws IllegalArgumentException {
+    public MyAspirantService(DAO<AspirantAccount> aspirantAccountDao, DAO<AspirantProfile> aspirantProfileDAO,
+                             DAO<Resume> resumeDAO, DAO<ResumeView> resumeViewDAO, DAO<Invitation> invitationDAO,
+                             JobVacancyService jobVacancyService, CompanyService companyService)
+            throws IllegalArgumentException {
 
         ArgumentVerificationService.verifyNull(aspirantAccountDao, "aspirantAccountDao");
         ArgumentVerificationService.verifyNull(aspirantProfileDAO, "aspirantProfileDAO");
         ArgumentVerificationService.verifyNull(resumeDAO, "resumeDAO");
         ArgumentVerificationService.verifyNull(resumeViewDAO, "resumeViewDAO");
+        ArgumentVerificationService.verifyNull(invitationDAO, "invitationDAO");
+        ArgumentVerificationService.verifyNull(jobVacancyService, "jobVacancyService");
+        ArgumentVerificationService.verifyNull(companyService, "companyService");
 
         this.aspirantAccountDao = aspirantAccountDao;
         this.aspirantProfileDAO = aspirantProfileDAO;
         this.resumeDAO = resumeDAO;
         this.resumeViewDAO = resumeViewDAO;
+        this.invitationDAO = invitationDAO;
+        this.jobVacancyService = jobVacancyService;
+        this.companyService = companyService;
     }
 
     @Override
-    public void register(AspirantAccount aspirantAccount) throws IllegalArgumentException, AspirantAlreadyExistsException, ServiceException {
+    public void register(AspirantAccount aspirantAccount)
+            throws IllegalArgumentException, AspirantAlreadyExistsException, ServiceException {
 
         ArgumentVerificationService.verifyNull(aspirantAccount, "aspirantAccount");
 
@@ -62,7 +79,8 @@ public class MyAspirantService implements AspirantService {
     }
 
     @Override
-    public boolean isValidCredentials(String email, String password) throws IllegalArgumentException, AspirantNotRegisteredException, ServiceException {
+    public boolean isValidCredentials(String email, String password)
+            throws IllegalArgumentException, AspirantNotRegisteredException, ServiceException {
 
         ArgumentVerificationService.verifyString(email, "email");
         ArgumentVerificationService.verifyString(password, "password");
@@ -84,7 +102,8 @@ public class MyAspirantService implements AspirantService {
     }
 
     @Override
-    public AspirantAccount getAspirantAccountByEmail(String email) throws IllegalArgumentException, ServiceException {
+    public AspirantAccount getAspirantAccountByEmail(String email)
+            throws IllegalArgumentException, ServiceException {
 
         ArgumentVerificationService.verifyString(email, "email");
 
@@ -101,7 +120,8 @@ public class MyAspirantService implements AspirantService {
     }
 
     @Override
-    public void addAspirantProfile(String email, AspirantProfile aspirantProfile) throws IllegalArgumentException, ServiceException {
+    public void addAspirantProfile(String email, AspirantProfile aspirantProfile)
+            throws IllegalArgumentException, ServiceException {
 
         ArgumentVerificationService.verifyString(email, "email");
         ArgumentVerificationService.verifyNull(aspirantProfile, "aspirantProfile");
@@ -124,7 +144,8 @@ public class MyAspirantService implements AspirantService {
     }
 
     @Override
-    public AspirantProfile getAspirantProfile(String email) throws IllegalArgumentException, ServiceException {
+    public AspirantProfile getAspirantProfile(String email)
+            throws IllegalArgumentException, ServiceException {
 
         ArgumentVerificationService.verifyString(email, "email");
 
@@ -167,7 +188,8 @@ public class MyAspirantService implements AspirantService {
     }
 
     @Override
-    public void addAspirantResume(String email, Resume resume) throws IllegalArgumentException, ServiceException {
+    public void addAspirantResume(String email, Resume resume)
+            throws IllegalArgumentException, ServiceException {
 
         ArgumentVerificationService.verifyString(email, "email");
         ArgumentVerificationService.verifyNull(resume, "resume");
@@ -181,7 +203,8 @@ public class MyAspirantService implements AspirantService {
     }
 
     @Override
-    public ArrayList<Resume> getAllAspirantResume(String email) throws IllegalArgumentException, ServiceException {
+    public ArrayList<Resume> getAllAspirantResume(String email)
+            throws IllegalArgumentException, ServiceException {
 
         ArgumentVerificationService.verifyString(email, "email");
 
@@ -208,7 +231,8 @@ public class MyAspirantService implements AspirantService {
     }
 
     @Override
-    public Resume getAspirantResume(String email, String careerObjective) throws IllegalArgumentException, ServiceException {
+    public Resume getAspirantResume(String email, String careerObjective)
+            throws IllegalArgumentException, ServiceException {
 
         ArgumentVerificationService.verifyString(email, "email");
         ArgumentVerificationService.verifyString(careerObjective, "careerObjective");
@@ -233,7 +257,8 @@ public class MyAspirantService implements AspirantService {
     }
 
     @Override
-    public void deleteAspirantResume(String email, String careerObjective) throws IllegalArgumentException, ServiceException {
+    public void deleteAspirantResume(String email, String careerObjective)
+            throws IllegalArgumentException, ServiceException {
 
         ArgumentVerificationService.verifyString(email, "email");
         ArgumentVerificationService.verifyString(careerObjective, "careerObjective");
@@ -252,7 +277,8 @@ public class MyAspirantService implements AspirantService {
     }
 
     @Override
-    public void updateAspirantResume(String email, String careerObjective, Resume resume) throws IllegalArgumentException, ResumeNotFoundException, ServiceException {
+    public void updateAspirantResume(String email, String careerObjective, Resume resume)
+            throws IllegalArgumentException, ResumeNotFoundException, ServiceException {
 
         ArgumentVerificationService.verifyString(email, "email");
         ArgumentVerificationService.verifyString(careerObjective, "careerObjective");
@@ -277,7 +303,8 @@ public class MyAspirantService implements AspirantService {
     }
 
     @Override
-    public ArrayList<ResumeView> getAllAspirantResumeView(String email, String careerObjective) throws IllegalArgumentException, ResumeNotFoundException, ServiceException {
+    public ArrayList<ResumeView> getAllAspirantResumeViews(String email, String careerObjective)
+            throws IllegalArgumentException, ResumeNotFoundException, ServiceException {
 
         ArgumentVerificationService.verifyString(email, "email");
         ArgumentVerificationService.verifyString(careerObjective, "careerObjective");
@@ -309,7 +336,8 @@ public class MyAspirantService implements AspirantService {
     }
 
     @Override
-    public void updateAspirantResumeDate(String email, String careerObjective, Date newDate) throws IllegalArgumentException, ResumeNotFoundException, ServiceException {
+    public void updateAspirantResumeDate(String email, String careerObjective, Date newDate)
+            throws IllegalArgumentException, ResumeNotFoundException, ServiceException {
 
         ArgumentVerificationService.verifyString(email, "email");
         ArgumentVerificationService.verifyString(careerObjective, "careerObjective");
@@ -331,5 +359,44 @@ public class MyAspirantService implements AspirantService {
             throw new ServiceException(e.getMessage(), e);
         }
 
+    }
+
+    @Override
+    public ArrayList<Invitation> getAllAspirantInvitations(String email)
+            throws IllegalArgumentException, ServiceException {
+
+        ArgumentVerificationService.verifyString(email, "email");
+
+        try {
+            List<Invitation> invitations = this.invitationDAO.getAll();
+            return new ArrayList<>(invitations);
+        } catch (Exception e) {
+            throw new ServiceException(e.getMessage(), e);
+        }
+    }
+
+    @Override
+    public Invitation getInvitation(String email, String careerObjective, String jobVacancyName, String companyName)
+            throws IllegalArgumentException, ServiceException {
+
+        ArgumentVerificationService.verifyString(email, "email");
+        ArgumentVerificationService.verifyString(careerObjective, "careerObjective");
+        ArgumentVerificationService.verifyString(jobVacancyName, "jobVacancyName");
+        ArgumentVerificationService.verifyString(companyName, "companyName");
+
+        try {
+            Resume resume = this.getAspirantResume(email, careerObjective);
+            JobVacancy jobVacancy = this.jobVacancyService.getJobVacancy(jobVacancyName);
+            Company company = this.companyService.getCompanyByName(companyName);
+
+            Predicate<Invitation> predicate = i -> i.getResumeId() == resume.getId() &&
+                    i.getAspirantAccountId() == resume.getAspirantId() &&
+                    i.getJobVacancyId() == jobVacancy.getId() && i.getCompanyId() == company.getId();
+
+            return this.invitationDAO.getBy(predicate);
+
+        } catch (Exception e) {
+            throw new ServiceException(e.getMessage(), e);
+        }
     }
 }

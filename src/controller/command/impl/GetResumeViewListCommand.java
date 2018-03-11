@@ -20,7 +20,7 @@ public class GetResumeViewListCommand implements Command {
 
         ArrayList<viewModel.ResumeView> viewList = new ArrayList<>();
 
-        /*ArrayList<ResumeView> resumeViewList = aspirantService.getAllAspirantResumeView(requestData[0], requestData[1]);
+        /*ArrayList<ResumeView> resumeViewList = aspirantService.getAllAspirantResumeViews(requestData[0], requestData[1]);
         for (ResumeView view : resumeViewList) {
             viewModel.ResumeView resumeView = new viewModel.ResumeView(view.getDate(), aspirantService.getCompany(view.getId()).name);
             viewList.add(resumeView);

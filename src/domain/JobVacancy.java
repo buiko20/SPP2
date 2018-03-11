@@ -16,6 +16,9 @@ public class JobVacancy implements Comparable<JobVacancy> {
     private int hrManagerId;
     private int companyId;
 
+    public JobVacancy() {
+    }
+
     /**
      * Initializes a new instance of the {@link JobVacancy model}
      * @param name job vacancy name

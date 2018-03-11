@@ -1,15 +1,19 @@
 package service.impl;
 
-import com.sun.org.apache.regexp.internal.RE;
 import dao.DAO;
 import domain.AspirantAccount;
 import domain.AspirantProfile;
+import domain.Company;
+import domain.Invitation;
+import domain.JobVacancy;
 import domain.Resume;
 import domain.ResumeView;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import service.AspirantService;
+import service.CompanyService;
+import service.JobVacancyService;
 import service.exception.AspirantAlreadyExistsException;
 import service.exception.AspirantNotRegisteredException;
 import service.exception.AspirantProfileNotFoundException;
@@ -18,13 +22,16 @@ import service.fake.AspirantAccountDaoFake;
 import service.fake.AspirantProfileDaoFake;
 import service.fake.AspirantResumeDaoFake;
 import service.fake.AspirantResumeViewDaoFake;
+import service.fake.CompanyDaoFake;
+import service.fake.InvitationDaoFake;
+import service.fake.JobVacancyDaoFake;
 
 import java.util.ArrayList;
 import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class MyAspirantServiceTest {
+class MyAspirantServiceTests {
 
     private AspirantService aspirantService;
 
@@ -34,7 +41,17 @@ class MyAspirantServiceTest {
         DAO<AspirantProfile> aspirantAccountDaoFake = new AspirantProfileDaoFake();
         DAO<Resume> resumeDAO = new AspirantResumeDaoFake();
         DAO<ResumeView> resumeViewDAO = new AspirantResumeViewDaoFake();
-        this.aspirantService = new MyAspirantService(aspirantAccountDAOFake, aspirantAccountDaoFake, resumeDAO, resumeViewDAO);
+        DAO<Invitation> invitationDAO = new InvitationDaoFake();
+
+        DAO<JobVacancy> jobVacancyDAO = new JobVacancyDaoFake();
+        JobVacancyService jobVacancyService = new MyJobVacancyService(jobVacancyDAO);
+
+        DAO<Company> companyDAO = new CompanyDaoFake();
+        CompanyService companyService = new MyCompanyService(companyDAO);
+
+        this.aspirantService = new MyAspirantService(
+                aspirantAccountDAOFake, aspirantAccountDaoFake, resumeDAO,
+                resumeViewDAO, invitationDAO, jobVacancyService, companyService);
     }
 
     @AfterEach
@@ -447,13 +464,13 @@ class MyAspirantServiceTest {
 
     @Test
     void getAllAspirantResumeView_nullEmptyWhitespaceArgs_throwsIllegalArgumentException() {
-        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.getAllAspirantResumeView("", "fwef"));
-        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.getAllAspirantResumeView("   ", "wef"));
-        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.getAllAspirantResumeView(null, "wef"));
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.getAllAspirantResumeViews("", "fwef"));
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.getAllAspirantResumeViews("   ", "wef"));
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.getAllAspirantResumeViews(null, "wef"));
 
-        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.getAllAspirantResumeView("wef", ""));
-        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.getAllAspirantResumeView("wef", "   "));
-        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.getAllAspirantResumeView("wef", null));
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.getAllAspirantResumeViews("wef", ""));
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.getAllAspirantResumeViews("wef", "   "));
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.getAllAspirantResumeViews("wef", null));
     }
 
     @Test
@@ -468,20 +485,20 @@ class MyAspirantServiceTest {
         this.aspirantService.addAspirantResume("email", resume);
 
         // Assert.
-        ArrayList<ResumeView> result = this.aspirantService.getAllAspirantResumeView("email", "setCareerObjective");
+        ArrayList<ResumeView> result = this.aspirantService.getAllAspirantResumeViews("email", "setCareerObjective");
         assertNotNull(result);
         assertTrue(result.isEmpty());
     }
 
     @Test
     void getAspirantResumeView_nullEmptyWhitespaceArgs_throwsIllegalArgumentException() {
-        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.getAllAspirantResumeView("", "fwef"));
-        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.getAllAspirantResumeView("   ", "wef"));
-        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.getAllAspirantResumeView(null, "wef"));
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.getAllAspirantResumeViews("", "fwef"));
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.getAllAspirantResumeViews("   ", "wef"));
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.getAllAspirantResumeViews(null, "wef"));
 
-        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.getAllAspirantResumeView("wef", ""));
-        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.getAllAspirantResumeView("wef", "   "));
-        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.getAllAspirantResumeView("wef", null));
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.getAllAspirantResumeViews("wef", ""));
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.getAllAspirantResumeViews("wef", "   "));
+        assertThrows(IllegalArgumentException.class, () -> this.aspirantService.getAllAspirantResumeViews("wef", null));
     }
 
 }

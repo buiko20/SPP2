@@ -2,6 +2,8 @@ package service;
 
 import domain.AspirantAccount;
 import domain.AspirantProfile;
+import domain.Invitation;
+import domain.JobVacancy;
 import domain.Resume;
 import domain.ResumeView;
 import service.exception.AspirantAlreadyExistsException;
@@ -26,7 +28,8 @@ public interface AspirantService {
      * @throws AspirantAlreadyExistsException when aspirant already exists in the system.
      * @throws ServiceException when an error occurred in service.
      */
-    void register(AspirantAccount aspirantAccount) throws IllegalArgumentException, AspirantAlreadyExistsException, ServiceException;
+    void register(AspirantAccount aspirantAccount)
+            throws IllegalArgumentException, AspirantAlreadyExistsException, ServiceException;
 
     /**
      * Checks an aspirant credentials.
@@ -37,7 +40,8 @@ public interface AspirantService {
      * @throws AspirantNotRegisteredException when aspirant is not registered in the system.
      * @throws ServiceException when an error occurred in service.
      */
-    boolean isValidCredentials(String email, String password) throws IllegalArgumentException, AspirantNotRegisteredException, ServiceException;
+    boolean isValidCredentials(String email, String password)
+            throws IllegalArgumentException, AspirantNotRegisteredException, ServiceException;
 
     /**
      * Returns {@link AspirantAccount} with specific email.
@@ -47,7 +51,8 @@ public interface AspirantService {
      * @throws ServiceException when error occurred in service.
      * @throws IllegalArgumentException when email is null, empty or white space.
      */
-    AspirantAccount getAspirantAccountByEmail(String email) throws IllegalArgumentException, ServiceException;
+    AspirantAccount getAspirantAccountByEmail(String email)
+            throws IllegalArgumentException, ServiceException;
 
     /**
      * Add aspirantProfile to aspirantAccount identifiable by email.
@@ -56,7 +61,8 @@ public interface AspirantService {
      * @throws IllegalArgumentException when email is null, empty or whitespace or aspirantProfile is null.
      * @throws ServiceException when an error occurred in service.
      */
-    void addAspirantProfile(String email, AspirantProfile aspirantProfile) throws IllegalArgumentException, ServiceException;
+    void addAspirantProfile(String email, AspirantProfile aspirantProfile)
+            throws IllegalArgumentException, ServiceException;
 
     /**
      * Returns an aspirant profile identifiable by aspirant account email.
@@ -65,7 +71,8 @@ public interface AspirantService {
      * @throws IllegalArgumentException when email is null, empty or whitespace.
      * @throws ServiceException when an error occurred in service.
      */
-    AspirantProfile getAspirantProfile(String email) throws IllegalArgumentException, ServiceException;
+    AspirantProfile getAspirantProfile(String email)
+            throws IllegalArgumentException, ServiceException;
 
     /**
      * Updates existing aspirant profile identifiable by aspirant account email.
@@ -85,7 +92,8 @@ public interface AspirantService {
      * @throws IllegalArgumentException when email is null, empty or whitespace or resume is null.
      * @throws ServiceException when an error occurred in service.
      */
-    void addAspirantResume(String email, Resume resume) throws IllegalArgumentException, ServiceException;
+    void addAspirantResume(String email, Resume resume)
+            throws IllegalArgumentException, ServiceException;
 
     /**
      * Returns all aspirant resume.
@@ -94,7 +102,8 @@ public interface AspirantService {
      * @throws IllegalArgumentException when email is null, empty or whitespace.
      * @throws ServiceException when an error occurred in service.
      */
-    ArrayList<Resume> getAllAspirantResume(String email) throws IllegalArgumentException, ServiceException;
+    ArrayList<Resume> getAllAspirantResume(String email)
+            throws IllegalArgumentException, ServiceException;
 
     /**
      * Returns an aspirant resume.
@@ -104,7 +113,8 @@ public interface AspirantService {
      * @throws IllegalArgumentException when email or careerObjective is null, empty or whitespace.
      * @throws ServiceException when an error occurred in service.
      */
-    Resume getAspirantResume(String email, String careerObjective) throws IllegalArgumentException, ServiceException;
+    Resume getAspirantResume(String email, String careerObjective)
+            throws IllegalArgumentException, ServiceException;
 
     /**
      * Delete aspirant resume.
@@ -113,7 +123,8 @@ public interface AspirantService {
      * @throws IllegalArgumentException when email or careerObjective is null, empty or whitespace.
      * @throws ServiceException when an error occurred in service.
      */
-    void deleteAspirantResume(String email, String careerObjective) throws IllegalArgumentException, ServiceException;
+    void deleteAspirantResume(String email, String careerObjective)
+            throws IllegalArgumentException, ServiceException;
 
     /**
      * Update aspirant resume.
@@ -124,7 +135,8 @@ public interface AspirantService {
      * @throws ResumeNotFoundException when aspirant resume not found.
      * @throws ServiceException when an error occurred in service.
      */
-    void updateAspirantResume(String email, String careerObjective, Resume resume) throws IllegalArgumentException, ResumeNotFoundException, ServiceException;
+    void updateAspirantResume(String email, String careerObjective, Resume resume)
+            throws IllegalArgumentException, ResumeNotFoundException, ServiceException;
 
     /**
      * Update resume date.
@@ -135,7 +147,8 @@ public interface AspirantService {
      * @throws ResumeNotFoundException when aspirant resume not found.
      * @throws ServiceException when an error occurred in service.
      */
-    void updateAspirantResumeDate(String email, String careerObjective, Date newDate) throws IllegalArgumentException, ResumeNotFoundException, ServiceException;
+    void updateAspirantResumeDate(String email, String careerObjective, Date newDate)
+            throws IllegalArgumentException, ResumeNotFoundException, ServiceException;
 
     /**
      * Return all aspirant resume view.
@@ -146,6 +159,12 @@ public interface AspirantService {
      * @throws ResumeNotFoundException when aspirant resume not found.
      * @throws ServiceException when an error occurred in service.
      */
-    ArrayList<ResumeView> getAllAspirantResumeView(String email, String careerObjective) throws IllegalArgumentException, ResumeNotFoundException, ServiceException;
+    ArrayList<ResumeView> getAllAspirantResumeViews(String email, String careerObjective)
+            throws IllegalArgumentException, ResumeNotFoundException, ServiceException;
 
+    ArrayList<Invitation> getAllAspirantInvitations(String email)
+            throws IllegalArgumentException, ServiceException;
+
+    Invitation getInvitation(String email, String careerObjective, String jobVacancyName, String companyName)
+            throws IllegalArgumentException, ServiceException;
 }

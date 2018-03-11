@@ -94,12 +94,14 @@ public class DbResumeDAO implements DAO<Resume> {
     }
 
     public void create(Resume resume) throws DAOException {
+        int isTripPossible = resume.getTripPossible() ? 1 : 0;
+        int isRelocationPossible = resume.getRelocationPossible() ? 1 : 0;
         try {
             Statement statement = mysqlConnect.connect().createStatement();
             statement.executeUpdate("INSERT INTO Resume (Date, Career_objective, Business_trip, Relocation, " +
                     "Skills, Salary, Number_of_view, Aspirant_id) VALUES ('" + resume.getDate() + "', '" +
-                    resume.getCareerObjective() + "', '" + resume.getTripPossible() + "', '" +
-                    resume.getRelocationPossible() + "', '" + resume.getSkills() + "', '" +
+                    resume.getCareerObjective() + "', '" + isTripPossible + "', '" +
+                    isRelocationPossible + "', '" + resume.getSkills() + "', '" +
                     resume.getSalary() + "', '" + resume.getNumberOfViews() + "', '" +
                     resume.getAspirantId() + "')", Statement.RETURN_GENERATED_KEYS);
 

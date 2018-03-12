@@ -10,10 +10,7 @@ import domain.Invitation;
 import domain.JobVacancy;
 import domain.Resume;
 import domain.ResumeView;
-import service.impl.MyAspirantService;
-import service.impl.MyAuthService;
-import service.impl.MyCompanyService;
-import service.impl.MyJobVacancyService;
+import service.impl.*;
 
 /**
  * Represents a simple service factory.
@@ -39,6 +36,8 @@ public class ServiceFactory {
     private final AspirantService aspirantService = new MyAspirantService(
             AspirantAccountDao, AspirantProfileDao, resumeDAO, resumeViewDAO,
             invitationDAO, jobVacancyService, companyService);
+    private final HRManagerService hrManagerService = new MyHRManagerService(hrManagerDAO, companyDAO,
+            jobVacancyDAO, resumeDAO);
 
     private ServiceFactory() {
     }
@@ -81,5 +80,13 @@ public class ServiceFactory {
      */
     public AuthService getAuthService() {
         return authService;
+    }
+
+    /**
+     * Returns an instance of the {@link HRManagerService} in singleton scope.
+     * @return instance of the {@link HRManagerService}
+     */
+    public HRManagerService getHrManagerService() {
+        return hrManagerService;
     }
 }

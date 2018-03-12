@@ -24,9 +24,9 @@ public class CompanyDaoFake implements DAO<Company> {
     @Override
     public Company getBy(Predicate<Company> predicate) throws DAOException {
 
-        for (Company resume : entities) {
-            if (predicate.test(resume)) {
-                return resume;
+        for (Company entity : entities) {
+            if (predicate.test(entity)) {
+                return entity;
             }
         }
 
@@ -43,9 +43,9 @@ public class CompanyDaoFake implements DAO<Company> {
     public void delete(int id) throws DAOException {
 
         int i = -1, j = 0;
-        for (Company resume : entities) {
+        for (Company entity : entities) {
 
-            if (resume.getId() == id) {
+            if (entity.getId() == id) {
                 i = j;
             }
 

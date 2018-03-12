@@ -55,6 +55,7 @@ public class MyAspirantService implements AspirantService {
         this.companyService = companyService;
     }
 
+    @Deprecated
     @Override
     public void register(AspirantAccount aspirantAccount)
             throws IllegalArgumentException, AspirantAlreadyExistsException, ServiceException {
@@ -78,6 +79,7 @@ public class MyAspirantService implements AspirantService {
 
     }
 
+    @Deprecated
     @Override
     public boolean isValidCredentials(String email, String password)
             throws IllegalArgumentException, AspirantNotRegisteredException, ServiceException {

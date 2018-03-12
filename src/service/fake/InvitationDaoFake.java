@@ -24,9 +24,9 @@ public class InvitationDaoFake implements DAO<Invitation> {
     @Override
     public Invitation getBy(Predicate<Invitation> predicate) throws DAOException {
 
-        for (Invitation resume : entities) {
-            if (predicate.test(resume)) {
-                return resume;
+        for (Invitation entity : entities) {
+            if (predicate.test(entity)) {
+                return entity;
             }
         }
 
@@ -43,9 +43,9 @@ public class InvitationDaoFake implements DAO<Invitation> {
     public void delete(int id) throws DAOException {
 
         int i = -1, j = 0;
-        for (Invitation resume : entities) {
+        for (Invitation entity : entities) {
 
-            if (resume.getId() == id) {
+            if (entity.getId() == id) {
                 i = j;
             }
 

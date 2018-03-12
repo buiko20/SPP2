@@ -2,29 +2,30 @@ package service.fake;
 
 import dao.DAO;
 import dao.exception.DAOException;
-import domain.JobVacancy;
+import domain.HRManager;
+import domain.Invitation;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 
-public class JobVacancyDaoFake implements DAO<JobVacancy> {
+public class HRManagerDaoFake implements DAO<HRManager> {
 
-    private static ArrayList<JobVacancy> entities;
+    private static ArrayList<HRManager> entities;
 
-    public JobVacancyDaoFake() {
+    public HRManagerDaoFake() {
         entities = new ArrayList<>();
     }
 
     @Override
-    public List<JobVacancy> getAll() throws DAOException {
+    public List<HRManager> getAll() throws DAOException {
         return entities;
     }
 
     @Override
-    public JobVacancy getBy(Predicate<JobVacancy> predicate) throws DAOException {
+    public HRManager getBy(Predicate<HRManager> predicate) throws DAOException {
 
-        for (JobVacancy entity : entities) {
+        for (HRManager entity : entities) {
             if (predicate.test(entity)) {
                 return entity;
             }
@@ -34,7 +35,7 @@ public class JobVacancyDaoFake implements DAO<JobVacancy> {
     }
 
     @Override
-    public void update(JobVacancy entity) throws DAOException {
+    public void update(HRManager entity) throws DAOException {
         entities.remove(entity);
         entities.add(entity);
     }
@@ -43,7 +44,7 @@ public class JobVacancyDaoFake implements DAO<JobVacancy> {
     public void delete(int id) throws DAOException {
 
         int i = -1, j = 0;
-        for (JobVacancy entity : entities) {
+        for (HRManager entity : entities) {
 
             if (entity.getId() == id) {
                 i = j;
@@ -59,7 +60,7 @@ public class JobVacancyDaoFake implements DAO<JobVacancy> {
     }
 
     @Override
-    public void create(JobVacancy entity) throws DAOException {
+    public void create(HRManager entity) throws DAOException {
         entities.add(entity);
     }
 

@@ -21,6 +21,7 @@ import java.util.List;
  */
 public interface AspirantService {
 
+    @Deprecated
     /**
      * Adds an aspirant to the system.
      * @param aspirantAccount aspirant account
@@ -31,6 +32,7 @@ public interface AspirantService {
     void register(AspirantAccount aspirantAccount)
             throws IllegalArgumentException, AspirantAlreadyExistsException, ServiceException;
 
+    @Deprecated
     /**
      * Checks an aspirant credentials.
      * @param email aspirant email

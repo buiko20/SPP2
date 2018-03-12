@@ -2,7 +2,6 @@ package service.fake;
 
 import dao.DAO;
 import dao.exception.DAOException;
-import domain.AspirantAccount;
 import domain.AspirantProfile;
 
 import java.util.ArrayList;
@@ -11,23 +10,23 @@ import java.util.function.Predicate;
 
 public class AspirantProfileDaoFake implements DAO<AspirantProfile> {
 
-    private static ArrayList<AspirantProfile> aspirantProfiles;
+    private static ArrayList<AspirantProfile> entities;
 
     public AspirantProfileDaoFake() {
-        aspirantProfiles = new ArrayList<>();
+        entities = new ArrayList<>();
     }
 
     @Override
     public List<AspirantProfile> getAll() throws DAOException {
-        return aspirantProfiles;
+        return entities;
     }
 
     @Override
     public AspirantProfile getBy(Predicate<AspirantProfile> predicate) throws DAOException {
 
-        for (AspirantProfile aspirantProfile : aspirantProfiles) {
-            if (predicate.test(aspirantProfile)) {
-                return aspirantProfile;
+        for (AspirantProfile entity : entities) {
+            if (predicate.test(entity)) {
+                return entity;
             }
         }
 
@@ -36,17 +35,17 @@ public class AspirantProfileDaoFake implements DAO<AspirantProfile> {
 
     @Override
     public void update(AspirantProfile entity) throws DAOException {
-        aspirantProfiles.remove(entity);
-        aspirantProfiles.add(entity);
+        entities.remove(entity);
+        entities.add(entity);
     }
 
     @Override
     public void delete(int id) throws DAOException {
 
         int i = -1, j = 0;
-        for (AspirantProfile aspirantProfile : aspirantProfiles) {
+        for (AspirantProfile entity : entities) {
 
-            if (aspirantProfile.getId() == id) {
+            if (entity.getId() == id) {
                 i = j;
             }
 
@@ -54,14 +53,14 @@ public class AspirantProfileDaoFake implements DAO<AspirantProfile> {
         }
 
         if (i != -1) {
-            aspirantProfiles.remove(i);
+            entities.remove(i);
         }
 
     }
 
     @Override
     public void create(AspirantProfile entity) throws DAOException {
-        aspirantProfiles.add(entity);
+        entities.add(entity);
     }
 
 }

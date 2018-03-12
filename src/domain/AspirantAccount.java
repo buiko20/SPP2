@@ -14,6 +14,9 @@ public class AspirantAccount implements Comparable<AspirantAccount> {
 
     private int aspirantProfileId;
 
+    public AspirantAccount() {
+    }
+
     /**
      * Initializes a new instance of the {@link AspirantAccount model}
      * @param email aspirant email

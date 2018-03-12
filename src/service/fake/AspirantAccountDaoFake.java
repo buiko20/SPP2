@@ -10,23 +10,23 @@ import java.util.function.Predicate;
 
 public class AspirantAccountDaoFake implements DAO<AspirantAccount> {
 
-    private static ArrayList<AspirantAccount> aspirantAccounts;
+    private static ArrayList<AspirantAccount> entities;
 
     public AspirantAccountDaoFake() {
-        aspirantAccounts = new ArrayList<>();
+        entities = new ArrayList<>();
     }
 
     @Override
     public List<AspirantAccount> getAll() throws DAOException {
-        return aspirantAccounts;
+        return entities;
     }
 
     @Override
     public AspirantAccount getBy(Predicate<AspirantAccount> predicate) throws DAOException {
 
-        for (AspirantAccount aspirantAccount : aspirantAccounts) {
-            if (predicate.test(aspirantAccount)) {
-                return aspirantAccount;
+        for (AspirantAccount entity : entities) {
+            if (predicate.test(entity)) {
+                return entity;
             }
         }
 
@@ -35,17 +35,17 @@ public class AspirantAccountDaoFake implements DAO<AspirantAccount> {
 
     @Override
     public void update(AspirantAccount entity) throws DAOException {
-        aspirantAccounts.remove(entity);
-        aspirantAccounts.add(entity);
+        entities.remove(entity);
+        entities.add(entity);
     }
 
     @Override
     public void delete(int id) throws DAOException {
 
         int i = -1, j = 0;
-        for (AspirantAccount aspirantAccount : aspirantAccounts) {
+        for (AspirantAccount entity : entities) {
 
-            if (aspirantAccount.getId() == id) {
+            if (entity.getId() == id) {
                 i = j;
             }
 
@@ -53,13 +53,13 @@ public class AspirantAccountDaoFake implements DAO<AspirantAccount> {
         }
 
         if (i != -1) {
-            aspirantAccounts.remove(i);
+            entities.remove(i);
         }
 
     }
 
     @Override
     public void create(AspirantAccount entity) throws DAOException {
-        aspirantAccounts.add(entity);
+        entities.add(entity);
     }
 }

@@ -5,11 +5,13 @@ import dao.DAOFactory;
 import domain.AspirantAccount;
 import domain.AspirantProfile;
 import domain.Company;
+import domain.HRManager;
 import domain.Invitation;
 import domain.JobVacancy;
 import domain.Resume;
 import domain.ResumeView;
 import service.impl.MyAspirantService;
+import service.impl.MyAuthService;
 import service.impl.MyCompanyService;
 import service.impl.MyJobVacancyService;
 
@@ -26,7 +28,10 @@ public class ServiceFactory {
     private final DAO<JobVacancy> jobVacancyDAO = DAOFactory.getInstance().getJobVacancyDAO();
     private final DAO<Company> companyDAO = DAOFactory.getInstance().getCompanyDAO();
     private final DAO<Invitation> invitationDAO = DAOFactory.getInstance().getInvitationDAO();
+    private final DAO<HRManager> hrManagerDAO = DAOFactory.getInstance().getHRManagerDAO();
 
+    private final AuthService authService = new MyAuthService(
+            AspirantAccountDao, hrManagerDAO);
     private final JobVacancyService jobVacancyService = new MyJobVacancyService(
             jobVacancyDAO);
     private final CompanyService companyService = new MyCompanyService(
@@ -68,5 +73,13 @@ public class ServiceFactory {
      */
     public CompanyService getCompanyService() {
         return companyService;
+    }
+
+    /**
+     * Returns an instance of the {@link AuthService} in singleton scope.
+     * @return instance of the {@link AuthService}
+     */
+    public AuthService getAuthService() {
+        return authService;
     }
 }

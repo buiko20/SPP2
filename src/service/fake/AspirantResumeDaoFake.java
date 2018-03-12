@@ -10,23 +10,23 @@ import java.util.function.Predicate;
 
 public class AspirantResumeDaoFake implements DAO<Resume> {
 
-    private static ArrayList<Resume> resumes;
+    private static ArrayList<Resume> entities;
 
     public AspirantResumeDaoFake() {
-        resumes = new ArrayList<>();
+        entities = new ArrayList<>();
     }
 
     @Override
     public List<Resume> getAll() throws DAOException {
-        return resumes;
+        return entities;
     }
 
     @Override
     public Resume getBy(Predicate<Resume> predicate) throws DAOException {
 
-        for (Resume resume : resumes) {
-            if (predicate.test(resume)) {
-                return resume;
+        for (Resume entity : entities) {
+            if (predicate.test(entity)) {
+                return entity;
             }
         }
 
@@ -35,17 +35,17 @@ public class AspirantResumeDaoFake implements DAO<Resume> {
 
     @Override
     public void update(Resume entity) throws DAOException {
-        resumes.remove(entity);
-        resumes.add(entity);
+        entities.remove(entity);
+        entities.add(entity);
     }
 
     @Override
     public void delete(int id) throws DAOException {
 
         int i = -1, j = 0;
-        for (Resume resume : resumes) {
+        for (Resume entity : entities) {
 
-            if (resume.getId() == id) {
+            if (entity.getId() == id) {
                 i = j;
             }
 
@@ -53,14 +53,14 @@ public class AspirantResumeDaoFake implements DAO<Resume> {
         }
 
         if (i != -1) {
-            resumes.remove(i);
+            entities.remove(i);
         }
 
     }
 
     @Override
     public void create(Resume entity) throws DAOException {
-        resumes.add(entity);
+        entities.add(entity);
     }
 
 }

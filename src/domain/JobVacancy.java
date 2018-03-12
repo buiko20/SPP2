@@ -183,6 +183,14 @@ public class JobVacancy implements Comparable<JobVacancy> {
         return companyId;
     }
 
+    /**
+     * Sets id of the company to which the vacancy refers
+     * @param companyId id of the company to which the vacancy refers
+     */
+    public void setCompanyId(int companyId) {
+        this.companyId = companyId;
+    }
+
     @Override
     public int compareTo(JobVacancy obj) {
         if (obj == null) {

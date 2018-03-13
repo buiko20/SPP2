@@ -2,6 +2,7 @@ package service.impl;
 
 import dao.DAO;
 import domain.Company;
+import domain.Invitation;
 import domain.HRManager;
 import domain.JobVacancy;
 import domain.Resume;
@@ -22,19 +23,22 @@ public class MyHRManagerService implements HRManagerService {
     private DAO<Company> companyDAO;
     private DAO<JobVacancy> jobVacancyDAO;
     private DAO<Resume> resumeDAO;
+    private DAO<Invitation> invitationDAO;
 
     public MyHRManagerService(DAO<HRManager> hrManagerDAO, DAO<Company> companyDAO, DAO<JobVacancy> jobVacancyDAO,
-        DAO<Resume> resumeDAO) {
+        DAO<Resume> resumeDAO, DAO<Invitation> invitationDAO) {
 
         ArgumentVerificationService.verifyNull(hrManagerDAO, "hrManagerDAO");
         ArgumentVerificationService.verifyNull(companyDAO, "companyDAO");
         ArgumentVerificationService.verifyNull(jobVacancyDAO, "jobVacancyDAO");
         ArgumentVerificationService.verifyNull(resumeDAO, "resumeDAO");
+        ArgumentVerificationService.verifyNull(invitationDAO, "invitationDAO");
 
         this.hrManagerDAO = hrManagerDAO;
         this.companyDAO = companyDAO;
         this.jobVacancyDAO = jobVacancyDAO;
         this.resumeDAO = resumeDAO;
+        this.invitationDAO = invitationDAO;
     }
 
     @Override
@@ -44,6 +48,15 @@ public class MyHRManagerService implements HRManagerService {
         try {
             Predicate<HRManager> mailPredicate = HRManager -> HRManager.getEmail().equals(email);
             return this.hrManagerDAO.getBy(mailPredicate);
+        } catch (Exception e) {
+            throw new ServiceException(e.getMessage(), e);
+        }
+    }
+
+    @Override
+    public HRManager getHRManagerById(int id) throws ServiceException {
+        try {
+            return this.hrManagerDAO.getBy(hrManager -> hrManager.getId() == id);
         } catch (Exception e) {
             throw new ServiceException(e.getMessage(), e);
         }
@@ -84,6 +97,16 @@ public class MyHRManagerService implements HRManagerService {
         try {
             List<Resume> resumes = this.resumeDAO.getAll();
             return new ArrayList<>(resumes);
+        } catch (Exception e) {
+            throw new ServiceException(e.getMessage(), e);
+        }
+    }
+
+    @Override
+    public ArrayList<Invitation> getAllInvitations() throws ServiceException {
+        try {
+            List<Invitation> invitations = this.invitationDAO.getAll();
+            return new ArrayList<>(invitations);
         } catch (Exception e) {
             throw new ServiceException(e.getMessage(), e);
         }

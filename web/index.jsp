@@ -37,7 +37,7 @@
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li><a href="AspirantRegistration.jsp" id="registerLink">Регистрация</a></li>
-          <li><a href="AspirantLogin.jsp" id="loginLink">Вход</a></li>
+          <li><a href="Login.jsp" id="loginLink">Вход</a></li>
         </ul>
       </div>
     </div>
@@ -48,12 +48,12 @@
       <div class="col-md-4">
         <h2>1</h2>
         <p>Создай резюме, чтобы работодатель узнал о тебе</p>
-        <p><a class="btn btn-success" href="AspirantLogin.jsp">Создать резюме</a></p>
+        <p><a class="btn btn-success" href="Login.jsp">Создать резюме</a></p>
       </div>
       <div class="col-md-4">
         <h2>2</h2>
         <p>Найди вакансию, которая придется тебе по вкусу</p>
-        <p><a class="btn btn-success" href="/Home/About">Найти вакансию</a></p>
+        <p><a class="btn btn-success" href="Login.jsp">Найти вакансию</a></p>
       </div>
     </div>
     <hr/>

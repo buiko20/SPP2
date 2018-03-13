@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: Анастасия
-  Date: 01.03.2018
-  Time: 18:49
+  Date: 12.03.2018
+  Time: 19:03
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -33,13 +33,13 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li><a href="/ResumeList?command=GetResumeListForAspirant">Резюме</a></li>
+                <li><a href="/ResumeList?command=GetResumeListForHRManager">Резюме</a></li>
             </ul>
             <ul class="nav navbar-nav">
-                <li><a href="/InvitationList?command=GetInvitationListForAspirant">Приглашения</a></li>
+                <li><a href="/InvitationList?command=GetInvitationListForHRManager">Приглашения</a></li>
             </ul>
             <ul class="nav navbar-nav">
-                <li><a href="/JobVacancyList?command=GetJobVacancyListForAspirant">Вакансии</a></li>
+                <li><a href="/JobVacancyList?command=GetJobVacancyListForHRManager">Вакансии</a></li>
             </ul>
             <ul class="nav navbar-nav">
                 <li><a href="/Home/About">О программе</a></li>
@@ -53,16 +53,16 @@
 </div>
 <div class="container body-content">
     <div class="jumbotron">
-        <h1>Хочешь найти работу?</h1>
+        <h1>Хочешь найти хорошего сотрудника?</h1>
         <div class="col-md-4">
             <h2>1</h2>
-            <p>Создай резюме, чтобы работодатель узнал о тебе</p>
-            <p><a class="btn btn-success" href="ResumeCreation.jsp">Создать резюме</a></p>
+            <p>Размести вакансию, чтобы соискатель мог оставить отклик на нее</p>
+            <p><a class="btn btn-success" href="JobVacancyCreation.jsp">Создать вакансию</a></p>
         </div>
         <div class="col-md-4">
             <h2>2</h2>
-            <p>Найди вакансию, которая придется тебе по вкусу</p>
-            <p><a class="btn btn-success" href="/JobVacancyList?command=GetJobVacancyListForAspirant">Найти вакансию</a></p>
+            <p>Найди резюме, которое придется тебе по вкусу</p>
+            <p><a class="btn btn-success" href="/ResumeList?command=GetResumeListForHRManager">Найти резюме</a></p>
         </div>
     </div>
 
@@ -76,3 +76,4 @@
 <script type="text/javascript"> <%@include file="/WEB-INF/scripts/snow-fall.js"%></script>
 </body>
 </html>
+

@@ -3,6 +3,7 @@ package controller.command.impl;
 import controller.command.Command;
 import domain.AspirantAccount;
 import service.AspirantService;
+import service.AuthService;
 import service.ServiceFactory;
 import service.exception.AspirantAlreadyExistsException;
 import service.exception.ServiceException;
@@ -12,7 +13,7 @@ import service.exception.ServiceException;
  */
 public class RegisterAspirantCommand implements Command{
 
-    private final AspirantService aspirantService = ServiceFactory.getInstance().getAspirantService();
+    private final AuthService authService = ServiceFactory.getInstance().getAuthService();
 
     @Override
     public Object execute(String request) throws AspirantAlreadyExistsException {
@@ -21,7 +22,7 @@ public class RegisterAspirantCommand implements Command{
             String[] aspirant = request.split(";");
 
             AspirantAccount aspirantAccount = new AspirantAccount(aspirant[0], aspirant[1], null);
-            aspirantService.register(aspirantAccount);
+            authService.registerAspirant(aspirantAccount);
         } catch (AspirantAlreadyExistsException e) {
             throw e;
         } catch (ServiceException e) {

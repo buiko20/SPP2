@@ -21,6 +21,8 @@ import service.exception.ResumeNotFoundException;
 import service.exception.ServiceException;
 import service.utils.ArgumentVerificationService;
 
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -467,12 +469,18 @@ public class MyAspirantService implements AspirantService {
                 throw new ResumeNotFoundException(aspirantEmail, careerObjective);
             }
 
+            resume.setNumberOfViews(resume.getNumberOfViews() + 1);
+            this.updateAspirantResume(aspirantEmail, careerObjective, resume);
+
             HRManager hrManager = this.hrManagerService.getHRManagerByEmail(HRManagerEmail);
             if (hrManager == null) {
                 throw new HRManagerNotFoundException(HRManagerEmail);
             }
 
-            ResumeView resumeView = new ResumeView(new Date(), resume.getId(), resume.getAspirantId(), hrManager.getId(), hrManager.getCompanyId());
+            java.util.Date currentDate = new java.util.Date();
+            String curStringDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(currentDate);
+
+            ResumeView resumeView = new ResumeView(Timestamp.valueOf(curStringDate), resume.getId(), resume.getAspirantId(), hrManager.getId(), hrManager.getCompanyId());
             this.resumeViewDAO.create(resumeView);
 
         } catch (ServiceException e) {

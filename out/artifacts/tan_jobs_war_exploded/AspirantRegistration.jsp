@@ -37,7 +37,7 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="AspirantRegistration.jsp" id="registerLink">Регистрация</a></li>
-                    <li><a href="AspirantLogin.jsp" id="loginLink">Вход</a></li>
+                    <li><a href="Login.jsp" id="loginLink">Вход</a></li>
                 </ul>
             </div>
         </div>

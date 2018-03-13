@@ -1,7 +1,6 @@
 package controller;
 
 import controller.command.Command;
-import service.exception.AspirantAlreadyExistsException;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -42,7 +41,7 @@ public class RegistrationServlet extends HttpServlet {
 
             userSession.setAttribute("userEmail", email);
 
-            request.getRequestDispatcher("/HomePage.jsp").forward(request, response);
+            request.getRequestDispatcher("/HomePageAspirant.jsp").forward(request, response);
         }
         catch(Exception incorrectEmail)
         {

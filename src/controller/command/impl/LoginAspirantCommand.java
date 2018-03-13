@@ -1,9 +1,8 @@
 package controller.command.impl;
 
 import controller.command.Command;
-import service.AspirantService;
+import service.AuthService;
 import service.ServiceFactory;
-import service.exception.AspirantNotRegisteredException;
 import service.exception.ServiceException;
 
 /**
@@ -11,21 +10,13 @@ import service.exception.ServiceException;
  */
 public class LoginAspirantCommand implements Command {
 
-    private final AspirantService aspirantService = ServiceFactory.getInstance().getAspirantService();
+    private final AuthService authService = ServiceFactory.getInstance().getAuthService();
 
     @Override
-    public Object execute(String request) throws AspirantNotRegisteredException {
+    public Object execute(String request) throws ServiceException {
 
-        try {
-            String[] aspirant = request.split(";");
+        String[] aspirant = request.split(";");
 
-            if (aspirantService.isValidCredentials(aspirant[0], aspirant[1]))
-                return new Object();
-        } catch (AspirantNotRegisteredException e) {
-            throw e;
-        } catch (ServiceException e) {
-            e.printStackTrace();
-        }
-        return null;
+        return authService.isValidAspirantCredentials(aspirant[0], aspirant[1]);
     }
 }

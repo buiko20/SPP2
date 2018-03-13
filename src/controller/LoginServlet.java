@@ -1,9 +1,6 @@
 package controller;
 
 import controller.command.Command;
-import service.exception.AspirantNotRegisteredException;
-import viewModel.Aspirant;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -39,34 +36,42 @@ public class LoginServlet extends HttpServlet {
         Command command = commandProvider.getCommand(commandName);
 
         try {
-            if(command.execute(email + ";" + password) != null) {
+            String actor = (String)command.execute(email + ";" + password);
+
+            if( actor == "") {
                 HttpSession userSession = request.getSession();
 
-                userSession.setAttribute("userEmail", email);
+                userSession.setAttribute("loginEmailIncorrect", "Неправильный Email. Повторите ввод.");
+                userSession.setAttribute("loginEmail", email);
 
-                request.getRequestDispatcher("/HomePage.jsp").forward(request, response);
+                request.getRequestDispatcher("/Login.jsp").forward(request, response);
+
+                userSession.invalidate();
             }
-            else{
+
+            if(actor == "error"){
                 HttpSession userSession = request.getSession();
 
                 userSession.setAttribute("loginEmail", email);
                 userSession.setAttribute("loginPasswordIncorrect", "Неправильный пароль. Повторите ввод.");
 
-                request.getRequestDispatcher("/AspirantLogin.jsp").forward(request, response);
+                request.getRequestDispatcher("/Login.jsp").forward(request, response);
 
                 userSession.invalidate();
             }
+
+            if( actor == "hr" || actor == "aspirant") {
+                HttpSession userSession = request.getSession();
+
+                userSession.setAttribute("userEmail", email);
+                userSession.setAttribute("actor", actor);
+
+                if(actor == "aspirant")
+                    request.getRequestDispatcher("/HomePageAspirant.jsp").forward(request, response);
+                else
+                    request.getRequestDispatcher("/HomePageHRManager.jsp").forward(request, response);
+            }
         }
-        catch (Exception incorrectEmailException)
-        {
-            HttpSession userSession = request.getSession();
-
-            userSession.setAttribute("loginEmailIncorrect", "Неправильный Email. Повторите ввод.");
-            userSession.setAttribute("loginEmail", email);
-
-            request.getRequestDispatcher("/AspirantLogin.jsp").forward(request, response);
-
-            userSession.invalidate();
-        }
+        catch (Exception incorrectEmailException) { }
     }
 }

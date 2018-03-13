@@ -4,6 +4,7 @@ import domain.JobVacancy;
 import service.exception.ServiceException;
 
 import java.util.ArrayList;
+import java.util.function.Predicate;
 
 /**
  * Represents a JobVacancyService responsible for working with a job vacancy.
@@ -35,4 +36,6 @@ public interface JobVacancyService {
      */
     JobVacancy getJobVacancy(String vacancyName)
             throws IllegalArgumentException, ServiceException;
+
+    JobVacancy getJobVacancyById(int id) throws ServiceException;
 }

@@ -33,11 +33,11 @@ public class ServiceFactory {
             jobVacancyDAO);
     private final CompanyService companyService = new MyCompanyService(
             companyDAO);
-    private final AspirantService aspirantService = new MyAspirantService(
-            AspirantAccountDao, AspirantProfileDao, resumeDAO, resumeViewDAO,
-            invitationDAO, jobVacancyService, companyService);
     private final HRManagerService hrManagerService = new MyHRManagerService(hrManagerDAO, companyDAO,
             jobVacancyDAO, resumeDAO);
+    private final AspirantService aspirantService = new MyAspirantService(
+            AspirantAccountDao, AspirantProfileDao, resumeDAO, resumeViewDAO,
+            invitationDAO, jobVacancyService, companyService, hrManagerService);
 
     private ServiceFactory() {
     }

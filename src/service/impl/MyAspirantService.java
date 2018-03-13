@@ -4,16 +4,19 @@ import dao.DAO;
 import domain.AspirantAccount;
 import domain.AspirantProfile;
 import domain.Company;
+import domain.HRManager;
 import domain.Invitation;
 import domain.JobVacancy;
 import domain.Resume;
 import domain.ResumeView;
 import service.AspirantService;
 import service.CompanyService;
+import service.HRManagerService;
 import service.JobVacancyService;
 import service.exception.AspirantAlreadyExistsException;
 import service.exception.AspirantNotRegisteredException;
 import service.exception.AspirantProfileNotFoundException;
+import service.exception.HRManagerNotFoundException;
 import service.exception.ResumeNotFoundException;
 import service.exception.ServiceException;
 import service.utils.ArgumentVerificationService;
@@ -32,10 +35,12 @@ public class MyAspirantService implements AspirantService {
     private DAO<Invitation> invitationDAO;
     private JobVacancyService jobVacancyService;
     private CompanyService companyService;
+    private HRManagerService hrManagerService;
 
     public MyAspirantService(DAO<AspirantAccount> aspirantAccountDao, DAO<AspirantProfile> aspirantProfileDAO,
                              DAO<Resume> resumeDAO, DAO<ResumeView> resumeViewDAO, DAO<Invitation> invitationDAO,
-                             JobVacancyService jobVacancyService, CompanyService companyService)
+                             JobVacancyService jobVacancyService, CompanyService companyService,
+                             HRManagerService hrManagerService)
             throws IllegalArgumentException {
 
         ArgumentVerificationService.verifyNull(aspirantAccountDao, "aspirantAccountDao");
@@ -45,6 +50,7 @@ public class MyAspirantService implements AspirantService {
         ArgumentVerificationService.verifyNull(invitationDAO, "invitationDAO");
         ArgumentVerificationService.verifyNull(jobVacancyService, "jobVacancyService");
         ArgumentVerificationService.verifyNull(companyService, "companyService");
+        ArgumentVerificationService.verifyNull(hrManagerService, "hrManagerService");
 
         this.aspirantAccountDao = aspirantAccountDao;
         this.aspirantProfileDAO = aspirantProfileDAO;
@@ -53,6 +59,7 @@ public class MyAspirantService implements AspirantService {
         this.invitationDAO = invitationDAO;
         this.jobVacancyService = jobVacancyService;
         this.companyService = companyService;
+        this.hrManagerService = hrManagerService;
     }
 
     @Deprecated
@@ -400,5 +407,79 @@ public class MyAspirantService implements AspirantService {
         } catch (Exception e) {
             throw new ServiceException(e.getMessage(), e);
         }
+    }
+
+    @Override
+    public AspirantAccount getAspirantAccountById(int id) throws ServiceException {
+
+        try {
+
+            Predicate<AspirantAccount> mailPredicate =
+                    aspirantAccount -> aspirantAccount.getId() == id;
+
+            return aspirantAccountDao.getBy(mailPredicate);
+
+        } catch (Exception e) {
+            throw new ServiceException(e.getMessage(), e);
+        }
+    }
+
+    @Override
+    public Resume getResumeById(int id) throws ServiceException {
+        try {
+
+            return this.resumeDAO.getBy(Resume -> Resume.getId() == id);
+
+        } catch (Exception e) {
+            throw new ServiceException(e.getMessage(), e);
+        }
+    }
+
+    @Override
+    public ArrayList<Resume> getAllResume() throws ServiceException {
+        try {
+
+            List<Resume> resumes = this.resumeDAO.getAll();
+            return new ArrayList<>(resumes);
+
+        } catch (Exception e) {
+            throw new ServiceException(e.getMessage(), e);
+        }
+    }
+
+    @Override
+    public void addAspirantResumeView(String aspirantEmail, String careerObjective, String HRManagerEmail)
+            throws IllegalArgumentException, AspirantNotRegisteredException, ResumeNotFoundException, HRManagerNotFoundException, ServiceException {
+
+        ArgumentVerificationService.verifyString(aspirantEmail, "aspirantEmail");
+        ArgumentVerificationService.verifyString(careerObjective, "careerObjective");
+        ArgumentVerificationService.verifyString(HRManagerEmail, "HRManagerEmail");
+
+        try {
+
+            AspirantAccount aspirantAccount = this.getAspirantAccountByEmail(aspirantEmail);
+            if (aspirantAccount == null) {
+                throw new AspirantNotRegisteredException(aspirantEmail);
+            }
+
+            Resume resume = this.getAspirantResume(aspirantEmail, careerObjective);
+            if (resume == null) {
+                throw new ResumeNotFoundException(aspirantEmail, careerObjective);
+            }
+
+            HRManager hrManager = this.hrManagerService.getHRManagerByEmail(HRManagerEmail);
+            if (hrManager == null) {
+                throw new HRManagerNotFoundException(HRManagerEmail);
+            }
+
+            ResumeView resumeView = new ResumeView(new Date(), resume.getId(), resume.getAspirantId(), hrManager.getId(), hrManager.getCompanyId());
+            this.resumeViewDAO.create(resumeView);
+
+        } catch (ServiceException e) {
+            throw e;
+        } catch (Exception e) {
+            throw new ServiceException(e.getMessage(), e);
+        }
+
     }
 }

@@ -56,4 +56,15 @@ public class MyJobVacancyService implements JobVacancyService {
         }
 
     }
+
+    @Override
+    public JobVacancy getJobVacancyById(int id) throws ServiceException {
+
+        try {
+            Predicate<JobVacancy> predicate = (jobVacancy) -> jobVacancy.getId() == id;
+            return this.jobVacancyDAO.getBy(predicate);
+        } catch (Exception e) {
+            throw new ServiceException(e.getMessage(), e);
+        }
+    }
 }

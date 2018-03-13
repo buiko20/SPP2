@@ -4,6 +4,7 @@ import dao.DAO;
 import domain.AspirantAccount;
 import domain.AspirantProfile;
 import domain.Company;
+import domain.HRManager;
 import domain.Invitation;
 import domain.JobVacancy;
 import domain.Resume;
@@ -13,6 +14,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import service.AspirantService;
 import service.CompanyService;
+import service.HRManagerService;
 import service.JobVacancyService;
 import service.exception.AspirantAlreadyExistsException;
 import service.exception.AspirantNotRegisteredException;
@@ -23,6 +25,7 @@ import service.fake.AspirantProfileDaoFake;
 import service.fake.AspirantResumeDaoFake;
 import service.fake.AspirantResumeViewDaoFake;
 import service.fake.CompanyDaoFake;
+import service.fake.HRManagerDaoFake;
 import service.fake.InvitationDaoFake;
 import service.fake.JobVacancyDaoFake;
 
@@ -49,9 +52,12 @@ class MyAspirantServiceTests {
         DAO<Company> companyDAO = new CompanyDaoFake();
         CompanyService companyService = new MyCompanyService(companyDAO);
 
+        DAO<HRManager> hrManagerDAO = new HRManagerDaoFake();
+        HRManagerService hrManagerService = new MyHRManagerService(hrManagerDAO, companyDAO, jobVacancyDAO, resumeDAO);
+
         this.aspirantService = new MyAspirantService(
                 aspirantAccountDAOFake, aspirantAccountDaoFake, resumeDAO,
-                resumeViewDAO, invitationDAO, jobVacancyService, companyService);
+                resumeViewDAO, invitationDAO, jobVacancyService, companyService, hrManagerService);
     }
 
     @AfterEach

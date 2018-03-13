@@ -14,7 +14,7 @@ import java.util.ArrayList;
 /**
  * Represents a resume list get command.
  */
-public class GetResumeListCommand implements Command {
+public class GetResumeListForAspirantCommand implements Command {
 
     private final AspirantService aspirantService = ServiceFactory.getInstance().getAspirantService();
 

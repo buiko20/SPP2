@@ -23,17 +23,18 @@ public class UpdateResumeCommand implements Command {
 
         String[] aspirant = request.split(";");
 
-        AspirantProfile aspirantProfile = new AspirantProfile(aspirant[1], aspirant[2], aspirant[3], aspirant[4], aspirant[5],
-                aspirant[6], Date.valueOf(aspirant[7]), aspirant[8], aspirant[9], aspirant[10], aspirant[11], aspirant[12]);
-        aspirantService.updateAspirantProfile(aspirant[0], aspirantProfile);
+        AspirantProfile aspirantProfile = new AspirantProfile(aspirant[2], aspirant[3], aspirant[4], aspirant[5], aspirant[6],
+                aspirant[7], Date.valueOf(aspirant[8]), aspirant[9], aspirant[10], aspirant[11], aspirant[12], aspirant[13]);
+        aspirantService.updateAspirantProfile(aspirant[1], aspirantProfile);
 
         java.util.Date currentDate = new java.util.Date();
         String curStringDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(currentDate);
 
-        Resume resume = new Resume(Timestamp.valueOf(curStringDate), aspirant[13], Boolean.valueOf(aspirant[14]),
-                Boolean.valueOf(aspirant[15]), aspirant[16], Float.valueOf(aspirant[17]),0, aspirantService.getAspirantAccountByEmail(aspirant[0]).getId());
+        Resume resume = new Resume(Timestamp.valueOf(curStringDate), aspirant[14], Boolean.valueOf(aspirant[15]),
+                Boolean.valueOf(aspirant[16]), aspirant[17], Float.valueOf(aspirant[18]),aspirantService.getAllAspirantResumeViews(aspirant[1], aspirant[0]).size(),
+                aspirantService.getAspirantAccountByEmail(aspirant[1]).getId());
 
-        aspirantService.updateAspirantResume(aspirant[0], aspirant[13], resume);
+        aspirantService.updateAspirantResume(aspirant[1], aspirant[0], resume);
         return null;
     }
 }

@@ -36,6 +36,9 @@
                 <li><a href="/ResumeList">Резюме</a></li>
             </ul>
             <ul class="nav navbar-nav">
+                <li><a href="/InvitationList">Приглашения</a></li>
+            </ul>
+            <ul class="nav navbar-nav">
                 <li><a href="">Вакансии</a></li>
             </ul>
             <ul class="nav navbar-nav">

@@ -1,4 +1,4 @@
-package controller.command.impl;
+package controller.command.impl.ResumeCommands;
 
 import controller.command.Command;
 import domain.AspirantProfile;
@@ -24,25 +24,25 @@ public class CreateResumeCommand implements Command{
     @Override
     public Object execute(String request) throws AspirantAlreadyExistsException, ServiceException, AspirantNotRegisteredException, AspirantProfileNotFoundException {
 
-        String[] aspirant = request.split(";");
+        String[] requestData = request.split(";");
 
-        if(aspirantService.getAspirantProfile(aspirant[0]) == null){
-            AspirantProfile aspirantProfile = new AspirantProfile(aspirant[1], aspirant[2], aspirant[3], aspirant[4], aspirant[5],
-                   aspirant[6], Date.valueOf(aspirant[7]), aspirant[8], aspirant[9], aspirant[10], aspirant[11], aspirant[12]);
-            aspirantService.addAspirantProfile(aspirant[0], aspirantProfile);
+        if(aspirantService.getAspirantProfile(requestData[0]) == null){
+            AspirantProfile aspirantProfile = new AspirantProfile(requestData[1], requestData[2], requestData[3], requestData[4], requestData[5],
+                   requestData[6], Date.valueOf(requestData[7]), requestData[8], requestData[9], requestData[10], requestData[11], requestData[12]);
+            aspirantService.addAspirantProfile(requestData[0], aspirantProfile);
         } else{
-            AspirantProfile aspirantProfile = new AspirantProfile(aspirant[1], aspirant[2], aspirant[3], aspirant[4], aspirant[5],
-                    aspirant[6], Date.valueOf(aspirant[7]), aspirant[8], aspirant[9], aspirant[10], aspirant[11], aspirant[12]);
-            aspirantService.updateAspirantProfile(aspirant[0], aspirantProfile);
+            AspirantProfile aspirantProfile = new AspirantProfile(requestData[1], requestData[2], requestData[3], requestData[4], requestData[5],
+                    requestData[6], Date.valueOf(requestData[7]), requestData[8], requestData[9], requestData[10], requestData[11], requestData[12]);
+            aspirantService.updateAspirantProfile(requestData[0], aspirantProfile);
         }
 
         java.util.Date currentDate = new java.util.Date();
         String curStringDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:s").format(currentDate);
 
-        Resume resume = new Resume(Timestamp.valueOf(curStringDate), aspirant[13], Boolean.valueOf(aspirant[14]),
-                Boolean.valueOf(aspirant[15]), aspirant[16], Float.valueOf(aspirant[17]),0, aspirantService.getAspirantAccountByEmail(aspirant[0]).getId());
+        Resume resume = new Resume(Timestamp.valueOf(curStringDate), requestData[13], Boolean.valueOf(requestData[14]),
+                Boolean.valueOf(requestData[15]), requestData[16], Float.valueOf(requestData[17]),0, aspirantService.getAspirantAccountByEmail(requestData[0]).getId());
 
-        aspirantService.addAspirantResume(aspirant[0], resume);
+        aspirantService.addAspirantResume(requestData[0], resume);
         return null;
     }
 }

@@ -29,14 +29,17 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="HomePage.jsp">TanJobs.by</a>
+            <a class="navbar-brand" href="/HomePageAspirant.jsp">TanJobs.by</a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li><a href="/ResumeList">Резюме</a></li>
+                <li><a href="/ResumeList?command=GetResumeListForAspirant">Резюме</a></li>
             </ul>
             <ul class="nav navbar-nav">
-                <li><a href="">Вакансии</a></li>
+                <li><a href="/InvitationList?command=GetInvitationListForAspirant">Приглашения</a></li>
+            </ul>
+            <ul class="nav navbar-nav">
+                <li><a href="/JobVacancyList?command=GetJobVacancyListForAspirant">Вакансии</a></li>
             </ul>
             <ul class="nav navbar-nav">
                 <li><a href="/Home/About">О программе</a></li>
@@ -65,7 +68,6 @@
                 <label class="control-label col-md-2" for="Salary">Зарплата</label>
                 <div class="col-md-10">
                     <input class="form-control text-box single-line" id="Salary" name="Salary" type="text" value="<c:out value = "${resume.salary}"/>" />
-                    <span class="field-validation-valid text-danger" data-valmsg-for="Salary" data-valmsg-replace="true" class="add-on">$</span>
                 </div>
             </div>
 

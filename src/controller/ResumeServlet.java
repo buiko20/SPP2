@@ -1,10 +1,6 @@
 package controller;
 
 import controller.command.Command;
-import domain.Resume;
-import service.exception.AspirantAlreadyExistsException;
-import service.exception.AspirantNotRegisteredException;
-import service.exception.ServiceException;
 import viewModel.AspirantResume;
 import viewModel.ResumeView;
 
@@ -14,14 +10,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.sql.Date;
 import java.util.ArrayList;
-import java.util.List;
 
 /**
- * Represents an resume creation servlet.
+ * Represents a resume creation servlet.
  */
 @WebServlet(name = "ResumeServlet", urlPatterns = "/Resume")
 public class ResumeServlet extends HttpServlet {
@@ -45,7 +38,12 @@ public class ResumeServlet extends HttpServlet {
         {
             case("CreateResume"):
             {
-                SetNewResume(request, response, commandName);
+                Command command = commandProvider.getCommand(commandName);
+                try {
+                    command.execute(SetNewResumeData(request, response));
+                } catch (Exception e) { }
+
+                request.getRequestDispatcher("/ResumeList?command=GetResumeListForAspirant").forward(request, response);
                 break;
             }
 
@@ -53,11 +51,16 @@ public class ResumeServlet extends HttpServlet {
                 HttpSession session = request.getSession();
 
                 String email = (String)session.getAttribute("userEmail");
+                String aspirantId = request.getParameter("aspirantId");
                 String careerObjective = request.getParameter("careerObjective");
+                session.setAttribute("oldCareerObjective", careerObjective);
 
                 Command command = commandProvider.getCommand(commandName);
                 try {
-                    session.setAttribute("resume", (AspirantResume)command.execute(email + ";" + careerObjective));
+                    if(session.getAttribute("actor").toString() == "aspirant")
+                        session.setAttribute("resume", (AspirantResume)command.execute(email + ";" + careerObjective));
+                    else
+                        session.setAttribute("resume", (AspirantResume)command.execute(aspirantId + ";" + careerObjective + ";" + email));
                 } catch (Exception e) { }
 
                 request.getRequestDispatcher("/ResumeDisplay.jsp").forward(request, response);
@@ -65,19 +68,28 @@ public class ResumeServlet extends HttpServlet {
             }
 
             case("UpdateResume"):{
-                SetNewResume(request, response, commandName);
+                HttpSession session = request.getSession();
+
+                String oldCareerObjective = (String)session.getAttribute("oldCareerObjective");
+
+                Command command = commandProvider.getCommand(commandName);
+                try {
+                    command.execute( oldCareerObjective + ";" + SetNewResumeData(request, response));
+                } catch (Exception e) { }
+
+                request.getRequestDispatcher("/ResumeList?command=GetResumeListForAspirant").forward(request, response);
                 break;
             }
 
             case("DeleteResume"):{
                 GetAndSetSessionAttributes(request, response,commandName);
-                request.getRequestDispatcher("/ResumeList").forward(request, response);
+                request.getRequestDispatcher("/ResumeList?command=GetResumeListForAspirant").forward(request, response);
                 break;
             }
 
             case("UpdateResumeDate"):{
                 GetAndSetSessionAttributes(request, response,commandName);
-                request.getRequestDispatcher("/ResumeListDisplay.jsp").forward(request, response);
+                request.getRequestDispatcher("/ResumeList?command=GetResumeListForAspirant").forward(request, response);
                 break;
             }
 
@@ -115,7 +127,7 @@ public class ResumeServlet extends HttpServlet {
 
     }
 
-    protected void SetNewResume(HttpServletRequest request, HttpServletResponse response, String commandName) throws ServletException, IOException {
+    protected String SetNewResumeData(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         String email = (String)session.getAttribute("userEmail");
         String name = request.getParameter("Name");
@@ -142,13 +154,10 @@ public class ResumeServlet extends HttpServlet {
         if(salary.equals(""))
             salary = "0.0";
 
-        Command command = commandProvider.getCommand(commandName);
-        try {
-            command.execute(email + ";" + name + ";" + surname + ";" + feedbackEmail + ";" + patronymic + ";" + sex + ";" + education + ";" +
-                    dateOfBirth + ";" + phoneNumber + ";" + mailingAddress + ";" +englishLevel + ";" + aboutMe + ";" + cityOfResidence +
-                    ";" + careerObjective + ";" + isTripPossible + ";" + isRelocationPossible + ";" + skills + ";" + salary);
-        } catch (Exception e) { }
+        String result = email + ";" + name + ";" + surname + ";" + feedbackEmail + ";" + patronymic + ";" + sex + ";" + education + ";" +
+                dateOfBirth + ";" + phoneNumber + ";" + mailingAddress + ";" +englishLevel + ";" + aboutMe + ";" + cityOfResidence +
+                ";" + careerObjective + ";" + isTripPossible + ";" + isRelocationPossible + ";" + skills + ";" + salary;
 
-        request.getRequestDispatcher("/ResumeList").forward(request, response);
+        return result;
     }
 }

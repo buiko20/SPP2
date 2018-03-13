@@ -4,6 +4,7 @@ import java.sql.Date;
 
 public class AspirantResume {
 
+    public String accountEmail;
     public String careerObjective;
     public float salary;
     public String surname;
@@ -63,6 +64,22 @@ public class AspirantResume {
         this.isRelocationPossible = isRelocationPossible;
         this.skills = skills;
         this.aboutMe = aboutMe;
+    }
+
+    /**
+     * Gets an aspirant account email
+     * @return aspirant account email
+     */
+    public String getAccountEmail() {
+        return accountEmail;
+    }
+
+    /**
+     * Sets an aspirant account email
+     * @param accountEmail aspirant account email
+     */
+    public void setAccountEmail(String accountEmail) {
+        this.accountEmail = accountEmail;
     }
 
     /**

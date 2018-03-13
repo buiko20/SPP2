@@ -1,13 +1,11 @@
-package controller.command.impl;
+package controller.command.impl.ResumeCommands;
 
 import controller.command.Command;
 import domain.AspirantProfile;
 import domain.Resume;
 import service.AspirantService;
 import service.ServiceFactory;
-import service.exception.AspirantAlreadyExistsException;
-import service.exception.AspirantNotRegisteredException;
-import service.exception.ServiceException;
+import service.exception.*;
 import viewModel.AspirantResume;
 
 import java.sql.Date;
@@ -20,9 +18,18 @@ public class GetResumeCommand implements Command {
     private final AspirantService aspirantService = ServiceFactory.getInstance().getAspirantService();
 
     @Override
-    public Object execute(String request) throws AspirantAlreadyExistsException, ServiceException, AspirantNotRegisteredException {
+    public Object execute(String request) throws AspirantAlreadyExistsException, ServiceException, AspirantNotRegisteredException, HRManagerNotFoundException, ResumeNotFoundException {
 
         String[] requestData = request.split(";");
+
+        if(requestData.length != 2) {
+
+            String aspirantEmail = aspirantService.getAspirantAccountById(Integer.parseInt(requestData[0])).getEmail();
+
+            requestData[0] = aspirantEmail;
+
+            aspirantService.addAspirantResumeView(requestData[0], requestData[1], requestData[2]);
+        }
 
         Resume resume = aspirantService.getAspirantResume(requestData[0], requestData[1]);
         AspirantProfile aspirantProfile = aspirantService.getAspirantProfile(requestData[0]);

@@ -1,4 +1,4 @@
-package controller.command.impl;
+package controller.command.impl.ResumeCommands;
 
 import controller.command.Command;
 import domain.AspirantProfile;
@@ -35,6 +35,7 @@ public class UpdateResumeCommand implements Command {
                 aspirantService.getAspirantAccountByEmail(aspirant[1]).getId());
 
         aspirantService.updateAspirantResume(aspirant[1], aspirant[0], resume);
+
         return null;
     }
 }

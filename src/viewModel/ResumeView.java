@@ -1,17 +1,17 @@
 package viewModel;
 
-import java.sql.Timestamp;
+import java.util.Date;
 
 public class ResumeView {
 
-    public Timestamp date;
+    public Date date;
 
     /**
      * Initializes a new instance of the {@link ResumeView model}
      * @param date resume view date
      * @param companyName resume view company name
      */
-    public ResumeView(Timestamp date, String companyName) {
+    public ResumeView(Date date, String companyName) {
 
         this.date = date;
         this.companyName = companyName;
@@ -23,7 +23,7 @@ public class ResumeView {
      * Gets a resume view date
      * @return resume view date
      */
-    public Timestamp getDate() {
+    public Date getDate() {
         return date;
     }
 

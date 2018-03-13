@@ -1,4 +1,4 @@
-package controller.command.impl;
+package controller.command.impl.ResumeCommands;
 
 import controller.command.Command;
 import service.AspirantService;
@@ -9,6 +9,9 @@ import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/**
+ * Represents a resume date update command.
+ */
 public class UpdateResumeDateCommand implements Command {
 
     private final AspirantService aspirantService = ServiceFactory.getInstance().getAspirantService();

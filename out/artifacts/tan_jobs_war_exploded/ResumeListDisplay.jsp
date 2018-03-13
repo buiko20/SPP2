@@ -29,14 +29,37 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/HomePage.jsp">TanJobs.by</a>
+            <c:if test="${actor != 'aspirant'}">
+                <a class="navbar-brand" href="/HomePageHRManager.jsp">TanJobs.by</a>
+            </c:if>
+            <c:if test="${actor != 'hr'}">
+                <a class="navbar-brand" href="/HomePageAspirant.jsp">TanJobs.by</a>
+            </c:if>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li><a href="ResumeListDisplay.jsp">Резюме</a></li>
+                <c:if test="${actor != 'hr'}">
+                    <li><a href="/ResumeList?command=GetResumeListForAspirant">Резюме</a></li>
+                </c:if>
+                <c:if test="${actor != 'aspirant'}">
+                    <li><a href="/ResumeList?command=GetResumeListForHRManager">Резюме</a></li>
+                </c:if>
             </ul>
             <ul class="nav navbar-nav">
-                <li><a href="">Вакансии</a></li>
+                <c:if test="${actor != 'hr'}">
+                    <li><a href="/InvitationList?command=GetInvitationListForAspirant">Приглашения</a></li>
+                </c:if>
+                <c:if test="${actor != 'aspirant'}">
+                    <li><a href="/InvitationList?command=GetInvitationListForHRManager">Приглашения</a></li>
+                </c:if>
+            </ul>
+            <ul class="nav navbar-nav">
+                <c:if test="${actor != 'hr'}">
+                    <li><a href="/JobVacancyList?command=GetJobVacancyListForAspirant">Вакансии</a></li>
+                </c:if>
+                <c:if test="${actor != 'aspirant'}">
+                    <li><a href="/JobVacancyList?command=GetJobVacancyListForHRManager">Вакансии</a></li>
+                </c:if>
             </ul>
             <ul class="nav navbar-nav">
                 <li><a href="">О программе</a></li>
@@ -59,17 +82,25 @@
             <div class="form-group">
                 <div class="col-md-10">
                     <h6>Дата последнего обновления: <c:out value = "${resumeList.get(i).date}"/></h6>
-                    <h3><a href="/Resume?careerObjective=${resumeList.get(i).careerObjective}&command=GetResume"><c:out value = "${resumeList.get(i).careerObjective}"/></a></h3>
-                    <h5>Количество просмотров: <a href="/Resume?careerObjective=${resumeList.get(i).careerObjective}&command=GetResumeViewList"><c:out value = "${resumeList.get(i).numberOfViews}"/></a></h5>
-                    <h6><a href="/Resume?careerObjective=${resumeList.get(i).careerObjective}&command=UpdateResumeDate">Обновить дату</a></h6>
+                    <h3><a href="/Resume?careerObjective=${resumeList.get(i).careerObjective}&command=GetResume&aspirantId=${resumeList.get(i).aspirantId}"><c:out value = "${resumeList.get(i).careerObjective}"/></a></h3>
+                    <c:if test="${actor != 'hr'}">
+                        <h5>Количество просмотров: <a href="/Resume?careerObjective=${resumeList.get(i).careerObjective}&command=GetResumeViewList"><c:out value = "${resumeList.get(i).numberOfViews}"/></a></h5>
+                        <h6><a href="/Resume?careerObjective=${resumeList.get(i).careerObjective}&command=UpdateResumeDate">Обновить дату</a></h6>
+                    </c:if>
+                    <c:if test="${actor != 'aspirant'}">
+                        <h5>Соискатель №<c:out value = "${resumeList.get(i).aspirantId}"/></h5>
+                    </c:if>
                 </div>
             </div>
             <hr/>
             </c:forEach>
             </c:if>
-            <div class="form-group form-right">
-                <a class="btn btn-success resume-btn" href="ResumeCreation.jsp">Создать резюме</a>
-            </div>
+
+            <c:if test="${actor != 'hr'}">
+                <div class="form-group form-right">
+                    <a class="btn btn-success resume-btn" href="ResumeCreation.jsp">Создать резюме</a>
+                </div>
+            </c:if>
         </div>
     </form>
 </div>

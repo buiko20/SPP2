@@ -29,14 +29,37 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/HomePage.jsp">TanJobs.by</a>
+            <c:if test="${actor != 'aspirant'}">
+                <a class="navbar-brand" href="/HomePageHRManager.jsp">TanJobs.by</a>
+            </c:if>
+            <c:if test="${actor != 'hr'}">
+                <a class="navbar-brand" href="/HomePageAspirant.jsp">TanJobs.by</a>
+            </c:if>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li><a href="ResumeListDisplay.jsp">Резюме</a></li>
+                <c:if test="${actor != 'hr'}">
+                    <li><a href="/ResumeList?command=GetResumeListForAspirant">Резюме</a></li>
+                </c:if>
+                <c:if test="${actor != 'aspirant'}">
+                    <li><a href="/ResumeList?command=GetResumeListForHRManager">Резюме</a></li>
+                </c:if>
             </ul>
             <ul class="nav navbar-nav">
-                <li><a href="">Вакансии</a></li>
+                <c:if test="${actor != 'hr'}">
+                    <li><a href="/InvitationList?command=GetInvitationListForAspirant">Приглашения</a></li>
+                </c:if>
+                <c:if test="${actor != 'aspirant'}">
+                    <li><a href="/InvitationList?command=GetInvitationListForHRManager">Приглашения</a></li>
+                </c:if>
+            </ul>
+            <ul class="nav navbar-nav">
+                <c:if test="${actor != 'hr'}">
+                    <li><a href="/JobVacancyList?command=GetJobVacancyListForAspirant">Вакансии</a></li>
+                </c:if>
+                <c:if test="${actor != 'aspirant'}">
+                    <li><a href="/JobVacancyList?command=GetJobVacancyListForHRManager">Вакансии</a></li>
+                </c:if>
             </ul>
             <ul class="nav navbar-nav">
                 <li><a href="">О программе</a></li>
@@ -185,12 +208,21 @@
                     <textarea class="input-xlarge valid" id="About_me" name="About_me" rows="3"><c:out value = "${resume.aboutMe}"/></textarea>
                 </div>
             </div>
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <a class="btn btn-default" href="ResumeUpdate.jsp">Редактировать</a>
-                    <a class="btn btn-danger" href="/Resume?careerObjective=${resume.careerObjective}&command=DeleteResume">Удалить</a>
+            <c:if test="${actor != 'hr'}">
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <a class="btn btn-default" href="ResumeUpdate.jsp">Редактировать</a>
+                        <a class="btn btn-danger" href="/Resume?careerObjective=${resume.careerObjective}&command=DeleteResume">Удалить</a>
+                    </div>
                 </div>
-            </div>
+            </c:if>
+            <c:if test="${actor != 'aspirant'}">
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <a class="btn btn-default" href="InvitationCreation.jsp">Отправить приглашение</a>
+                    </div>
+                </div>
+            </c:if>
         </div>
     </form>
 </div>

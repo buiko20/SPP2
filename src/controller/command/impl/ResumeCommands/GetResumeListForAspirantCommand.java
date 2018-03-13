@@ -1,4 +1,4 @@
-package controller.command.impl;
+package controller.command.impl.ResumeCommands;
 
 import controller.command.Command;
 import domain.Resume;
@@ -8,11 +8,10 @@ import service.exception.AspirantAlreadyExistsException;
 import service.exception.AspirantNotRegisteredException;
 import service.exception.ServiceException;
 
-import java.sql.Date;
 import java.util.ArrayList;
 
 /**
- * Represents a resume list get command.
+ * Represents a resume list get command for aspirant.
  */
 public class GetResumeListForAspirantCommand implements Command {
 

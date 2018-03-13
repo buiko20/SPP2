@@ -1,4 +1,4 @@
-package controller.command.impl;
+package controller.command.impl.ResumeCommands;
 
 import controller.command.Command;
 import service.AspirantService;
@@ -14,6 +14,7 @@ public class DeleteResumeCommand implements Command {
 
     @Override
     public Object execute(String request) throws AspirantAlreadyExistsException, ServiceException, AspirantNotRegisteredException, AspirantProfileNotFoundException, ResumeNotFoundException {
+
         String[] requestData = request.split(";");
 
         aspirantService.deleteAspirantResume(requestData[0], requestData[1]);

@@ -29,14 +29,17 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="HomePage.jsp">TanJobs.by</a>
+            <a class="navbar-brand" href="/HomePageAspirant.jsp">TanJobs.by</a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li><a href="/ResumeList">Резюме</a></li>
+                <li><a href="/ResumeList?command=GetResumeListForAspirant">Резюме</a></li>
             </ul>
             <ul class="nav navbar-nav">
-                <li><a href="">Вакансии</a></li>
+                <li><a href="/InvitationList?command=GetInvitationListForAspirant">Приглашения</a></li>
+            </ul>
+            <ul class="nav navbar-nav">
+                <li><a href="/JobVacancyList?command=GetJobVacancyListForAspirant">Вакансии</a></li>
             </ul>
             <ul class="nav navbar-nav">
                 <li><a href="/Home/About">О программе</a></li>

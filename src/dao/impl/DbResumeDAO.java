@@ -26,7 +26,7 @@ public class DbResumeDAO implements DAO<Resume> {
                 Boolean isRelocationPossible = resultSet.getInt("Relocation") != 0;
                 Resume resume = new Resume(
                         resultSet.getInt("id"),
-                        resultSet.getDate("Date"),
+                        resultSet.getTimestamp("Date"),
                         resultSet.getString("Career_objective"),
                         isTripPossible,
                         isRelocationPossible,

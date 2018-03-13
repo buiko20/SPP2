@@ -25,7 +25,7 @@ public class DbJobVacancyDAO implements DAO<JobVacancy> {
                 JobVacancy jobVacancy = new JobVacancy(
                         resultSet.getInt("id"),
                         resultSet.getString("Name"),
-                        resultSet.getDate("Date"),
+                        resultSet.getTimestamp("Date"),
                         resultSet.getString("Description"),
                         resultSet.getString("Status"),
                         resultSet.getString("Address"),

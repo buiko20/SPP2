@@ -24,7 +24,7 @@ public class DbAspirantResponseDAO implements DAO<AspirantResponse> {
             while(resultSet.next()){
                 AspirantResponse aspirantResponse = new AspirantResponse(
                         resultSet.getInt("id"),
-                        resultSet.getDate("Date"),
+                        resultSet.getTimestamp("Date"),
                         resultSet.getString("Covering_letter"),
                         resultSet.getInt("Aspirant_id"),
                         resultSet.getInt("Job_vacancy_id"),

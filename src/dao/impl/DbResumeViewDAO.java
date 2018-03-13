@@ -24,7 +24,7 @@ public class DbResumeViewDAO implements DAO<ResumeView> {
             while(resultSet.next()){
                 ResumeView resumeView = new ResumeView(
                         resultSet.getInt("id"),
-                        resultSet.getDate("Date"),
+                        resultSet.getTimestamp("Date"),
                         resultSet.getInt("Resume_id"),
                         resultSet.getInt("Aspirant_id"),
                         resultSet.getInt("HR_manager_id"),

@@ -30,12 +30,12 @@ public interface JobVacancyService {
     /**
      * Returns job vacancy.
      * @param vacancyName job vacancy name.
+     * @param companyName name of the company to which the vacancy refers.
      * @return job vacancy.
      * @throws IllegalArgumentException when vacancyName or careerObjective is null, empty or whitespace.
      * @throws ServiceException when an error occurred in service.
      */
-    JobVacancy getJobVacancy(String vacancyName)
-            throws IllegalArgumentException, ServiceException;
+    JobVacancy getJobVacancy(String vacancyName, String companyName) throws IllegalArgumentException, ServiceException;
 
     JobVacancy getJobVacancyById(int id) throws ServiceException;
 }

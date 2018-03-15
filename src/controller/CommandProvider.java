@@ -40,6 +40,8 @@ public class CommandProvider {
 
         addCommand(new CreateJobVacancyCommand(), "CreateJobVacancy");
         addCommand(new GetJobVacancyCommand(), "GetJobVacancy");
+        addCommand(new UpdateJobVacancyCommand(), "UpdateJobVacancy");
+        addCommand(new DeleteJobVacancyCommand(), "DeleteJobVacancy");
 
         addCommand(new GetCompanyCommand(), "GetCompany");
 

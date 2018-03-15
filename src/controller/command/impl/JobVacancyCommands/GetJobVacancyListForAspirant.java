@@ -24,10 +24,7 @@ public class GetJobVacancyListForAspirant implements Command {
         ArrayList<JobVacancy> oldJobVacancyList = jobVacancyService.getAllAspirantJobVacancy();
 
         for (JobVacancy oldJobVacancy : oldJobVacancyList) {
-            //TODO: вызвать правильный метод
-            //HRManager hrManager = hrManagerService.getHRManagerById(oldJobVacancy.getHrManagerId());
-
-            HRManager hrManager = hrManagerService.getHRManagerByEmail("user@gmail.com");
+            HRManager hrManager = hrManagerService.getHRManagerById(oldJobVacancy.getHrManagerId());
 
             viewModel.JobVacancy newJobVacancy = new viewModel.JobVacancy(oldJobVacancy.getStatus(),
                     oldJobVacancy.getName(), oldJobVacancy.getDate(), companyService.getCompanyById(oldJobVacancy.getCompanyId()).getName(),

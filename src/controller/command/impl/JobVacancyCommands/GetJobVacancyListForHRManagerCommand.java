@@ -1,6 +1,7 @@
 package controller.command.impl.JobVacancyCommands;
 
 import controller.command.Command;
+import domain.Company;
 import domain.HRManager;
 import domain.JobVacancy;
 import service.CompanyService;
@@ -19,15 +20,13 @@ public class GetJobVacancyListForHRManagerCommand implements Command {
     public Object execute(String request) throws AspirantAlreadyExistsException, ServiceException, AspirantNotRegisteredException, AspirantProfileNotFoundException, ResumeNotFoundException {
 
         ArrayList<viewModel.JobVacancy> newJobVacancyList = new ArrayList<>();
-        //TODO: вызвать правильный метод
-        //ArrayList<JobVacancy> oldJobVacancyList = hrManagerService.getAllVacanciesOfCompany(request);
-        ArrayList<JobVacancy> oldJobVacancyList = hrManagerService.getAllVacanciesOfCompany("Ololoshka");
+
+        Company company = companyService.getCompanyById(hrManagerService.getHRManagerByEmail(request).getCompanyId());
+        ArrayList<JobVacancy> oldJobVacancyList = hrManagerService.getAllVacanciesOfCompany(company.getName());
 
         for (JobVacancy oldJobVacancy : oldJobVacancyList) {
-            //TODO: вызвать правильный метод
-            //HRManager hrManager = hrManagerService.getHRManagerById(oldJobVacancy.getHrManagerId());
 
-            HRManager hrManager = hrManagerService.getHRManagerByEmail("user@gmail.com");
+            HRManager hrManager = hrManagerService.getHRManagerById(oldJobVacancy.getHrManagerId());
 
             viewModel.JobVacancy newJobVacancy = new viewModel.JobVacancy(oldJobVacancy.getStatus(),
                     oldJobVacancy.getName(), oldJobVacancy.getDate(), companyService.getCompanyById(oldJobVacancy.getCompanyId()).getName(),

@@ -27,9 +27,7 @@ public class GetInvitationListForAspirantCommand implements Command {
 
         for (Invitation oldInvitation : oldInvitationList) {
 
-            //TODO: вызвать правильный метод
-            //HRManager hrManager = hrManagerService.getHRManagerByEmail(oldInvitation.getHrManagerId());
-            HRManager hrManager = hrManagerService.getHRManagerByEmail("user@gmail.com");
+            HRManager hrManager = hrManagerService.getHRManagerById(oldInvitation.getHrManagerId());
 
             AspirantInvitation newInvitation = new AspirantInvitation(oldInvitation.getDate(), oldInvitation.getAddress(), request,
                     aspirantService.getResumeById(oldInvitation.getResumeId()).getCareerObjective(), companyService.getCompanyById(oldInvitation.getCompanyId()).getName(),

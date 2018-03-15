@@ -22,13 +22,9 @@ public class GetJobVacancyCommand implements Command {
     public Object execute(String request) throws AspirantAlreadyExistsException, ServiceException, AspirantNotRegisteredException, AspirantProfileNotFoundException, ResumeNotFoundException {
 
         String[] requestData = request.split(";");
-        //TODO: вызвать правильный метод
 
-        //JobVacancy oldJobVacancy = jobVacancyService.getJobVacancy(requestData[0], requestData[1]);
-        //HRManager hrManager = hrManagerService.getHRManagerById(oldJobVacancy.getHrManagerId());
-
-        JobVacancy oldJobVacancy = jobVacancyService.getJobVacancy(requestData[1]);
-        HRManager hrManager = hrManagerService.getHRManagerByEmail("user@gmail.com");
+        JobVacancy oldJobVacancy = jobVacancyService.getJobVacancy(requestData[0], requestData[1]);
+        HRManager hrManager = hrManagerService.getHRManagerById(oldJobVacancy.getHrManagerId());
 
         viewModel.JobVacancy newJobVacancy = new viewModel.JobVacancy(oldJobVacancy.getStatus(),
                 oldJobVacancy.getName(), oldJobVacancy.getDate(), companyService.getCompanyById(oldJobVacancy.getCompanyId()).getName(),

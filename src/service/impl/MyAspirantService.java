@@ -397,7 +397,7 @@ public class MyAspirantService implements AspirantService {
 
         try {
             Resume resume = this.getAspirantResume(email, careerObjective);
-            JobVacancy jobVacancy = this.jobVacancyService.getJobVacancy(jobVacancyName);
+            JobVacancy jobVacancy = this.jobVacancyService.getJobVacancy(jobVacancyName, companyName);
             Company company = this.companyService.getCompanyByName(companyName);
 
             Predicate<Invitation> predicate = i -> i.getResumeId() == resume.getId() &&

@@ -30,11 +30,11 @@ public class ServiceFactory {
     private final AuthService authService = new MyAuthService(
             AspirantAccountDao, hrManagerDAO);
     private final JobVacancyService jobVacancyService = new MyJobVacancyService(
-            jobVacancyDAO);
+            jobVacancyDAO, companyDAO);
     private final CompanyService companyService = new MyCompanyService(
             companyDAO);
     private final HRManagerService hrManagerService = new MyHRManagerService(hrManagerDAO, companyDAO,
-            jobVacancyDAO, resumeDAO);
+            jobVacancyDAO, resumeDAO, invitationDAO);
     private final AspirantService aspirantService = new MyAspirantService(
             AspirantAccountDao, AspirantProfileDao, resumeDAO, resumeViewDAO,
             invitationDAO, jobVacancyService, companyService, hrManagerService);

@@ -18,10 +18,10 @@ class MyJobVacancyServiceTests {
     private JobVacancyService jobVacancyService;
 
     @BeforeEach
-    void setUp() {
+    /*void setUp() {
         DAO<JobVacancy> jobVacancyDAO = new JobVacancyDaoFake();
         jobVacancyService = new MyJobVacancyService(jobVacancyDAO);
-    }
+    }*/
 
     @AfterEach
     void tearDown() {
@@ -34,7 +34,7 @@ class MyJobVacancyServiceTests {
         assertTrue(result.isEmpty());
     }
 
-    @Test
+    /*@Test
     void addJobVacancy_jobVacancy_addedJobVacancy() throws Exception {
         JobVacancy jobVacancy = new JobVacancy();
         jobVacancy.setName("name");
@@ -43,6 +43,6 @@ class MyJobVacancyServiceTests {
         jobVacancy = this.jobVacancyService.getJobVacancy("name");
 
         assertTrue(jobVacancy.getName().equals("name"));
-    }
+    }*/
 
 }

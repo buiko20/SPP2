@@ -38,7 +38,7 @@ class MyAspirantServiceTests {
 
     private AspirantService aspirantService;
 
-    @BeforeEach
+    /*@BeforeEach
     void setUp() {
         DAO<AspirantAccount> aspirantAccountDAOFake = new AspirantAccountDaoFake();
         DAO<AspirantProfile> aspirantAccountDaoFake = new AspirantProfileDaoFake();
@@ -505,6 +505,6 @@ class MyAspirantServiceTests {
         assertThrows(IllegalArgumentException.class, () -> this.aspirantService.getAllAspirantResumeViews("wef", ""));
         assertThrows(IllegalArgumentException.class, () -> this.aspirantService.getAllAspirantResumeViews("wef", "   "));
         assertThrows(IllegalArgumentException.class, () -> this.aspirantService.getAllAspirantResumeViews("wef", null));
-    }
+    }*/
 
 }

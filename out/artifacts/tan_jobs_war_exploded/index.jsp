@@ -53,7 +53,7 @@
       <div class="col-md-4">
         <h2>2</h2>
         <p>Найди вакансию, которая придется тебе по вкусу</p>
-        <p><a class="btn btn-success" href="/Home/About">Найти вакансию</a></p>
+        <p><a class="btn btn-success" href="Login.jsp">Найти вакансию</a></p>
       </div>
     </div>
     <hr/>

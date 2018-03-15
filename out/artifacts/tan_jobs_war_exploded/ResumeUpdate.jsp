@@ -52,7 +52,7 @@
     </div>
 </div>
 <div class="container body-content">
-    <h2>Создание резюме</h2>
+    <h2>Редактирование резюме</h2>
     <form action="/Resume" method="post"><input name="__RequestVerificationToken" type="hidden" value="RjfiaDeksEmAHGtSU-2HgMr1exVppGtfOgrdB4XrXjcUJsg1G9WPQj8lNMQqCzUAnEUufPSMW0im1iVtmSWczIQb9BS6Hvh7q6nFDn1R43c1" />
         <div class="form-horizontal">
             <h4>Желаемая должность</h4>

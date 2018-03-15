@@ -40,7 +40,7 @@ public class JobVacancyServlet extends HttpServlet {
 
                 Command command = commandProvider.getCommand(commandName);
                 try {
-                    session.setAttribute("jobVacancy", (JobVacancy)command.execute(jobVacancyCompanyName + ";" + jobVacancyName));
+                    session.setAttribute("jobVacancy", (JobVacancy)command.execute(jobVacancyName + ";" + jobVacancyCompanyName));
                 } catch (Exception e) { }
 
                 request.getRequestDispatcher("/JobVacancyDisplay.jsp").forward(request, response);
@@ -53,10 +53,38 @@ public class JobVacancyServlet extends HttpServlet {
                     command.execute(SetNewVacancyData(request, response));
                 } catch (Exception e) { }
 
-                request.getRequestDispatcher("/JobVacancyList?command=GetJobVacancyListForYrManager").forward(request, response);
+                request.getRequestDispatcher("/JobVacancyList?command=GetJobVacancyListForHRManager").forward(request, response);
                 break;
             }
+            case("UpdateJobVacancy"):{
 
+                HttpSession session = request.getSession();
+
+                String oldJobVacancyName = (String)session.getAttribute("oldJobVacancyName");
+
+                Command command = commandProvider.getCommand(commandName);
+                try {
+                    command.execute(oldJobVacancyName +  ";" + SetNewVacancyData(request, response));
+                } catch (Exception e) { }
+
+                request.getRequestDispatcher("/JobVacancyList?command=GetJobVacancyListForHRManager").forward(request, response);
+                break;
+            }
+            case("DeleteJobVacancy"):{
+
+                HttpSession session = request.getSession();
+
+                String jobVacancyName = request.getParameter("name");
+                String jobVacancyCompanyName = request.getParameter("companyName");
+
+                Command command = commandProvider.getCommand(commandName);
+                try {
+                    command.execute(jobVacancyName + ";" + jobVacancyCompanyName);
+                } catch (Exception e) { }
+
+                request.getRequestDispatcher("/JobVacancyList?command=GetJobVacancyListForHRManager").forward(request, response);
+                break;
+            }
             default:{
 
             }
@@ -65,6 +93,7 @@ public class JobVacancyServlet extends HttpServlet {
 
     protected String SetNewVacancyData(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
+
         String email = (String)session.getAttribute("userEmail");
         String name = request.getParameter("Name");
         String description = request.getParameter("Description");

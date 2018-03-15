@@ -11,47 +11,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="21424ace-22c0-4d63-80cf-8818a8f4c80c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/tan_jobs_war_exploded/CompanyDisplay.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/controller/CompanyServlet.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/controller/command/impl/GetCompanyCommand.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/CompanyDisplay.jsp" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/tan_jobs_war_exploded/AspirantLogin.jsp" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/tan_jobs_war_exploded/AspirantRegistration.jsp" afterPath="$PROJECT_DIR$/out/artifacts/tan_jobs_war_exploded/AspirantRegistration.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/tan_jobs_war_exploded/ResumeCreation.jsp" afterPath="$PROJECT_DIR$/out/artifacts/tan_jobs_war_exploded/ResumeCreation.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/tan_jobs_war_exploded/ResumeDisplay.jsp" afterPath="$PROJECT_DIR$/out/artifacts/tan_jobs_war_exploded/ResumeDisplay.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/tan_jobs_war_exploded/ResumeListDisplay.jsp" afterPath="$PROJECT_DIR$/out/artifacts/tan_jobs_war_exploded/ResumeListDisplay.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/tan_jobs_war_exploded/ResumeUpdate.jsp" afterPath="$PROJECT_DIR$/out/artifacts/tan_jobs_war_exploded/ResumeUpdate.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/tan_jobs_war_exploded/ResumeViewList.jsp" afterPath="$PROJECT_DIR$/out/artifacts/tan_jobs_war_exploded/ResumeViewList.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/tan_jobs_war_exploded/WEB-INF/styles/Site.css" afterPath="$PROJECT_DIR$/out/artifacts/tan_jobs_war_exploded/WEB-INF/styles/Site.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/tan_jobs_war_exploded/index.jsp" afterPath="$PROJECT_DIR$/out/artifacts/tan_jobs_war_exploded/index.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/CommandProvider.java" afterPath="$PROJECT_DIR$/src/controller/CommandProvider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/LoginServlet.java" afterPath="$PROJECT_DIR$/src/controller/LoginServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/RegistrationServlet.java" afterPath="$PROJECT_DIR$/src/controller/RegistrationServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/ResumeListServlet.java" afterPath="$PROJECT_DIR$/src/controller/ResumeListServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/ResumeServlet.java" afterPath="$PROJECT_DIR$/src/controller/ResumeServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/command/Command.java" afterPath="$PROJECT_DIR$/src/controller/command/Command.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/command/impl/LoginAspirantCommand.java" afterPath="$PROJECT_DIR$/src/controller/command/impl/LoginAspirantCommand.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/command/impl/RegisterAspirantCommand.java" afterPath="$PROJECT_DIR$/src/controller/command/impl/RegisterAspirantCommand.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/command/impl/ResumeCommands/CreateResumeCommand.java" afterPath="$PROJECT_DIR$/src/controller/command/impl/ResumeCommands/CreateResumeCommand.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/command/impl/ResumeCommands/DeleteResumeCommand.java" afterPath="$PROJECT_DIR$/src/controller/command/impl/ResumeCommands/DeleteResumeCommand.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/command/impl/ResumeCommands/GetResumeCommand.java" afterPath="$PROJECT_DIR$/src/controller/command/impl/ResumeCommands/GetResumeCommand.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/command/impl/ResumeCommands/GetResumeListForAspirantCommand.java" afterPath="$PROJECT_DIR$/src/controller/command/impl/ResumeCommands/GetResumeListForAspirantCommand.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/command/impl/ResumeCommands/GetResumeViewListCommand.java" afterPath="$PROJECT_DIR$/src/controller/command/impl/ResumeCommands/GetResumeViewListCommand.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/command/impl/ResumeCommands/UpdateResumeCommand.java" afterPath="$PROJECT_DIR$/src/controller/command/impl/ResumeCommands/UpdateResumeCommand.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/command/impl/ResumeCommands/UpdateResumeDateCommand.java" afterPath="$PROJECT_DIR$/src/controller/command/impl/ResumeCommands/UpdateResumeDateCommand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/JobVacancyServlet.java" afterPath="$PROJECT_DIR$/src/controller/JobVacancyServlet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/command/impl/InvitationCommands/GetInvitationListForAspirantCommand.java" afterPath="$PROJECT_DIR$/src/controller/command/impl/InvitationCommands/GetInvitationListForAspirantCommand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/command/impl/JobVacancyCommands/GetJobVacancyCommand.java" afterPath="$PROJECT_DIR$/src/controller/command/impl/JobVacancyCommands/GetJobVacancyCommand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/command/impl/JobVacancyCommands/GetJobVacancyListForAspirant.java" afterPath="$PROJECT_DIR$/src/controller/command/impl/JobVacancyCommands/GetJobVacancyListForAspirant.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/command/impl/JobVacancyCommands/GetJobVacancyListForHRManagerCommand.java" afterPath="$PROJECT_DIR$/src/controller/command/impl/JobVacancyCommands/GetJobVacancyListForHRManagerCommand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/service/ServiceFactory.java" afterPath="$PROJECT_DIR$/src/service/ServiceFactory.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/service/impl/MyAspirantService.java" afterPath="$PROJECT_DIR$/src/service/impl/MyAspirantService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/viewModel/AspirantResume.java" afterPath="$PROJECT_DIR$/src/viewModel/AspirantResume.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/viewModel/ResumeView.java" afterPath="$PROJECT_DIR$/src/viewModel/ResumeView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/AspirantRegistration.jsp" afterPath="$PROJECT_DIR$/web/AspirantRegistration.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/Login.jsp" afterPath="$PROJECT_DIR$/web/Login.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/ResumeCreation.jsp" afterPath="$PROJECT_DIR$/web/ResumeCreation.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/ResumeDisplay.jsp" afterPath="$PROJECT_DIR$/web/ResumeDisplay.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/ResumeListDisplay.jsp" afterPath="$PROJECT_DIR$/web/ResumeListDisplay.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/service/impl/MyAspirantServiceTests.java" afterPath="$PROJECT_DIR$/tests/service/impl/MyAspirantServiceTests.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/service/impl/MyJobVacancyServiceTests.java" afterPath="$PROJECT_DIR$/tests/service/impl/MyJobVacancyServiceTests.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/ResumeUpdate.jsp" afterPath="$PROJECT_DIR$/web/ResumeUpdate.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/ResumeViewList.jsp" afterPath="$PROJECT_DIR$/web/ResumeViewList.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/styles/Site.css" afterPath="$PROJECT_DIR$/web/WEB-INF/styles/Site.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/index.jsp" afterPath="$PROJECT_DIR$/web/index.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -82,12 +54,6 @@
         <item name="jobs_db@localhost" type="e3449647:DbNodeDescriptor" />
         <item name="jobs_db" type="e3449647:DbNodeDescriptor" />
       </path>
-      <path>
-        <item name="" type="eadb38e5:DatabaseStructure$Root" />
-        <item name="jobs_db@localhost" type="e3449647:DbNodeDescriptor" />
-        <item name="jobs_db" type="e3449647:DbNodeDescriptor" />
-        <item name="invitation" type="e3449647:DbNodeDescriptor" />
-      </path>
     </expand>
     <select />
   </component>
@@ -95,42 +61,58 @@
     <favorites_list name="tan_jobs" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="JobVacancyDisplay.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/JobVacancyDisplay.jsp">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="DbJobVacancyDAO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dao/impl/DbJobVacancyDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="59" column="48" lean-forward="false" selection-start-line="59" selection-start-column="48" selection-end-line="59" selection-end-column="48" />
+            <state relative-caret-position="199">
+              <caret line="68" column="47" lean-forward="true" selection-start-line="68" selection-start-column="47" selection-end-line="68" selection-end-column="47" />
+              <folding>
+                <marker date="1521113867960" expanded="true" signature="655:680" ph="SELECT * FRO... Job_vacancy" />
+                <marker date="1521113867960" expanded="true" signature="2175:2616" ph="UPDATE Job_v... " />
+                <marker date="1521113867960" expanded="true" signature="2978:3011" ph="DELETE FROM " />
+                <marker date="1521113867960" expanded="true" signature="3378:3812" ph="INSERT INTO Job_vacancy... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JobVacancyServlet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/controller/JobVacancyServlet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="132">
+              <caret line="66" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JobVacancyListDisplay.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/JobVacancyListDisplay.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="59" column="48" lean-forward="false" selection-start-line="59" selection-start-column="48" selection-end-line="59" selection-end-column="48" />
-              <folding />
+      <file leaf-file-name="job_vacancy" pinned="false" current-in-tab="false">
+        <entry file="das://table:/79170a09/3a72b50c-c309-495d-b0e8-7beff6bdd944/jobs_db.job_vacancy">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ResumeDisplay.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/ResumeDisplay.jsp">
+      <file leaf-file-name="UpdateJobVacancyCommand.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/controller/command/impl/JobVacancyCommands/UpdateJobVacancyCommand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="59" column="48" lean-forward="false" selection-start-line="59" selection-start-column="48" selection-end-line="59" selection-end-column="48" />
-              <folding />
+            <state relative-caret-position="130">
+              <caret line="23" column="44" lean-forward="false" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="44" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ResumeListDisplay.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/ResumeListDisplay.jsp">
+      <file leaf-file-name="JobVacancyUpdate.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/JobVacancyUpdate.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="59" column="48" lean-forward="false" selection-start-line="59" selection-start-column="48" selection-end-line="59" selection-end-column="48" />
+            <state relative-caret-position="88">
+              <caret line="99" column="18" lean-forward="true" selection-start-line="99" selection-start-column="18" selection-end-line="99" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -139,58 +121,8 @@
       <file leaf-file-name="ResumeUpdate.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/ResumeUpdate.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
-              <caret line="38" column="66" lean-forward="false" selection-start-line="38" selection-start-column="66" selection-end-line="38" selection-end-column="66" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ResumeViewList.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/ResumeViewList.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="31" column="12" lean-forward="false" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CompanyDisplay.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/CompanyDisplay.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="59" column="48" lean-forward="false" selection-start-line="59" selection-start-column="48" selection-end-line="59" selection-end-column="48" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HomePageAspirant.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/HomePageAspirant.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="64" column="101" lean-forward="false" selection-start-line="64" selection-start-column="101" selection-end-line="64" selection-end-column="101" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HomePageHRManager.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/HomePageHRManager.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="236">
-              <caret line="59" column="22" lean-forward="false" selection-start-line="59" selection-start-column="22" selection-end-line="59" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/index.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="94">
-              <caret line="54" column="61" lean-forward="true" selection-start-line="54" selection-start-column="61" selection-end-line="54" selection-end-column="61" />
+            <state relative-caret-position="-2479">
+              <caret line="128" column="34" lean-forward="true" selection-start-line="128" selection-start-column="34" selection-end-line="128" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -203,9 +135,9 @@
       <list>
         <option value="CSS File" />
         <option value="JUnit5 Test Class" />
-        <option value="Jsp File" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -228,34 +160,20 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/domain/AspirantAccount.java" />
-        <option value="$PROJECT_DIR$/tests/service/impl/MyAuthServiceTests.java" />
-        <option value="$PROJECT_DIR$/src/service/AuthService.java" />
-        <option value="$PROJECT_DIR$/src/service/fake/AspirantResumeDaoFake.java" />
-        <option value="$PROJECT_DIR$/src/service/JobVacancyService.java" />
-        <option value="$PROJECT_DIR$/src/service/impl/MyJobVacancyService.java" />
-        <option value="$PROJECT_DIR$/src/service/ServiceFactory.java" />
-        <option value="$PROJECT_DIR$/src/service/exception/HRManagerNotFoundException.java" />
         <option value="$PROJECT_DIR$/src/service/AspirantService.java" />
-        <option value="$PROJECT_DIR$/tests/service/impl/MyAspirantServiceTests.java" />
         <option value="$PROJECT_DIR$/src/controller/command/impl/ResumeCommands/GetResumeListForAspirantCommand.java" />
         <option value="$PROJECT_DIR$/src/controller/command/impl/ResumeCommands/GetResumeListForHRManagerCommand.java" />
         <option value="$PROJECT_DIR$/src/controller/command/impl/ResumeCommands/GetResumeViewListCommand.java" />
         <option value="$PROJECT_DIR$/src/controller/command/impl/ResumeCommands/UpdateResumeDateCommand.java" />
-        <option value="$PROJECT_DIR$/src/controller/command/impl/JobVacancyCommands/GetJobVacancyCommand.java" />
         <option value="$PROJECT_DIR$/src/viewModel/AspirantInvitation.java" />
         <option value="$PROJECT_DIR$/src/controller/command/impl/GetInvitationListForAspirant.java" />
         <option value="$PROJECT_DIR$/src/controller/command/impl/ResumeCommands/GetResumeCommand.java" />
-        <option value="$PROJECT_DIR$/src/service/impl/MyAspirantService.java" />
-        <option value="$PROJECT_DIR$/src/service/impl/MyAspirantService.java" />
         <option value="$PROJECT_DIR$/src/controller/command/impl/SendInvitationCommand.java" />
         <option value="$PROJECT_DIR$/src/controller/command/impl/GetInvitation.java" />
         <option value="$PROJECT_DIR$/src/controller/command/impl/InvitationCommands/GetCompanyCommand.java" />
         <option value="$PROJECT_DIR$/src/controller/command/impl/InvitationCommands/GetInvitationCommand.java" />
-        <option value="$PROJECT_DIR$/src/controller/command/impl/InvitationCommands/GetInvitationListForAspirantCommand.java" />
         <option value="$PROJECT_DIR$/src/controller/command/impl/InvitationCommands/SendInvitationCommand.java" />
         <option value="$PROJECT_DIR$/src/controller/command/impl/GetCompanyCommand.java" />
-        <option value="$PROJECT_DIR$/src/controller/CommandProvider.java" />
         <option value="$PROJECT_DIR$/src/controller/CompanyServlet.java" />
         <option value="$PROJECT_DIR$/src/controller/ResumeServlet.java" />
         <option value="$PROJECT_DIR$/src/controller/ResumeListServlet.java" />
@@ -274,11 +192,25 @@
         <option value="$PROJECT_DIR$/web/JobVacancyListDisplay.jsp" />
         <option value="$PROJECT_DIR$/web/ResumeDisplay.jsp" />
         <option value="$PROJECT_DIR$/web/ResumeListDisplay.jsp" />
-        <option value="$PROJECT_DIR$/web/ResumeUpdate.jsp" />
         <option value="$PROJECT_DIR$/web/CompanyDisplay.jsp" />
         <option value="$PROJECT_DIR$/web/HomePageAspirant.jsp" />
         <option value="$PROJECT_DIR$/web/HomePageHRManager.jsp" />
         <option value="$PROJECT_DIR$/web/index.jsp" />
+        <option value="$PROJECT_DIR$/src/controller/command/impl/InvitationCommands/GetInvitationListForAspirantCommand.java" />
+        <option value="$PROJECT_DIR$/src/controller/command/impl/JobVacancyCommands/GetJobVacancyCommand.java" />
+        <option value="$PROJECT_DIR$/src/controller/command/impl/JobVacancyCommands/GetJobVacancyListForAspirant.java" />
+        <option value="$PROJECT_DIR$/src/controller/command/impl/JobVacancyCommands/GetJobVacancyListForHRManagerCommand.java" />
+        <option value="$PROJECT_DIR$/src/service/impl/MyAspirantService.java" />
+        <option value="$PROJECT_DIR$/src/service/impl/MyAspirantService.java" />
+        <option value="$PROJECT_DIR$/src/service/ServiceFactory.java" />
+        <option value="$PROJECT_DIR$/tests/service/impl/MyJobVacancyServiceTests.java" />
+        <option value="$PROJECT_DIR$/tests/service/impl/MyAspirantServiceTests.java" />
+        <option value="$PROJECT_DIR$/src/controller/command/impl/JobVacancyCommands/DeleteJobVacancyCommand.java" />
+        <option value="$PROJECT_DIR$/src/controller/CommandProvider.java" />
+        <option value="$PROJECT_DIR$/web/ResumeUpdate.jsp" />
+        <option value="$PROJECT_DIR$/src/controller/JobVacancyServlet.java" />
+        <option value="$PROJECT_DIR$/web/JobVacancyUpdate.jsp" />
+        <option value="$PROJECT_DIR$/src/controller/command/impl/JobVacancyCommands/UpdateJobVacancyCommand.java" />
       </list>
     </option>
   </component>
@@ -321,8 +253,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -352,6 +282,20 @@
               <item name="tan_jobs" type="b2602c69:ProjectViewProjectNode" />
               <item name="SPP2" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+              <item name="command" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tan_jobs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SPP2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tan_jobs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SPP2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -376,8 +320,10 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -774,7 +720,8 @@
       <workItem from="1520771056661" duration="12139000" />
       <workItem from="1520872759128" duration="2882000" />
       <workItem from="1520949929736" duration="1771000" />
-      <workItem from="1520958410462" duration="9844000" />
+      <workItem from="1520958410462" duration="10346000" />
+      <workItem from="1521114555888" duration="9864000" />
     </task>
     <servers />
   </component>
@@ -811,7 +758,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="207798000" />
+    <option name="totallyTimeSpent" value="218164000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -824,32 +771,32 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1732224" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27093595" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3218391" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34811166" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.00821018" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32676518" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28139183" sideWeight="0.7766831" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.290469" sideWeight="0.81463414" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24054463" sideWeight="0.22331691" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32676518" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1732224" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.290469" sideWeight="0.18536586" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27093595" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -857,6 +804,7 @@
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" x="92" y="92" width="1182" height="544" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32676518" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -865,13 +813,13 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1732224" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1732224" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27093595" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -882,13 +830,13 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" x="92" y="92" width="1182" height="544" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34811166" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.00821018" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32676518" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28139183" sideWeight="0.7766831" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28971255" sideWeight="0.7766831" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24054463" sideWeight="0.22331691" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32826087" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32676518" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
     </layout-to-restore>
@@ -930,7 +878,15 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="113" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/controller/JobVacancyServlet.java</url>
+          <line>60</line>
+          <properties />
+          <option name="timeStamp" value="122" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="123" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory">
@@ -954,94 +910,106 @@
       </configuration>
     </watches-manager>
   </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/service/AspirantService.java">
+    <entry file="file://$PROJECT_DIR$/web/InvitationDisplay.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="812">
-          <caret line="182" column="0" lean-forward="true" selection-start-line="182" selection-start-column="0" selection-end-line="182" selection-end-column="0" />
+        <state relative-caret-position="239">
+          <caret line="64" column="21" lean-forward="false" selection-start-line="64" selection-start-column="21" selection-end-line="64" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/impl/DbResumeViewDAO.java">
+    <entry file="file://$PROJECT_DIR$/web/InvitationListDisplay.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="88" column="75" lean-forward="true" selection-start-line="88" selection-start-column="75" selection-end-line="88" selection-end-column="75" />
-          <folding>
-            <marker date="1519996171063" expanded="true" signature="654:672" ph="SELECT * FRO... View" />
-            <marker date="1519996171063" expanded="true" signature="2048:2386" ph="UPDATE View " />
-            <marker date="1519996171063" expanded="true" signature="2748:2774" ph="DELETE FROM " />
-            <marker date="1519996171063" expanded="true" signature="3141:3470" ph="INSERT INTO View... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/viewModel/AspirantInvitation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="51" column="37" lean-forward="false" selection-start-line="51" selection-start-column="37" selection-end-line="51" selection-end-column="37" />
-          <folding>
-            <element signature="e#1557#1558#0" expanded="true" />
-            <element signature="e#1594#1595#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/viewModel/AspirantResume.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        <state relative-caret-position="197">
+          <caret line="59" column="48" lean-forward="false" selection-start-line="59" selection-start-column="48" selection-end-line="59" selection-end-column="48" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/service/impl/MyAspirantService.java">
+    <entry file="file://$PROJECT_DIR$/web/ResumeDisplay.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="471" column="18" lean-forward="false" selection-start-line="471" selection-start-column="18" selection-end-line="471" selection-end-column="18" />
-          <folding>
-            <element signature="method#MyAspirantService#0;class#MyAspirantService#0" expanded="false" />
-            <element signature="method#register#0;class#MyAspirantService#0" expanded="false" />
-            <element signature="method#isValidCredentials#0;class#MyAspirantService#0" expanded="false" />
-            <element signature="method#getAspirantAccountByEmail#0;class#MyAspirantService#0" expanded="false" />
-            <element signature="method#addAspirantProfile#0;class#MyAspirantService#0" expanded="false" />
-            <element signature="method#getAspirantProfile#0;class#MyAspirantService#0" expanded="false" />
-            <element signature="method#updateAspirantProfile#0;class#MyAspirantService#0" expanded="false" />
-            <element signature="method#addAspirantResume#0;class#MyAspirantService#0" expanded="false" />
-            <element signature="method#getAllAspirantResume#0;class#MyAspirantService#0" expanded="false" />
-            <element signature="method#getAspirantResume#0;class#MyAspirantService#0" expanded="false" />
-            <element signature="method#deleteAspirantResume#0;class#MyAspirantService#0" expanded="false" />
-            <element signature="method#updateAspirantResume#0;class#MyAspirantService#0" expanded="false" />
-            <element signature="method#getAllAspirantResumeViews#0;class#MyAspirantService#0" expanded="false" />
-            <element signature="method#updateAspirantResumeDate#0;class#MyAspirantService#0" expanded="false" />
-            <element signature="method#getAllAspirantInvitations#0;class#MyAspirantService#0" expanded="false" />
-            <element signature="method#getInvitation#0;class#MyAspirantService#0" expanded="false" />
-            <element signature="method#getAspirantAccountById#0;class#MyAspirantService#0" expanded="false" />
-            <element signature="method#getResumeById#0;class#MyAspirantService#0" expanded="false" />
-            <element signature="method#getAllResume#0;class#MyAspirantService#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/79170a09/3a72b50c-c309-495d-b0e8-7beff6bdd944/jobs_db.resume">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/service/impl/MyAuthService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="21" lean-forward="true" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="21" />
+        <state relative-caret-position="1003">
+          <caret line="59" column="48" lean-forward="false" selection-start-line="59" selection-start-column="48" selection-end-line="59" selection-end-column="48" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="das://table:/79170a09/3a72b50c-c309-495d-b0e8-7beff6bdd944/jobs_db.invitation">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
+    <entry file="file://$PROJECT_DIR$/web/ResumeListDisplay.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1003">
+          <caret line="59" column="48" lean-forward="false" selection-start-line="59" selection-start-column="48" selection-end-line="59" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/ResumeViewList.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="12" lean-forward="false" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/CompanyDisplay.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1003">
+          <caret line="59" column="48" lean-forward="false" selection-start-line="59" selection-start-column="48" selection-end-line="59" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/HomePageAspirant.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1088">
+          <caret line="64" column="101" lean-forward="false" selection-start-line="64" selection-start-column="101" selection-end-line="64" selection-end-column="101" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/HomePageHRManager.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1003">
+          <caret line="59" column="22" lean-forward="false" selection-start-line="59" selection-start-column="22" selection-end-line="59" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="62" column="8" lean-forward="false" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/command/impl/InvitationCommands/GetInvitationCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="10" column="3" lean-forward="true" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/command/impl/InvitationCommands/SendInvitationCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="32" lean-forward="false" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/command/impl/InvitationCommands/GetInvitationListForAspirantCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1063,7 +1031,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/command/impl/ResumeCommands/GetResumeCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
+        <state relative-caret-position="550">
           <caret line="43" column="42" lean-forward="true" selection-start-line="43" selection-start-column="42" selection-end-line="43" selection-end-column="42" />
           <folding />
         </state>
@@ -1093,77 +1061,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/command/impl/ResumeCommands/UpdateResumeCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/command/impl/ResumeCommands/UpdateResumeDateCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
+        <state relative-caret-position="289">
           <caret line="24" column="56" lean-forward="false" selection-start-line="24" selection-start-column="56" selection-end-line="24" selection-end-column="56" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/command/impl/JobVacancyCommands/CreateJobVacancyCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="18" column="46" lean-forward="true" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/command/impl/JobVacancyCommands/GetJobVacancyCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="26" column="10" lean-forward="true" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/command/impl/JobVacancyCommands/GetJobVacancyListForAspirant.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="29" column="17" lean-forward="true" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/command/impl/JobVacancyCommands/GetJobVacancyListForHRManagerCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="22" column="10" lean-forward="false" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/command/impl/InvitationCommands/GetInvitationCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="10" column="3" lean-forward="true" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/command/impl/InvitationCommands/GetInvitationListForAspirantCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="12" column="57" lean-forward="false" selection-start-line="12" selection-start-column="57" selection-end-line="12" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/command/impl/InvitationCommands/SendInvitationCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="32" lean-forward="false" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1175,219 +1077,277 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/CommandProvider.java">
+    <entry file="file://$PROJECT_DIR$/src/controller/command/impl/LoginAspirantCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="48" column="98" lean-forward="true" selection-start-line="48" selection-start-column="98" selection-end-line="48" selection-end-column="98" />
+        <state relative-caret-position="119">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/CompanyServlet.java">
+    <entry file="file://$PROJECT_DIR$/src/controller/command/impl/RegisterAspirantCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="14" column="23" lean-forward="false" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+        <state relative-caret-position="119">
+          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/ResumeServlet.java">
+    <entry file="file://$PROJECT_DIR$/src/service/impl/MyAspirantService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="7" lean-forward="false" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+        <state relative-caret-position="199">
+          <caret line="399" column="100" lean-forward="false" selection-start-line="399" selection-start-column="100" selection-end-line="399" selection-end-column="100" />
+          <folding>
+            <element signature="method#MyAspirantService#0;class#MyAspirantService#0" expanded="false" />
+            <element signature="method#register#0;class#MyAspirantService#0" expanded="false" />
+            <element signature="method#isValidCredentials#0;class#MyAspirantService#0" expanded="false" />
+            <element signature="method#getAspirantAccountByEmail#0;class#MyAspirantService#0" expanded="false" />
+            <element signature="method#addAspirantProfile#0;class#MyAspirantService#0" expanded="false" />
+            <element signature="method#getAspirantProfile#0;class#MyAspirantService#0" expanded="false" />
+            <element signature="method#updateAspirantProfile#0;class#MyAspirantService#0" expanded="false" />
+            <element signature="method#addAspirantResume#0;class#MyAspirantService#0" expanded="false" />
+            <element signature="method#getAllAspirantResume#0;class#MyAspirantService#0" expanded="false" />
+            <element signature="method#getAspirantResume#0;class#MyAspirantService#0" expanded="false" />
+            <element signature="method#deleteAspirantResume#0;class#MyAspirantService#0" expanded="false" />
+            <element signature="method#updateAspirantResume#0;class#MyAspirantService#0" expanded="false" />
+            <element signature="method#getAllAspirantResumeViews#0;class#MyAspirantService#0" expanded="false" />
+            <element signature="method#updateAspirantResumeDate#0;class#MyAspirantService#0" expanded="false" />
+            <element signature="method#getAllAspirantInvitations#0;class#MyAspirantService#0" expanded="false" />
+            <element signature="method#getAspirantAccountById#0;class#MyAspirantService#0" expanded="false" />
+            <element signature="method#getResumeById#0;class#MyAspirantService#0" expanded="false" />
+            <element signature="method#getAllResume#0;class#MyAspirantService#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/service/ServiceFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="32" column="39" lean-forward="true" selection-start-line="32" selection-start-column="39" selection-end-line="32" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/ResumeListServlet.java">
+    <entry file="file://$PROJECT_DIR$/tests/service/impl/MyJobVacancyServiceTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="2" column="7" lean-forward="false" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+        <state relative-caret-position="408">
+          <caret line="45" column="7" lean-forward="false" selection-start-line="45" selection-start-column="7" selection-end-line="45" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/RegistrationServlet.java">
+    <entry file="file://$PROJECT_DIR$/tests/service/impl/MyAspirantServiceTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="33">
-          <caret line="2" column="34" lean-forward="false" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
+        <state relative-caret-position="411">
+          <caret line="507" column="7" lean-forward="false" selection-start-line="507" selection-start-column="7" selection-end-line="507" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/LoginServlet.java">
+    <entry file="file://$PROJECT_DIR$/src/controller/command/impl/JobVacancyCommands/GetJobVacancyListForHRManagerCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="2" column="34" lean-forward="false" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
+        <state relative-caret-position="306">
+          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/JobVacancyServlet.java">
+    <entry file="file://$PROJECT_DIR$/src/controller/command/impl/JobVacancyCommands/GetJobVacancyListForAspirant.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        <state relative-caret-position="270">
+          <caret line="25" column="60" lean-forward="false" selection-start-line="25" selection-start-column="60" selection-end-line="25" selection-end-column="60" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/service/impl/MyJobVacancyService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/79170a09/3a72b50c-c309-495d-b0e8-7beff6bdd944/jobs_db.company">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/79170a09/3a72b50c-c309-495d-b0e8-7beff6bdd944/jobs_db.hr_manager">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/JobVacancyListServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="34" lean-forward="false" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
-          <folding />
+        <state relative-caret-position="351">
+          <caret line="40" column="11" lean-forward="false" selection-start-line="40" selection-start-column="11" selection-end-line="40" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/InvitationServlet.java">
+    <entry file="file://$PROJECT_DIR$/web/JobVacancyDisplay.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="2" column="7" lean-forward="false" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/InvitationListServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="7" lean-forward="false" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/AspirantRegistration.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-449">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="1059">
+          <caret line="135" column="29" lean-forward="false" selection-start-line="135" selection-start-column="29" selection-end-line="135" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/JobVacancyCreation.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="31" column="12" lean-forward="false" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="12" />
+        <state relative-caret-position="-359">
+          <caret line="40" column="39" lean-forward="true" selection-start-line="40" selection-start-column="39" selection-end-line="40" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/ResponseCreation.jsp">
+    <entry file="file://$PROJECT_DIR$/src/controller/ResumeServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-69">
-          <caret line="17" column="7" lean-forward="true" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
+        <state relative-caret-position="353">
+          <caret line="84" column="74" lean-forward="true" selection-start-line="84" selection-start-column="74" selection-end-line="84" selection-end-column="74" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/ResumeCreation.jsp">
+    <entry file="file://$PROJECT_DIR$/src/controller/command/impl/JobVacancyCommands/CreateJobVacancyCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="31" column="79" lean-forward="false" selection-start-line="31" selection-start-column="79" selection-end-line="31" selection-end-column="79" />
+        <state relative-caret-position="221">
+          <caret line="23" column="50" lean-forward="true" selection-start-line="23" selection-start-column="50" selection-end-line="23" selection-end-column="50" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/InvitationCreation.jsp">
+    <entry file="file://$PROJECT_DIR$/src/viewModel/JobVacancy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="70">
-          <caret line="31" column="48" lean-forward="false" selection-start-line="31" selection-start-column="48" selection-end-line="31" selection-end-column="48" />
+        <state relative-caret-position="68">
+          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/InvitationDisplay.jsp">
+    <entry file="file://$PROJECT_DIR$/src/viewModel/AspirantResume.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="64" column="21" lean-forward="false" selection-start-line="64" selection-start-column="21" selection-end-line="64" selection-end-column="21" />
+        <state relative-caret-position="0">
+          <caret line="0" column="18" lean-forward="true" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/InvitationListDisplay.jsp">
+    <entry file="file://$PROJECT_DIR$/src/controller/command/impl/JobVacancyCommands/GetJobVacancyCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="59" column="48" lean-forward="false" selection-start-line="59" selection-start-column="48" selection-end-line="59" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/JobVacancyDisplay.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="59" column="48" lean-forward="false" selection-start-line="59" selection-start-column="48" selection-end-line="59" selection-end-column="48" />
+        <state relative-caret-position="362">
+          <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/JobVacancyListDisplay.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="59" column="48" lean-forward="false" selection-start-line="59" selection-start-column="48" selection-end-line="59" selection-end-column="48" />
+        <state relative-caret-position="-394">
+          <caret line="52" column="108" lean-forward="true" selection-start-line="52" selection-start-column="108" selection-end-line="52" selection-end-column="108" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/ResumeDisplay.jsp">
+    <entry file="file://$PROJECT_DIR$/src/controller/CommandProvider.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="59" column="48" lean-forward="false" selection-start-line="59" selection-start-column="48" selection-end-line="59" selection-end-column="48" />
+        <state relative-caret-position="151">
+          <caret line="43" column="57" lean-forward="false" selection-start-line="43" selection-start-column="57" selection-end-line="43" selection-end-column="57" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/ResumeListDisplay.jsp">
+    <entry file="file://$PROJECT_DIR$/src/dao/MysqlConnect.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="59" column="48" lean-forward="false" selection-start-line="59" selection-start-column="48" selection-end-line="59" selection-end-column="48" />
+        <state relative-caret-position="68">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/79170a09/3a72b50c-c309-495d-b0e8-7beff6bdd944/jobs_db.response">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dao/impl/DbJobVacancyDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="68" column="47" lean-forward="true" selection-start-line="68" selection-start-column="47" selection-end-line="68" selection-end-column="47" />
+          <folding>
+            <marker date="1521113867960" expanded="true" signature="655:680" ph="SELECT * FRO... Job_vacancy" />
+            <marker date="1521113867960" expanded="true" signature="2175:2616" ph="UPDATE Job_v... " />
+            <marker date="1521113867960" expanded="true" signature="2978:3011" ph="DELETE FROM " />
+            <marker date="1521113867960" expanded="true" signature="3378:3812" ph="INSERT INTO Job_vacancy... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/service/impl/MyHRManagerService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="142" column="50" lean-forward="false" selection-start-line="142" selection-start-column="50" selection-end-line="142" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/command/impl/JobVacancyCommands/DeleteJobVacancyCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="8" column="51" lean-forward="false" selection-start-line="8" selection-start-column="51" selection-end-line="8" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/ResumeUpdate.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="38" column="66" lean-forward="false" selection-start-line="38" selection-start-column="66" selection-end-line="38" selection-end-column="66" />
+        <state relative-caret-position="-2479">
+          <caret line="128" column="34" lean-forward="true" selection-start-line="128" selection-start-column="34" selection-end-line="128" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/ResumeViewList.jsp">
+    <entry file="file://$PROJECT_DIR$/web/JobVacancyUpdate.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="31" column="12" lean-forward="false" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="12" />
+        <state relative-caret-position="88">
+          <caret line="99" column="18" lean-forward="true" selection-start-line="99" selection-start-column="18" selection-end-line="99" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/CompanyDisplay.jsp">
+    <entry file="das://table:/79170a09/3a72b50c-c309-495d-b0e8-7beff6bdd944/jobs_db.job_vacancy">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/JobVacancyServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="59" column="48" lean-forward="false" selection-start-line="59" selection-start-column="48" selection-end-line="59" selection-end-column="48" />
+        <state relative-caret-position="132">
+          <caret line="66" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/HomePageAspirant.jsp">
+    <entry file="file://$PROJECT_DIR$/src/controller/command/impl/JobVacancyCommands/UpdateJobVacancyCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="64" column="101" lean-forward="false" selection-start-line="64" selection-start-column="101" selection-end-line="64" selection-end-column="101" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/HomePageHRManager.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="59" column="22" lean-forward="false" selection-start-line="59" selection-start-column="22" selection-end-line="59" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="54" column="61" lean-forward="true" selection-start-line="54" selection-start-column="61" selection-end-line="54" selection-end-column="61" />
-          <folding />
+        <state relative-caret-position="130">
+          <caret line="23" column="44" lean-forward="false" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

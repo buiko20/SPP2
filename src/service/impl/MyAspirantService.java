@@ -381,8 +381,18 @@ public class MyAspirantService implements AspirantService {
         ArgumentVerificationService.verifyString(email, "email");
 
         try {
+
+            AspirantAccount aspirantAccount = this.getAspirantAccountByEmail(email);
+
             List<Invitation> invitations = this.invitationDAO.getAll();
-            return new ArrayList<>(invitations);
+            ArrayList<Invitation> result = new ArrayList<>();
+            for (Invitation invitation : invitations) {
+                if (invitation.getAspirantAccountId() == aspirantAccount.getId()) {
+                    result.add(invitation);
+                }
+            }
+
+            return result;
         } catch (Exception e) {
             throw new ServiceException(e.getMessage(), e);
         }

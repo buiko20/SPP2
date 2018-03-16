@@ -10,23 +10,7 @@
     <bookmark url="file://$PROJECT_DIR$/src/service/impl/MyAspirantService.java" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21424ace-22c0-4d63-80cf-8818a8f4c80c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/tan_jobs_war_exploded/InvitationCreation.jsp" afterPath="$PROJECT_DIR$/out/artifacts/tan_jobs_war_exploded/InvitationCreation.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/tan_jobs_war_exploded/InvitationDisplay.jsp" afterPath="$PROJECT_DIR$/out/artifacts/tan_jobs_war_exploded/InvitationDisplay.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/tan_jobs_war_exploded/InvitationListDisplay.jsp" afterPath="$PROJECT_DIR$/out/artifacts/tan_jobs_war_exploded/InvitationListDisplay.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/CommandProvider.java" afterPath="$PROJECT_DIR$/src/controller/CommandProvider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/InvitationServlet.java" afterPath="$PROJECT_DIR$/src/controller/InvitationServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/command/Command.java" afterPath="$PROJECT_DIR$/src/controller/command/Command.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/command/impl/InvitationCommands/GetInvitationCommand.java" afterPath="$PROJECT_DIR$/src/controller/command/impl/InvitationCommands/GetInvitationCommand.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/command/impl/InvitationCommands/GetInvitationListForAspirantCommand.java" afterPath="$PROJECT_DIR$/src/controller/command/impl/InvitationCommands/GetInvitationListForAspirantCommand.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/command/impl/InvitationCommands/SendInvitationCommand.java" afterPath="$PROJECT_DIR$/src/controller/command/impl/InvitationCommands/SendInvitationCommand.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/command/impl/ResumeCommands/GetResumeCommand.java" afterPath="$PROJECT_DIR$/src/controller/command/impl/ResumeCommands/GetResumeCommand.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/viewModel/AspirantInvitation.java" afterPath="$PROJECT_DIR$/src/viewModel/AspirantInvitation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/InvitationCreation.jsp" afterPath="$PROJECT_DIR$/web/InvitationCreation.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/InvitationDisplay.jsp" afterPath="$PROJECT_DIR$/web/InvitationDisplay.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/InvitationListDisplay.jsp" afterPath="$PROJECT_DIR$/web/InvitationListDisplay.jsp" />
-    </list>
+    <list default="true" id="21424ace-22c0-4d63-80cf-8818a8f4c80c" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -778,7 +762,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="220915000" />
+    <option name="totallyTimeSpent" value="221463000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">

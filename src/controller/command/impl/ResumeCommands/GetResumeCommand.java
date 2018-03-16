@@ -22,9 +22,11 @@ public class GetResumeCommand implements Command {
 
         String[] requestData = request.split(";");
 
+        String aspirantEmail = "";
+
         if(requestData.length != 2) {
 
-            String aspirantEmail = aspirantService.getAspirantAccountById(Integer.parseInt(requestData[0])).getEmail();
+            aspirantEmail = aspirantService.getAspirantAccountById(Integer.parseInt(requestData[0])).getEmail();
 
             requestData[0] = aspirantEmail;
 
@@ -52,6 +54,9 @@ public class GetResumeCommand implements Command {
                 aspirantProfile.getPhoneNumber(), aspirantProfile.getMailingAddress(), aspirantProfile.getCityOfResidence(),
                 aspirantProfile.getEducation(), aspirantProfile.getEnglishLevel(), isTripPossible, isRelocationPossible,
                 resume.getSkills(), aspirantProfile.getAboutMe());
+
+        if(aspirantEmail != "")
+            aspirantResume.accountEmail = aspirantEmail;
 
         return aspirantResume;
     }

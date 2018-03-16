@@ -16,7 +16,9 @@ import service.JobVacancyService;
 import service.exception.AspirantAlreadyExistsException;
 import service.exception.AspirantNotRegisteredException;
 import service.exception.AspirantProfileNotFoundException;
+import service.exception.CompanyNotFoundException;
 import service.exception.HRManagerNotFoundException;
+import service.exception.JobVacancyNotFoundException;
 import service.exception.ResumeNotFoundException;
 import service.exception.ServiceException;
 import service.utils.ArgumentVerificationService;
@@ -483,11 +485,62 @@ public class MyAspirantService implements AspirantService {
             ResumeView resumeView = new ResumeView(Timestamp.valueOf(curStringDate), resume.getId(), resume.getAspirantId(), hrManager.getId(), hrManager.getCompanyId());
             this.resumeViewDAO.create(resumeView);
 
-        } catch (ServiceException e) {
+        } catch (ServiceException | AspirantNotRegisteredException| ResumeNotFoundException | HRManagerNotFoundException e) {
             throw e;
         } catch (Exception e) {
             throw new ServiceException(e.getMessage(), e);
         }
 
+    }
+
+    @Override
+    public void sendInvitation(String aspirantEmail, String careerObjective, String jobVacancyName, String hrManagerEmail, Invitation invitation)
+            throws IllegalArgumentException, AspirantNotRegisteredException, ResumeNotFoundException, HRManagerNotFoundException, CompanyNotFoundException, ServiceException {
+
+        ArgumentVerificationService.verifyString(aspirantEmail, "aspirantEmail");
+        ArgumentVerificationService.verifyString(careerObjective, "careerObjective");
+        ArgumentVerificationService.verifyString(jobVacancyName, "jobVacancyName");
+        ArgumentVerificationService.verifyString(hrManagerEmail, "hrManagerEmail");
+        ArgumentVerificationService.verifyNull(invitation, "invitation");
+
+        try {
+
+            AspirantAccount aspirantAccount = this.getAspirantAccountByEmail(aspirantEmail);
+            if (aspirantAccount == null) {
+                throw new AspirantNotRegisteredException(aspirantEmail);
+            }
+
+            Resume resume = this.getAspirantResume(aspirantEmail, careerObjective);
+            if (resume == null) {
+                throw new ResumeNotFoundException(aspirantEmail, careerObjective);
+            }
+
+            HRManager hrManager = this.hrManagerService.getHRManagerByEmail(hrManagerEmail);
+            if (hrManager == null) {
+                throw new HRManagerNotFoundException(hrManagerEmail);
+            }
+
+            Company company = this.companyService.getCompanyById(hrManager.getCompanyId());
+            if (company == null) {
+                throw new CompanyNotFoundException("Company id = " + String.valueOf(hrManager.getCompanyId()));
+            }
+
+            JobVacancy jobVacancy = this.jobVacancyService.getJobVacancy(jobVacancyName, company.getName());
+            if (jobVacancy == null) {
+                throw new JobVacancyNotFoundException(jobVacancyName, company.getName());
+            }
+
+            invitation.setAspirantAccountId(aspirantAccount.getId());
+            invitation.setCompanyId(company.getId());
+            invitation.setHrManagerId(hrManager.getId());
+            invitation.setResumeId(resume.getId());
+            invitation.setJobVacancyId(jobVacancy.getId());
+            this.invitationDAO.create(invitation);
+
+        } catch (ServiceException | AspirantNotRegisteredException| ResumeNotFoundException | HRManagerNotFoundException | CompanyNotFoundException e) {
+            throw e;
+        } catch (Exception e) {
+            throw new ServiceException(e.getMessage(), e);
+        }
     }
 }

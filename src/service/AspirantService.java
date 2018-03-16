@@ -9,6 +9,7 @@ import domain.ResumeView;
 import service.exception.AspirantAlreadyExistsException;
 import service.exception.AspirantNotRegisteredException;
 import service.exception.AspirantProfileNotFoundException;
+import service.exception.CompanyNotFoundException;
 import service.exception.HRManagerNotFoundException;
 import service.exception.ResumeNotFoundException;
 import service.exception.ServiceException;
@@ -179,4 +180,7 @@ public interface AspirantService {
 
     void addAspirantResumeView(String aspirantEmail, String careerObjective, String HRManagerEmail)
             throws IllegalArgumentException, AspirantNotRegisteredException, ResumeNotFoundException, HRManagerNotFoundException, ServiceException;
+
+    void sendInvitation(String aspirantEmail, String careerObjective, String jobVacancyName, String hrManagerEmail, Invitation invitation)
+            throws IllegalArgumentException, AspirantNotRegisteredException, ResumeNotFoundException, HRManagerNotFoundException, CompanyNotFoundException, ServiceException;
 }

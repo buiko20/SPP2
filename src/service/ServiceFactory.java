@@ -32,7 +32,7 @@ public class ServiceFactory {
     private final JobVacancyService jobVacancyService = new MyJobVacancyService(
             jobVacancyDAO, companyDAO);
     private final CompanyService companyService = new MyCompanyService(
-            companyDAO);
+            companyDAO, invitationDAO);
     private final HRManagerService hrManagerService = new MyHRManagerService(hrManagerDAO, companyDAO,
             jobVacancyDAO, resumeDAO, invitationDAO);
     private final AspirantService aspirantService = new MyAspirantService(

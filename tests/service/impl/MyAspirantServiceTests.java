@@ -38,7 +38,7 @@ class MyAspirantServiceTests {
 
     private AspirantService aspirantService;
 
-    /*@BeforeEach
+    @BeforeEach
     void setUp() {
         DAO<AspirantAccount> aspirantAccountDAOFake = new AspirantAccountDaoFake();
         DAO<AspirantProfile> aspirantAccountDaoFake = new AspirantProfileDaoFake();
@@ -47,13 +47,13 @@ class MyAspirantServiceTests {
         DAO<Invitation> invitationDAO = new InvitationDaoFake();
 
         DAO<JobVacancy> jobVacancyDAO = new JobVacancyDaoFake();
-        JobVacancyService jobVacancyService = new MyJobVacancyService(jobVacancyDAO);
 
         DAO<Company> companyDAO = new CompanyDaoFake();
-        CompanyService companyService = new MyCompanyService(companyDAO);
+        CompanyService companyService = new MyCompanyService(companyDAO, invitationDAO);
+        JobVacancyService jobVacancyService = new MyJobVacancyService(jobVacancyDAO, companyDAO);
 
         DAO<HRManager> hrManagerDAO = new HRManagerDaoFake();
-        HRManagerService hrManagerService = new MyHRManagerService(hrManagerDAO, companyDAO, jobVacancyDAO, resumeDAO);
+        HRManagerService hrManagerService = new MyHRManagerService(hrManagerDAO, companyDAO, jobVacancyDAO, resumeDAO, invitationDAO);
 
         this.aspirantService = new MyAspirantService(
                 aspirantAccountDAOFake, aspirantAccountDaoFake, resumeDAO,
@@ -505,6 +505,6 @@ class MyAspirantServiceTests {
         assertThrows(IllegalArgumentException.class, () -> this.aspirantService.getAllAspirantResumeViews("wef", ""));
         assertThrows(IllegalArgumentException.class, () -> this.aspirantService.getAllAspirantResumeViews("wef", "   "));
         assertThrows(IllegalArgumentException.class, () -> this.aspirantService.getAllAspirantResumeViews("wef", null));
-    }*/
+    }
 
 }

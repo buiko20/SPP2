@@ -1,6 +1,7 @@
 package service;
 
 import domain.Company;
+import domain.Invitation;
 import service.exception.ServiceException;
 
 import java.util.ArrayList;
@@ -14,5 +15,7 @@ public interface CompanyService {
     Company getCompanyByName(String name) throws IllegalArgumentException, ServiceException;
 
     void addCompany(Company company) throws IllegalArgumentException, ServiceException;
+
+    ArrayList<Invitation> getAllInvitation(String companyName) throws IllegalArgumentException, ServiceException;
 
 }

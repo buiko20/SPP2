@@ -2,10 +2,12 @@ package service.impl;
 
 import dao.DAO;
 import domain.Company;
+import domain.Invitation;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import service.fake.CompanyDaoFake;
+import service.fake.InvitationDaoFake;
 
 import java.util.ArrayList;
 
@@ -19,7 +21,8 @@ class MyCompanyServiceTests {
     @BeforeEach
     void setUp() {
         DAO<Company> companyDAO = new CompanyDaoFake();
-        companyService = new MyCompanyService(companyDAO);
+        DAO<Invitation> invitationDAO = new InvitationDaoFake();
+        companyService = new MyCompanyService(companyDAO, invitationDAO);
     }
 
     @AfterEach

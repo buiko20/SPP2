@@ -23,11 +23,11 @@ public class GetInvitationCommand implements Command {
 
         Invitation oldInvitation = aspirantService.getInvitation(requestData[0], requestData[1], requestData[2], requestData[3]);
 
-        HRManager hrManager = hrManagerService.getHRManagerByEmail(requestData[0]);
+        HRManager hrManager = hrManagerService.getHRManagerById(oldInvitation.getHrManagerId());
 
         AspirantInvitation newInvitation = new AspirantInvitation(oldInvitation.getDate(), oldInvitation.getAddress(),
-                requestData[1], requestData[2] ,companyService.getCompanyById(hrManager.getCompanyId()).getName(),
-                requestData[3], hrManager.getSurname(), hrManager.getName(), hrManager.getPhoneNumber(), hrManager.getEmail());
+                requestData[0], requestData[1] ,requestData[3], requestData[2],
+                hrManager.getSurname(), hrManager.getName(), hrManager.getPhoneNumber(), hrManager.getEmail());
 
         return newInvitation;
     }

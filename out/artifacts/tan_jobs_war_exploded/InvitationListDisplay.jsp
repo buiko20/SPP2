@@ -81,10 +81,11 @@
                 <c:forEach var = "i" begin = "0" end = "${invitationList.size()-1}">
                     <div class="form-group">
                         <div class="col-md-10">
-                            <h5>Соискатель: <c:out value = "${invitationList.get(i).resume.aspirantEmail}"/></h5>
-                            <h5>Желаемая должность: <c:out value = "${invitationList.get(i).resume.aspirantCareerObjective}"/></h5>
-                            <h3><a href="/Invitation?aspirantEmail=${invitationList.get(i).aspirantEmail}&careerObjective=${invitationList.get(i).aspirantCareerObjective}&
-                            jobVacancyName=${invitationList.get(i).jobVacancyName}&companyName=${invitationList.get(i).companyName}&command=GetInvitation"><c:out value = "${invitationList.get(i).jobVacancyName}"/></a></h3>
+                            <c:if test="${actor != 'aspirant'}">
+                                <h5>Соискатель: <c:out value = "${invitationList.get(i).aspirantEmail}"/></h5>
+                            </c:if>
+                            <h5>Желаемая должность: <c:out value = "${invitationList.get(i).aspirantCareerObjective}"/></h5>
+                            <h3><a href="/Invitation?aspirantEmail=${invitationList.get(i).aspirantEmail}&careerObjective=${invitationList.get(i).aspirantCareerObjective}&jobVacancyName=${invitationList.get(i).jobVacancyName}&companyName=${invitationList.get(i).companyName}&command=GetInvitation"><c:out value = "${invitationList.get(i).jobVacancyName}"/></a></h3>
                             <br>
                             <h5>Компания: <a href="/Company?companyName=${invitationList.get(i).companyName}&command=GetCompany"><c:out value = "${invitationList.get(i).companyName}"/></a></h5>
                             <h5>Дата собеседования: <c:out value = "${invitationList.get(i).date}"/></h5>

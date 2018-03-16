@@ -64,9 +64,9 @@
             </div>
 
             <div class="form-group">
-                <label class="control-label col-md-2" for="Position">На должность</label>
+                <label class="control-label col-md-2" for="JobVacancyName">На должность</label>
                 <div class="col-md-10">
-                    <input class="form-control text-box single-line"  id="Position" name="Position" type="text" value=""/>
+                    <input class="form-control text-box single-line"  id="JobVacancyName" name="JobVacancyName" type="text" value=""/>
                 </div>
             </div>
 
@@ -80,7 +80,7 @@
             <div class="form-group">
                 <label class="control-label col-md-2" for="Date">Дата</label>
                 <div class="col-md-10">
-                    <input class="form-control text-box single-line" id="Date" name="Date" type="date" value="2001-01-01"/>
+                    <input class="form-control text-box single-line" id="Date" name="Date" type="datetime-local" value="01.01.2001 00:00"/>
                 </div>
             </div>
 

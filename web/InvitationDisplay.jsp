@@ -87,13 +87,13 @@
             <div class="form-group">
                 <label class="control-label col-md-2">Адрес прохождения собеседования</label>
                 <div class="col-md-10">
-                    <h4><c:out value = "${jobVacancy.address}"/></h4>
+                    <h4><c:out value = "${invitation.address}"/></h4>
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-2">Название вакансии</label>
                 <div class="col-md-10">
-                    <h4><c:out value = "${invitation.jobVacancy}"/></h4>
+                    <h4><c:out value = "${invitation.jobVacancyName}"/></h4>
                 </div>
             </div>
             <div class="form-group">

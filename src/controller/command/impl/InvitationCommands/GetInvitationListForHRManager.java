@@ -1,6 +1,7 @@
 package controller.command.impl.InvitationCommands;
 
 import controller.command.Command;
+import domain.Company;
 import domain.HRManager;
 import domain.Invitation;
 import service.*;
@@ -9,10 +10,7 @@ import viewModel.AspirantInvitation;
 
 import java.util.ArrayList;
 
-/**
- * Represents an invitation list get command for aspirant.
- */
-public class GetInvitationListForAspirantCommand implements Command {
+public class GetInvitationListForHRManager implements Command {
 
     private final AspirantService aspirantService = ServiceFactory.getInstance().getAspirantService();
     private final CompanyService companyService = ServiceFactory.getInstance().getCompanyService();
@@ -20,16 +18,17 @@ public class GetInvitationListForAspirantCommand implements Command {
     private final HRManagerService hrManagerService  = ServiceFactory.getInstance().getHrManagerService();
 
     @Override
-    public Object execute(String request) throws AspirantAlreadyExistsException, ServiceException, AspirantNotRegisteredException, AspirantProfileNotFoundException, ResumeNotFoundException {
-
+    public Object execute(String request) throws AspirantAlreadyExistsException, ServiceException, AspirantNotRegisteredException, AspirantProfileNotFoundException, ResumeNotFoundException, HRManagerNotFoundException {
         ArrayList<AspirantInvitation> newInvitationList = new ArrayList<>();
-        ArrayList<Invitation> oldInvitationList = aspirantService.getAllAspirantInvitations(request);
+
+        Company company = companyService.getCompanyById(hrManagerService.getHRManagerByEmail(request).getCompanyId());
+        ArrayList<Invitation> oldInvitationList = companyService.getAllInvitation(company.getName());
 
         for (Invitation oldInvitation : oldInvitationList) {
 
             HRManager hrManager = hrManagerService.getHRManagerById(oldInvitation.getHrManagerId());
 
-            AspirantInvitation newInvitation = new AspirantInvitation(oldInvitation.getDate(), oldInvitation.getAddress(), request,
+            AspirantInvitation newInvitation = new AspirantInvitation(oldInvitation.getDate(), oldInvitation.getAddress(), aspirantService.getAspirantAccountById(oldInvitation.getAspirantAccountId()).getEmail(),
                     aspirantService.getResumeById(oldInvitation.getResumeId()).getCareerObjective(), companyService.getCompanyById(oldInvitation.getCompanyId()).getName(),
                     jobVacancyService.getJobVacancyById(oldInvitation.getJobVacancyId()).getName(), hrManager.getSurname(), hrManager.getName(),
                     hrManager.getPhoneNumber(), hrManager.getEmail());

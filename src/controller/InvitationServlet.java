@@ -1,6 +1,8 @@
 package controller;
 
 import controller.command.Command;
+import domain.Invitation;
+import viewModel.AspirantInvitation;
 import viewModel.AspirantResume;
 
 import javax.servlet.ServletException;
@@ -37,11 +39,15 @@ public class InvitationServlet extends HttpServlet {
                 AspirantResume resume = (AspirantResume)session.getAttribute("resume");
                 String resumeCareerObjective = resume.getCareerObjective();
                 String aspirantEmail = resume.accountEmail;
-                String jobVacancyName = request.getParameter("jobVacancyName");
+                String jobVacancyName = request.getParameter("JobVacancyName");
+
+                String address = request.getParameter("Address");
+                String date = request.getParameter("Date");
 
                 Command command = commandProvider.getCommand(commandName);
                 try {
-                    command.execute(email + ";" + aspirantEmail + ";" + resumeCareerObjective + ";" + jobVacancyName);
+                    command.execute(email + ";" + aspirantEmail + ";" + resumeCareerObjective + ";" + jobVacancyName
+                            + ";" + address + ";" + date);
                 } catch (Exception e) { }
 
                 request.getRequestDispatcher("/InvitationList?command=GetInvitationListForHRManager").forward(request, response);
@@ -50,6 +56,22 @@ public class InvitationServlet extends HttpServlet {
             }
 
             case("GetInvitation"):{
+                HttpSession session = request.getSession();
+
+                String aspirantEmail = request.getParameter("aspirantEmail");
+                String careerObjective = request.getParameter("careerObjective");
+                String jobVacancyName = request.getParameter("jobVacancyName");
+                String companyName = request.getParameter("companyName");
+
+                Command command = commandProvider.getCommand(commandName);
+                try {
+                    AspirantInvitation aspirantInvitation = (AspirantInvitation)command.execute(aspirantEmail + ";" + careerObjective + ";" + jobVacancyName
+                            + ";" + companyName);
+                    session.setAttribute("invitation", aspirantInvitation);
+                } catch (Exception e) { }
+
+                request.getRequestDispatcher("/InvitationDisplay.jsp").forward(request, response);
+
                 break;
             }
         }

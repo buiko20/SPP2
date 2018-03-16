@@ -28,7 +28,6 @@ public class AspirantInvitation {
         this.hrManagerPhoneNumber = hrManagerPhoneNumber;
         this.hrManagerEmail = hrManagerEmail;
     }
-
     public Date getDate() {
         return date;
     }
@@ -36,6 +35,7 @@ public class AspirantInvitation {
     public String getAddress() {
         return address;
     }
+
 
     public String getAspirantEmail() {
         return aspirantEmail;

@@ -5,6 +5,7 @@ import controller.command.impl.*;
 import controller.command.impl.GetCompanyCommand;
 import controller.command.impl.InvitationCommands.GetInvitationCommand;
 import controller.command.impl.InvitationCommands.GetInvitationListForAspirantCommand;
+import controller.command.impl.InvitationCommands.GetInvitationListForHRManager;
 import controller.command.impl.InvitationCommands.SendInvitationCommand;
 import controller.command.impl.JobVacancyCommands.*;
 import controller.command.impl.ResumeCommands.*;
@@ -45,10 +46,10 @@ public class CommandProvider {
 
         addCommand(new GetCompanyCommand(), "GetCompany");
 
-        addCommand(new GetInvitationCommand(), "GetInvitationCommand");
-        addCommand(new SendInvitationCommand(), "SendInvitationCommand");
+        addCommand(new GetInvitationCommand(), "GetInvitation");
+        addCommand(new SendInvitationCommand(), "SendInvitation");
 
-        //addCommand(new GetInvitationListForHRManagerCommand(), "GetInvitationListForHRManager");
+        addCommand(new GetInvitationListForHRManager(), "GetInvitationListForHRManager");
         addCommand(new GetInvitationListForAspirantCommand(), "GetInvitationListForAspirant");
     }
 

@@ -39,6 +39,8 @@ public class ServiceFactory {
             AspirantAccountDao, AspirantProfileDao, resumeDAO, resumeViewDAO,
             invitationDAO, jobVacancyService, companyService, hrManagerService);
 
+    private final DocumentService documentService = new MyDocumentService(companyService);
+
     private ServiceFactory() {
     }
 
@@ -88,5 +90,13 @@ public class ServiceFactory {
      */
     public HRManagerService getHrManagerService() {
         return hrManagerService;
+    }
+
+    /**
+     * Returns an instance of the {@link DocumentService} in singleton scope.
+     * @return instance of the {@link DocumentService}
+     */
+    public DocumentService getDocumentService() {
+        return documentService;
     }
 }

@@ -1,7 +1,7 @@
 package service.impl;
 
-import com.itextpdf.io.font.FontConstants;
 import com.itextpdf.io.image.ImageDataFactory;
+import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
@@ -31,12 +31,12 @@ import viewModel.JobVacancy;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.PrintWriter;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 
 public class MyDocumentService implements DocumentService {
 
     private static final String LOGO = "logo.PNG";
+    private static final String RUSSIAN_FONT = "D:\\Учёба\\3 курс\\2 семестр\\СПП\\labs\\SPP2\\FreeSans.ttf";
+    private static PdfFont russian;
 
     private CompanyService companyService;
 
@@ -45,6 +45,10 @@ public class MyDocumentService implements DocumentService {
         ArgumentVerificationService.verifyNull(companyService, "companyService");
 
         this.companyService = companyService;
+
+        try {
+            russian = PdfFontFactory.createFont(RUSSIAN_FONT, "Cp1251", true);
+        } catch (Exception ignored) {}
     }
 
     @Override
@@ -62,7 +66,7 @@ public class MyDocumentService implements DocumentService {
                     .setItalic()
                     .setMarginBottom(20)
                     .setTextAlignment(TextAlignment.CENTER)
-                    .setFont(PdfFontFactory.createFont(FontConstants.HELVETICA_BOLD))
+                    .setFont(russian)
                     .setFontSize(40);
             document.add(paragraph);
 
@@ -70,12 +74,12 @@ public class MyDocumentService implements DocumentService {
                     .setItalic()
                     .setMarginBottom(20)
                     .setTextAlignment(TextAlignment.CENTER)
-                    .setFont(PdfFontFactory.createFont(FontConstants.HELVETICA_BOLD))
+                    .setFont(russian)
                     .setFontSize(40);
             document.add(paragraph);
 
             paragraph = new Paragraph("Email: " + resume.getEmail() + "\r\n")
-                    .setFont(PdfFontFactory.createFont(FontConstants.HELVETICA))
+                    .setFont(russian)
                     .setFontSize(20)
                     .add("Career objective: " + resume.getCareerObjective() + "\r\n")
                     .add("Skills: " + resume.getSkills() + "\r\n")
@@ -113,12 +117,12 @@ public class MyDocumentService implements DocumentService {
                     .setItalic()
                     .setMarginBottom(20)
                     .setTextAlignment(TextAlignment.CENTER)
-                    .setFont(PdfFontFactory.createFont(FontConstants.HELVETICA_BOLD))
+                    .setFont(russian)
                     .setFontSize(40);
             document.add(paragraph);
 
             paragraph = new Paragraph("Status: " + jobVacancy.getStatus() + "\r\n")
-                    .setFont(PdfFontFactory.createFont(FontConstants.HELVETICA))
+                    .setFont(russian)
                     .setFontSize(20)
                     .add("Name: " + jobVacancy.getName() + "\r\n")
                     .add("Date: " + jobVacancy.getDate() + "\r\n")
@@ -152,12 +156,12 @@ public class MyDocumentService implements DocumentService {
                     .setItalic()
                     .setMarginBottom(20)
                     .setTextAlignment(TextAlignment.CENTER)
-                    .setFont(PdfFontFactory.createFont(FontConstants.HELVETICA_BOLD))
+                    .setFont(russian)
                     .setFontSize(40);
             document.add(paragraph);
 
             paragraph = new Paragraph("Sex: " + aspirant.getSex() + "\r\n")
-                    .setFont(PdfFontFactory.createFont(FontConstants.HELVETICA))
+                    .setFont(russian)
                     .setFontSize(20)
                     .add("Email: " + aspirant.getEmail() + "\r\n")
                     .add("Phone number: " + aspirant.getPhoneNumber() + "\r\n")
@@ -192,12 +196,12 @@ public class MyDocumentService implements DocumentService {
                     .setItalic()
                     .setMarginBottom(20)
                     .setTextAlignment(TextAlignment.CENTER)
-                    .setFont(PdfFontFactory.createFont(FontConstants.HELVETICA_BOLD))
+                    .setFont(russian)
                     .setFontSize(40);
             document.add(paragraph);
 
             paragraph = new Paragraph("Date: " + invitation.getDate())
-                    .setFont(PdfFontFactory.createFont(FontConstants.HELVETICA))
+                    .setFont(russian)
                     .setFontSize(20)
                     .add("Address: " + invitation.getAddress() + "\r\n")
                     .add("Aspirant email: " + invitation.getAspirantEmail() + "\r\n")
@@ -233,12 +237,12 @@ public class MyDocumentService implements DocumentService {
                     .setItalic()
                     .setMarginBottom(20)
                     .setTextAlignment(TextAlignment.CENTER)
-                    .setFont(PdfFontFactory.createFont(FontConstants.HELVETICA_BOLD))
+                    .setFont(russian)
                     .setFontSize(40);
             document.add(paragraph);
 
             paragraph = new Paragraph("Hr manager: " + hrManager.getSurname() + " " + hrManager.getName() + "\r\n")
-                    .setFont(PdfFontFactory.createFont(FontConstants.HELVETICA))
+                    .setFont(russian)
                     .setFontSize(20)
                     .add("Email: " + hrManager.getEmail() + "\r\n")
                     .add("Phone: " + hrManager.getPhoneNumber() + "\r\n")

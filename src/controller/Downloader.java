@@ -20,11 +20,11 @@ public class Downloader {
         response.setHeader("Content-Transfer-Encoding","binary;");
 
         String fileExt=shortname.substring(shortname.lastIndexOf(".")+1).toString();
-        //Выставляем заголовок ответа
         String ContDispType="application/force-download";
 
         if (fileExt.toString().equalsIgnoreCase("pdf")) { ContDispType="application/pdf"; }
         if (fileExt.toString().equalsIgnoreCase("xls")) { ContDispType="application/vnd.ms-excel"; } //   "application/x-xls"
+        if (fileExt.toString().equalsIgnoreCase("csv")) { ContDispType="application/csv"; } //   "application/x-xls"
 
         response.setHeader("Content-Type",ContDispType);
 

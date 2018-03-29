@@ -45,7 +45,7 @@
                 <li><a href="/Home/About">О программе</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="index.jsp" id="userAccountLink"><c:out value="${userEmail}"/></a></li>
+                <li><a href="/HRManager?command=GetHRManager" id="userAccountLink"><c:out value="${userEmail}"/></a></li>
                 <li><a href="index.jsp" id="loginLink">Выход</a></li>
             </ul>
         </div>

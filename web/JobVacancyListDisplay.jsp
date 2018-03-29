@@ -65,7 +65,12 @@
                 <li><a href="">О программе</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="index.jsp" id="userAccountLink" name="userEmail"><c:out value="${userEmail}"/></a></li>
+                <c:if test="${actor != 'hr'}">
+                    <li><a href="/Aspirant?command=GetAspirant" id="userAccountLink" name="userEmail"><c:out value="${userEmail}"/></a></li>
+                </c:if>
+                <c:if test="${actor != 'aspirant'}">
+                    <li><a href="/HRManager?command=GetHRManager" id="HRAccountLink" name="userEmail"><c:out value="${userEmail}"/></a></li>
+                </c:if>
                 <li><a href="index.jsp" id="loginLink">Выход</a></li>
             </ul>
         </div>
@@ -85,6 +90,11 @@
                             <h5>Статус: <c:out value = "${jobVacancyList.get(i).status}"/></h5>
                             <h3><a href="/JobVacancy?name=${jobVacancyList.get(i).name}&command=GetJobVacancy&companyName=${jobVacancyList.get(i).companyName}"><c:out value = "${jobVacancyList.get(i).name}"/></a></h3>
                             <h5>Компания: <a href="/Company?companyName=${jobVacancyList.get(i).companyName}&command=GetCompany"><c:out value = "${jobVacancyList.get(i).companyName}"/></a></h5>
+                            <div class="form-group form-right">
+                                <a class="btn btn-default resume-btn" href="/JobVacancy?name=${jobVacancyList.get(i).name}&command=CreatePdf&companyName=${jobVacancyList.get(i).companyName}">PDF</a>
+                                <a class="btn btn-default resume-btn" href="/JobVacancy?name=${jobVacancyList.get(i).name}&command=CreateCsv&companyName=${jobVacancyList.get(i).companyName}">CSV</a>
+                                <a class="btn btn-default resume-btn" href="/JobVacancy?name=${jobVacancyList.get(i).name}&command=CreateXls&companyName=${jobVacancyList.get(i).companyName}">XLS</a>
+                            </div>
                         </div>
                     </div>
                     <hr/>

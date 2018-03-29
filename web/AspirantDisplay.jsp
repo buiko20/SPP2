@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: Анастасия
-  Date: 02.03.2018
-  Time: 0:10
+  Date: 29.03.2018
+  Time: 10:39
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -29,92 +29,52 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <c:if test="${actor != 'aspirant'}">
-                <a class="navbar-brand" href="/HomePageHRManager.jsp">TanJobs.by</a>
-            </c:if>
-            <c:if test="${actor != 'hr'}">
-                <a class="navbar-brand" href="/HomePageAspirant.jsp">TanJobs.by</a>
-            </c:if>
+            <a class="navbar-brand" href="/HomePageAspirant.jsp">TanJobs.by</a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <c:if test="${actor != 'hr'}">
-                    <li><a href="/ResumeList?command=GetResumeListForAspirant">Резюме</a></li>
-                </c:if>
-                <c:if test="${actor != 'aspirant'}">
-                    <li><a href="/ResumeList?command=GetResumeListForHRManager">Резюме</a></li>
-                </c:if>
+                <li><a href="/ResumeList?command=GetResumeListForAspirant">Резюме</a></li>
             </ul>
             <ul class="nav navbar-nav">
-                <c:if test="${actor != 'hr'}">
-                    <li><a href="/InvitationList?command=GetInvitationListForAspirant">Приглашения</a></li>
-                </c:if>
-                <c:if test="${actor != 'aspirant'}">
-                    <li><a href="/InvitationList?command=GetInvitationListForHRManager">Приглашения</a></li>
-                </c:if>
+                <li><a href="/InvitationList?command=GetInvitationListForAspirant">Приглашения</a></li>
             </ul>
             <ul class="nav navbar-nav">
-                <c:if test="${actor != 'hr'}">
-                    <li><a href="/JobVacancyList?command=GetJobVacancyListForAspirant">Вакансии</a></li>
-                </c:if>
-                <c:if test="${actor != 'aspirant'}">
-                    <li><a href="/JobVacancyList?command=GetJobVacancyListForHRManager">Вакансии</a></li>
-                </c:if>
+                <li><a href="/JobVacancyList?command=GetJobVacancyListForAspirant">Вакансии</a></li>
             </ul>
             <ul class="nav navbar-nav">
                 <li><a href="">О программе</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <c:if test="${actor != 'hr'}">
-                    <li><a href="/Aspirant?command=GetAspirant" id="userAccountLink" name="userEmail"><c:out value="${userEmail}"/></a></li>
-                </c:if>
-                <c:if test="${actor != 'aspirant'}">
-                    <li><a href="/HRManager?command=GetHRManager" id="HRAccountLink" name="userEmail"><c:out value="${userEmail}"/></a></li>
-                </c:if>
+                <li><a href="/Aspirant?command=GetAspirant" id="userAccountLink" name="userEmail"><c:out value="${userEmail}"/></a></li>
                 <li><a href="index.jsp" id="loginLink">Выход</a></li>
             </ul>
         </div>
     </div>
 </div>
 <div class="container body-content">
-    <h2>Ваше резюме</h2>
-    <form action="/Resume" method="post"><input name="__RequestVerificationToken" type="hidden" value="RjfiaDeksEmAHGtSU-2HgMr1exVppGtfOgrdB4XrXjcUJsg1G9WPQj8lNMQqCzUAnEUufPSMW0im1iVtmSWczIQb9BS6Hvh7q6nFDn1R43c1" />
+    <h2>Ваши данные</h2>
+    <form action="/Aspirant" method="post"><input name="__RequestVerificationToken" type="hidden" value="RjfiaDeksEmAHGtSU-2HgMr1exVppGtfOgrdB4XrXjcUJsg1G9WPQj8lNMQqCzUAnEUufPSMW0im1iVtmSWczIQb9BS6Hvh7q6nFDn1R43c1" />
         <div class="form-horizontal">
-            <h4>Желаемая должность</h4>
-            <hr />
-            <div class="form-group">
-                <label class="control-label col-md-2">Желаемая должность</label>
-                <div class="col-md-10">
-                    <h4><c:out value = "${resume.careerObjective}"/></h4>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-2">Зарплата</label>
-                <div class="col-md-10">
-                    <h4><c:out value = "${resume.salary}"/>$</h4>
-                </div>
-            </div>
-
             <br>
             <h4>Персональные данные</h4>
             <hr />
             <div class="form-group">
                 <label class="control-label col-md-2">Фамилия</label>
                 <div class="col-md-10">
-                    <h4><c:out value = "${resume.surname}"/></h4>
+                    <h4><c:out value = "${aspirant.surname}"/></h4>
                 </div>
             </div>
 
             <div class="form-group">
                 <label class="control-label col-md-2">Имя</label>
                 <div class="col-md-10">
-                    <h4><c:out value = "${resume.name}"/></h4>
+                    <h4><c:out value = "${aspirant.name}"/></h4>
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-2">Отчество</label>
                 <div class="col-md-10">
-                    <h4><c:out value = "${resume.patronymic}"/></h4>
+                    <h4><c:out value = "${aspirant.patronymic}"/></h4>
                 </div>
             </div>
 
@@ -124,13 +84,13 @@
             <div class="form-group">
                 <label class="control-label col-md-2">Пол</label>
                 <div class="col-md-10">
-                    <h4><c:out value = "${resume.sex}"/></h4>
+                    <h4><c:out value = "${aspirant.sex}"/></h4>
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-2">Дата рождения</label>
                 <div class="col-md-10">
-                    <h4><c:out value = "${resume.dateOfBirth}"/></h4>
+                    <h4><c:out value = "${aspirant.dateOfBirth}"/></h4>
                 </div>
             </div>
 
@@ -140,19 +100,19 @@
             <div class="form-group">
                 <label class="control-label col-md-2">Адрес электронной почты</label>
                 <div class="col-md-10">
-                    <h4><c:out value = "${resume.email}"/></h4>
+                    <h4><c:out value = "${aspirant.email}"/></h4>
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-2">Номер телефона</label>
                 <div class="col-md-10">
-                    <h4><c:out value = "${resume.phoneNumber}"/></h4>
+                    <h4><c:out value = "${aspirant.phoneNumber}"/></h4>
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-2">Почтовый адрес</label>
                 <div class="col-md-10">
-                    <h4><c:out value = "${resume.mailingAddress}"/></h4>
+                    <h4><c:out value = "${aspirant.mailingAddress}"/></h4>
                 </div>
             </div>
 
@@ -162,7 +122,7 @@
             <div class="form-group">
                 <label class="control-label col-md-2">Город проживания</label>
                 <div class="col-md-10">
-                    <h4><c:out value = "${resume.cityOfResidence}"/></h4>
+                    <h4><c:out value = "${aspirant.cityOfResidence}"/></h4>
                 </div>
             </div>
 
@@ -172,62 +132,34 @@
             <div class="form-group">
                 <label class="control-label col-md-2">Образование</label>
                 <div class="col-md-10">
-                    <h4><c:out value = "${resume.education}"/></h4>
+                    <h4><c:out value = "${aspirant.education}"/></h4>
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-2">Уровень английского языка</label>
                 <div class="col-md-10">
-                    <h4><c:out value = "${resume.englishLevel}"/></h4>
+                    <h4><c:out value = "${aspirant.englishLevel}"/></h4>
                 </div>
-            </div>
-
-            <br>
-            <h4>Командировки и переезд</h4>
-            <hr />
-            <div class="form-group">
-                <label class="control-label col-md-2">Готовность к командировкам</label>
-                <div class="col-md-10">
-                    <h4><c:out value = "${resume.isTripPossible}"/></h4>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-2">Готовность к переезду</label>
-                <div class="col-md-10">
-                    <h4><c:out value = "${resume.isRelocationPossible}"/></h4>
-            </div>
             </div>
 
             <br>
             <h4>Ключевые навыки</h4>
             <hr />
             <div class="form-group">
-                <label class="control-label col-md-2" for="Skills">Ключевые навыки</label>
-                <div class="col-md-10">
-                    <textarea class="input-xlarge valid" id="Skills" rows="1"><c:out value = "${resume.skills}"/></textarea>
-                </div>
-            </div>
-            <div class="form-group">
                 <label class="control-label col-md-2" for="About_me">Обо мне</label>
                 <div class="col-md-10">
-                    <textarea class="input-xlarge valid" id="About_me" name="About_me" rows="3"><c:out value = "${resume.aboutMe}"/></textarea>
+                    <textarea class="input-xlarge valid" id="About_me" name="About_me" rows="3"><c:out value = "${aspirant.aboutMe}"/></textarea>
                 </div>
             </div>
-            <c:if test="${actor != 'hr'}">
+                <div class="form-group">
+
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">
-                        <a class="btn btn-default" href="ResumeUpdate.jsp">Редактировать</a>
-                        <a class="btn btn-danger" href="/Resume?careerObjective=${resume.careerObjective}&command=DeleteResume">Удалить</a>
+                        <a class="btn btn-default resume-btn" href="/Aspirant?command=CreatePdf">PDF</a>
+                        <a class="btn btn-default resume-btn" href="/Aspirant?command=CreateCsv">CSV</a>
+                        <a class="btn btn-default resume-btn" href="/Aspirant?command=CreateXls">XLS</a>
                     </div>
                 </div>
-            </c:if>
-            <c:if test="${actor != 'aspirant'}">
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <a class="btn btn-default" href="InvitationCreation.jsp">Отправить приглашение</a>
-                    </div>
-                </div>
-            </c:if>
         </div>
     </form>
 </div>

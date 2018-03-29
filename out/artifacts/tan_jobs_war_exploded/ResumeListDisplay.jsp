@@ -65,7 +65,12 @@
                 <li><a href="">О программе</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="index.jsp" id="userAccountLink" name="userEmail"><c:out value="${userEmail}"/></a></li>
+                < <c:if test="${actor != 'hr'}">
+                <li><a href="/Aspirant?command=GetAspirant" id="userAccountLink" name="userEmail"><c:out value="${userEmail}"/></a></li>
+            </c:if>
+                <c:if test="${actor != 'aspirant'}">
+                    <li><a href="/HRManager?command=GetHRManager" id="HRAccountLink" name="userEmail"><c:out value="${userEmail}"/></a></li>
+                </c:if>
                 <li><a href="index.jsp" id="loginLink">Выход</a></li>
             </ul>
         </div>
@@ -90,6 +95,11 @@
                     <c:if test="${actor != 'aspirant'}">
                         <h5>Соискатель №<c:out value = "${resumeList.get(i).aspirantId}"/></h5>
                     </c:if>
+                    <div class="form-group form-right">
+                        <a class="btn btn-default resume-btn" href="/Resume?careerObjective=${resumeList.get(i).careerObjective}&command=CreatePdf&aspirantId=${resumeList.get(i).aspirantId}">PDF</a>
+                        <a class="btn btn-default resume-btn" href="/Resume?careerObjective=${resumeList.get(i).careerObjective}&command=CreateCsv&aspirantId=${resumeList.get(i).aspirantId}">CSV</a>
+                        <a class="btn btn-default resume-btn" href="/Resume?careerObjective=${resumeList.get(i).careerObjective}&command=CreateXls&aspirantId=${resumeList.get(i).aspirantId}">XLS</a>
+                    </div>
                 </div>
             </div>
             <hr/>

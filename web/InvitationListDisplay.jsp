@@ -65,7 +65,12 @@
                 <li><a href="">О программе</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="index.jsp" id="userAccountLink" name="userEmail"><c:out value="${userEmail}"/></a></li>
+                <c:if test="${actor != 'hr'}">
+                    <li><a href="/Aspirant?command=GetAspirant" id="userAccountLink" name="userEmail"><c:out value="${userEmail}"/></a></li>
+                </c:if>
+                <c:if test="${actor != 'aspirant'}">
+                    <li><a href="/HRManager?command=GetHRManager" id="HRAccountLink" name="userEmail"><c:out value="${userEmail}"/></a></li>
+                </c:if>
                 <li><a href="index.jsp" id="loginLink">Выход</a></li>
             </ul>
         </div>
@@ -90,6 +95,11 @@
                             <h5>Компания: <a href="/Company?companyName=${invitationList.get(i).companyName}&command=GetCompany"><c:out value = "${invitationList.get(i).companyName}"/></a></h5>
                             <h5>Дата собеседования: <c:out value = "${invitationList.get(i).date}"/></h5>
                             <h5>Адрес: <c:out value = "${invitationList.get(i).address}"/></h5>
+                            <div class="form-group form-right">
+                                <a class="btn btn-default resume-btn" href="/Invitation?aspirantEmail=${invitationList.get(i).aspirantEmail}&careerObjective=${invitationList.get(i).aspirantCareerObjective}&jobVacancyName=${invitationList.get(i).jobVacancyName}&companyName=${invitationList.get(i).companyName}&command=CreatePdf">PDF</a>
+                                <a class="btn btn-default resume-btn" href="/Invitation?aspirantEmail=${invitationList.get(i).aspirantEmail}&careerObjective=${invitationList.get(i).aspirantCareerObjective}&jobVacancyName=${invitationList.get(i).jobVacancyName}&companyName=${invitationList.get(i).companyName}&command=CreateCsv">CSV</a>
+                                <a class="btn btn-default resume-btn" href="/Invitation?aspirantEmail=${invitationList.get(i).aspirantEmail}&careerObjective=${invitationList.get(i).aspirantCareerObjective}&jobVacancyName=${invitationList.get(i).jobVacancyName}&companyName=${invitationList.get(i).companyName}&command=CreateXls">XLS</a>
+                            </div>
                         </div>
                     </div>
                     <hr/>

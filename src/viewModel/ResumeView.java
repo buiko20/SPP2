@@ -2,6 +2,9 @@ package viewModel;
 
 import java.util.Date;
 
+/**
+ * Represents a resume view view model.
+ */
 public class ResumeView {
 
     public Date date;

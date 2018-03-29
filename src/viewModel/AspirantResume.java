@@ -2,6 +2,9 @@ package viewModel;
 
 import java.sql.Date;
 
+/**
+ * Represents an aspirant resume view model.
+ */
 public class AspirantResume {
 
     public String accountEmail;

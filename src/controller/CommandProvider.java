@@ -2,6 +2,9 @@ package controller;
 
 import controller.command.Command;
 import controller.command.impl.*;
+import controller.command.impl.DocumentCommands.CreateCsvCommand;
+import controller.command.impl.DocumentCommands.CreatePdfCommand;
+import controller.command.impl.DocumentCommands.CreateXlsCommand;
 import controller.command.impl.GetCompanyCommand;
 import controller.command.impl.InvitationCommands.GetInvitationCommand;
 import controller.command.impl.InvitationCommands.GetInvitationListForAspirantCommand;
@@ -25,6 +28,9 @@ public class CommandProvider {
     public CommandProvider() {
         addCommand(new RegisterAspirantCommand(), "Register");
         addCommand(new LoginAspirantCommand(), "Login");
+
+        addCommand(new GetAspirantCommand(), "GetAspirant");
+        addCommand(new GetHRManagerCommand(), "GetHRManager");
 
         addCommand(new GetResumeListForAspirantCommand(), "GetResumeListForAspirant");
         addCommand(new GetResumeListForHRManagerCommand(), "GetResumeListForHRManager");
@@ -51,6 +57,10 @@ public class CommandProvider {
 
         addCommand(new GetInvitationListForHRManager(), "GetInvitationListForHRManager");
         addCommand(new GetInvitationListForAspirantCommand(), "GetInvitationListForAspirant");
+
+        addCommand(new CreatePdfCommand(), "CreatePdf");
+        addCommand(new CreateCsvCommand(), "CreateCsv");
+        addCommand(new CreateXlsCommand(), "CreateXls");
     }
 
     /**

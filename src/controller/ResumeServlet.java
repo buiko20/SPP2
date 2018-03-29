@@ -107,7 +107,27 @@ public class ResumeServlet extends HttpServlet {
                 request.getRequestDispatcher("/ResumeViewList.jsp").forward(request, response);
                 break;
             }
+            case("CreatePdf"):{
 
+                DocumentCreate(request, response, commandName);
+
+                response.setContentType("text/pdf");
+                break;
+            }
+            case("CreateCsv"):{
+
+                DocumentCreate(request, response, commandName);
+
+                response.setContentType("text/csv");
+                break;
+            }
+            case("CreateXls"):{
+
+                DocumentCreate(request, response, commandName);
+
+                response.setContentType("text/xls");
+                break;
+            }
             default:{
             }
         }
@@ -124,6 +144,29 @@ public class ResumeServlet extends HttpServlet {
         try {
             command.execute(email + ";" + careerObjective);
         } catch (Exception e) { }
+
+    }
+
+    protected void DocumentCreate(HttpServletRequest request, HttpServletResponse response, String commandName) throws ServletException, IOException {
+
+        HttpSession session = request.getSession();
+
+        String email = (String)session.getAttribute("userEmail");
+        String aspirantId = request.getParameter("aspirantId");
+        String careerObjective = request.getParameter("careerObjective");
+
+        Command command = commandProvider.getCommand(commandName);
+        try {
+            if(session.getAttribute("actor").toString() == "aspirant")
+                command.execute(email + ";" + careerObjective + ";Resume");
+            else
+                command.execute(aspirantId + ";" + careerObjective + ";" + email + ";Resume");
+        } catch (Exception e) { }
+
+        if((String)session.getAttribute("actor") == "aspirant")
+            request.getRequestDispatcher("/ResumeList?command=GetResumeListForAspirant").forward(request, response);
+        else
+            request.getRequestDispatcher("/ResumeList?command=GetResumeListForHRManager").forward(request, response);
 
     }
 

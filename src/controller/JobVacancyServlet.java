@@ -85,10 +85,51 @@ public class JobVacancyServlet extends HttpServlet {
                 request.getRequestDispatcher("/JobVacancyList?command=GetJobVacancyListForHRManager").forward(request, response);
                 break;
             }
+            case("CreatePdf"):{
+
+                DocumentCreate(request, response, commandName);
+
+                response.setContentType("text/pdf");
+                break;
+            }
+            case("CreateCsv"):{
+
+                DocumentCreate(request, response, commandName);
+
+                response.setContentType("text/csv");
+                break;
+            }
+            case("CreateXls"):{
+
+                DocumentCreate(request, response, commandName);
+
+                response.setContentType("text/xls");
+                break;
+            }
+
             default:{
 
             }
         }
+    }
+
+    protected void DocumentCreate(HttpServletRequest request, HttpServletResponse response, String commandName) throws ServletException, IOException {
+
+        HttpSession session = request.getSession();
+
+        String jobVacancyName = request.getParameter("name");
+        String jobVacancyCompanyName = request.getParameter("companyName");
+
+        Command command = commandProvider.getCommand(commandName);
+        try {
+            command.execute(jobVacancyName + ";" + jobVacancyCompanyName + ";JobVacancy");
+        } catch (Exception e) { }
+
+        if((String)session.getAttribute("actor") == "aspirant")
+            request.getRequestDispatcher("/JobVacancyList?command=GetJobVacancyListForAspirant").forward(request, response);
+        else
+            request.getRequestDispatcher("/JobVacancyList?command=GetJobVacancyListForHRManager").forward(request, response);
+
     }
 
     protected String SetNewVacancyData(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

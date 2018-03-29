@@ -28,9 +28,7 @@ import viewModel.AspirantInvitation;
 import viewModel.AspirantResume;
 import viewModel.JobVacancy;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.PrintWriter;
+import java.io.*;
 
 public class MyDocumentService implements DocumentService {
 
@@ -575,7 +573,6 @@ public class MyDocumentService implements DocumentService {
         ArgumentVerificationService.verifyNull(resume, "resume");
 
         try {
-            PrintWriter printWriter = new PrintWriter(new File(path));
             String csv = resume.getSurname() + ";" + resume.getName() + ";" + resume.getPatronymic() + ";\"" +
                     resume.getEmail() + "\";" +
                     resume.getCareerObjective() + ";" +
@@ -588,8 +585,10 @@ public class MyDocumentService implements DocumentService {
                     resume.getSalary() + "\";\"" +
                     resume.getAboutMe() + "\"";
 
-            printWriter.write(csv);
-            printWriter.close();
+            Writer out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(path), "Cp1251"));
+            out.append(csv);
+            out.flush();
+            out.close();
         } catch (Exception e) {
             throw new ServiceException(e.getMessage(), e);
         }
@@ -604,7 +603,6 @@ public class MyDocumentService implements DocumentService {
         ArgumentVerificationService.verifyNull(jobVacancy, "resume");
 
         try {
-            PrintWriter printWriter = new PrintWriter(new File(path));
             String csv = "\"" + jobVacancy.getStatus() + "\";\"" +
                     jobVacancy.getName() + "\";" +
                     jobVacancy.getHrManagerSurname() + ";" + jobVacancy.hrManagerName + ";\"" +
@@ -613,8 +611,10 @@ public class MyDocumentService implements DocumentService {
                     jobVacancy.getAddress() + "\";\"" +
                     jobVacancy.getDescription() + "\";";
 
-            printWriter.write(csv);
-            printWriter.close();
+            Writer out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(path), "Cp1251"));
+            out.append(csv);
+            out.flush();
+            out.close();
         } catch (Exception e) {
             throw new ServiceException(e.getMessage(), e);
         }
@@ -629,7 +629,6 @@ public class MyDocumentService implements DocumentService {
         ArgumentVerificationService.verifyNull(aspirant, "resume");
 
         try {
-            PrintWriter printWriter = new PrintWriter(new File(path));
             String csv = aspirant.getSurname() + ";" + aspirant.getName() + ";" + aspirant.getPatronymic() + ";" +
                     aspirant.getSex() + ";\"" +
                     aspirant.getEmail() + "\";\"" +
@@ -641,8 +640,10 @@ public class MyDocumentService implements DocumentService {
                     aspirant.getAboutMe() + "\";\"" +
                     aspirant.getCityOfResidence() + "\";";
 
-            printWriter.write(csv);
-            printWriter.close();
+            Writer out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(path), "Cp1251"));
+            out.append(csv);
+            out.flush();
+            out.close();
         } catch (Exception e) {
             throw new ServiceException(e.getMessage(), e);
         }
@@ -657,7 +658,6 @@ public class MyDocumentService implements DocumentService {
         ArgumentVerificationService.verifyNull(invitation, "invitation");
 
         try {
-            PrintWriter printWriter = new PrintWriter(new File(path));
             String csv = "\"" + invitation.getDate().toString() + "\";\"" +
                     invitation.getAddress() + "\";\"" +
                     invitation.getAspirantEmail() + "\";\"" +
@@ -668,8 +668,10 @@ public class MyDocumentService implements DocumentService {
                     invitation.getHrManagerPhoneNumber() + "\";\"" +
                     invitation.getHrManagerEmail() + "\";";
 
-            printWriter.write(csv);
-            printWriter.close();
+            Writer out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(path), "Cp1251"));
+            out.append(csv);
+            out.flush();
+            out.close();
         } catch (Exception e) {
             throw new ServiceException(e.getMessage(), e);
         }
@@ -685,7 +687,6 @@ public class MyDocumentService implements DocumentService {
 
         try {
             Company company = this.companyService.getCompanyById(hrManager.getCompanyId());
-            PrintWriter printWriter = new PrintWriter(new File(path));
             String csv = hrManager.getSurname() + ";" + hrManager.getName() + ";\"" +
                     hrManager.getEmail() + "\";\"" +
                     hrManager.getPhoneNumber() + "\";\"" +
@@ -694,8 +695,10 @@ public class MyDocumentService implements DocumentService {
                     company.getMailingAddress() + "\";\"" +
                     company.getPhoneNumber() + "\";";
 
-            printWriter.write(csv);
-            printWriter.close();
+            Writer out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(path), "Cp1251"));
+            out.append(csv);
+            out.flush();
+            out.close();
         } catch (Exception e) {
             throw new ServiceException(e.getMessage(), e);
         }
@@ -723,5 +726,4 @@ public class MyDocumentService implements DocumentService {
         cell.setCellStyle(style);
         return cell;
     }
-
 }

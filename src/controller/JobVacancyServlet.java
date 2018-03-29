@@ -87,49 +87,40 @@ public class JobVacancyServlet extends HttpServlet {
             }
             case("CreatePdf"):{
 
-                DocumentCreate(request, response, commandName);
-
-                response.setContentType("text/pdf");
+                Downloader downloader = new Downloader();
+                downloader.DownloadFile(request, response, DocumentCreate(request, response, commandName));
                 break;
             }
             case("CreateCsv"):{
 
-                DocumentCreate(request, response, commandName);
-
-                response.setContentType("text/csv");
+                Downloader downloader = new Downloader();
+                downloader.DownloadFile(request, response, DocumentCreate(request, response, commandName));
                 break;
             }
             case("CreateXls"):{
 
-                DocumentCreate(request, response, commandName);
-
-                response.setContentType("text/xls");
+                Downloader downloader = new Downloader();
+                downloader.DownloadFile(request, response, DocumentCreate(request, response, commandName));
                 break;
-            }
-
-            default:{
-
             }
         }
     }
 
-    protected void DocumentCreate(HttpServletRequest request, HttpServletResponse response, String commandName) throws ServletException, IOException {
+    protected String DocumentCreate(HttpServletRequest request, HttpServletResponse response, String commandName) throws ServletException, IOException {
 
         HttpSession session = request.getSession();
+
+        String result = "";
 
         String jobVacancyName = request.getParameter("name");
         String jobVacancyCompanyName = request.getParameter("companyName");
 
         Command command = commandProvider.getCommand(commandName);
         try {
-            command.execute(jobVacancyName + ";" + jobVacancyCompanyName + ";JobVacancy");
+            result = (String) command.execute(jobVacancyName + ";" + jobVacancyCompanyName + ";JobVacancy");
         } catch (Exception e) { }
 
-        if((String)session.getAttribute("actor") == "aspirant")
-            request.getRequestDispatcher("/JobVacancyList?command=GetJobVacancyListForAspirant").forward(request, response);
-        else
-            request.getRequestDispatcher("/JobVacancyList?command=GetJobVacancyListForHRManager").forward(request, response);
-
+        return result;
     }
 
     protected String SetNewVacancyData(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

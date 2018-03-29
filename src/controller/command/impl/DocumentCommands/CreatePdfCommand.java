@@ -30,6 +30,7 @@ public class CreatePdfCommand implements Command {
     public Object execute(String request) throws AspirantAlreadyExistsException, ServiceException, AspirantNotRegisteredException, AspirantProfileNotFoundException, ResumeNotFoundException, HRManagerNotFoundException, CompanyNotFoundException {
 
         String[] requestData = request.split(";");
+        String fileName = "";
 
         request = requestData[0];
         for (int i = 1; i < requestData.length - 1; i++) {
@@ -40,39 +41,45 @@ public class CreatePdfCommand implements Command {
             case("Resume"):{
                 Command command = new GetResumeCommand();
                 AspirantResume resume = (AspirantResume) command.execute(request);
+                fileName = packagePath + "resume.pdf";
 
-                documentService.createPdf(packagePath + "resume.pdf", resume);
+                documentService.createPdf(fileName, resume);
                 break;
             }
             case("JobVacancy"): {
                 Command command = new GetJobVacancyCommand();
                 JobVacancy jobVacancy = (JobVacancy) command.execute(request);
+                fileName = packagePath + "jobVacancy.pdf";
 
-                documentService.createPdf(packagePath + "jobVacancy.pdf", jobVacancy);
+                documentService.createPdf(fileName, jobVacancy);
                 break;
             }
             case("Invitation"):{
                 Command command = new GetInvitationCommand();
                 AspirantInvitation invitation = (AspirantInvitation) command.execute(request);
-                documentService.createPdf(packagePath + "invitation.pdf", invitation);
-                // /documentService.createPdf(requestData[requestData.length - 2], resume);
+                fileName = packagePath + "invitation.pdf";
+
+                documentService.createPdf(fileName, invitation);
                 break;
             }
             case("Aspirant"): {
                 Command command = new GetAspirantCommand();
                 Aspirant aspirant = (Aspirant) command.execute(request);
+                fileName = packagePath + "aspirant.pdf";
 
-                documentService.createPdf(packagePath + "aspirant.pdf", aspirant);
+                documentService.createPdf(fileName, aspirant);
                 break;
             }
             case("HRManager"): {
                 Command command = new GetHRManagerCommand();
                 HRManager hrManager = (HRManager) command.execute(request);
+                fileName = packagePath + "hrManager.pdf";
 
-                documentService.createPdf(packagePath + "hrManager.pdf", hrManager);
+                documentService.createPdf(fileName, hrManager);
                 break;
             }
         }
-        return null;
+
+        return fileName;
     }
 }

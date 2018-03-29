@@ -90,9 +90,9 @@
 
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
-                    <a class="btn btn-default" href="/HRManager?command=CreatePdf">PDF</a>
-                    <a class="btn btn-default" href="/HRManager?command=CreateCsv">CSV</a>
-                    <a class="btn btn-default" href="/HRManager?command=CreateXls">XLS</a>
+                    <a class="btn btn-default resume-btn" href="/HRManager?command=CreatePdf">PDF</a>
+                    <a class="btn btn-default resume-btn" href="/HRManager?command=CreateCsv">CSV</a>
+                    <a class="btn btn-default resume-btn" href="/HRManager?command=CreateXls">XLS</a>
                 </div>
             </div>
         </div>

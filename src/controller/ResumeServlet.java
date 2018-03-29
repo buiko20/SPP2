@@ -10,6 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -109,23 +112,20 @@ public class ResumeServlet extends HttpServlet {
             }
             case("CreatePdf"):{
 
-                DocumentCreate(request, response, commandName);
-
-                response.setContentType("text/pdf");
+                Downloader downloader = new Downloader();
+                downloader.DownloadFile(request, response, DocumentCreate(request, response, commandName));
                 break;
             }
             case("CreateCsv"):{
 
-                DocumentCreate(request, response, commandName);
-
-                response.setContentType("text/csv");
+                Downloader downloader = new Downloader();
+                downloader.DownloadFile(request, response, DocumentCreate(request, response, commandName));
                 break;
             }
             case("CreateXls"):{
 
-                DocumentCreate(request, response, commandName);
-
-                response.setContentType("text/xls");
+                Downloader downloader = new Downloader();
+                downloader.DownloadFile(request, response, DocumentCreate(request, response, commandName));
                 break;
             }
             default:{
@@ -147,7 +147,7 @@ public class ResumeServlet extends HttpServlet {
 
     }
 
-    protected void DocumentCreate(HttpServletRequest request, HttpServletResponse response, String commandName) throws ServletException, IOException {
+    protected String DocumentCreate(HttpServletRequest request, HttpServletResponse response, String commandName) throws ServletException, IOException {
 
         HttpSession session = request.getSession();
 
@@ -155,19 +155,17 @@ public class ResumeServlet extends HttpServlet {
         String aspirantId = request.getParameter("aspirantId");
         String careerObjective = request.getParameter("careerObjective");
 
+        String result = "";
+
         Command command = commandProvider.getCommand(commandName);
         try {
             if(session.getAttribute("actor").toString() == "aspirant")
-                command.execute(email + ";" + careerObjective + ";Resume");
+                result =  (String) command.execute(email + ";" + careerObjective + ";Resume");
             else
-                command.execute(aspirantId + ";" + careerObjective + ";" + email + ";Resume");
+                result = (String) command.execute(aspirantId + ";" + careerObjective + ";" + email + ";Resume");
         } catch (Exception e) { }
 
-        if((String)session.getAttribute("actor") == "aspirant")
-            request.getRequestDispatcher("/ResumeList?command=GetResumeListForAspirant").forward(request, response);
-        else
-            request.getRequestDispatcher("/ResumeList?command=GetResumeListForHRManager").forward(request, response);
-
+        return result;
     }
 
     protected String SetNewResumeData(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

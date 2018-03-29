@@ -65,9 +65,9 @@
                 <li><a href="">О программе</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                < <c:if test="${actor != 'hr'}">
-                <li><a href="/Aspirant?command=GetAspirant" id="userAccountLink" name="userEmail"><c:out value="${userEmail}"/></a></li>
-            </c:if>
+                <c:if test="${actor != 'hr'}">
+                    <li><a href="/Aspirant?command=GetAspirant" id="userAccountLink" name="userEmail"><c:out value="${userEmail}"/></a></li>
+                </c:if>
                 <c:if test="${actor != 'aspirant'}">
                     <li><a href="/HRManager?command=GetHRManager" id="HRAccountLink" name="userEmail"><c:out value="${userEmail}"/></a></li>
                 </c:if>

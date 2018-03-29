@@ -53,39 +53,40 @@ public class AspirantServlet extends HttpServlet {
 
             case("CreatePdf"):{
 
-                DocumentCreate(request, response, commandName);
-
-                response.setContentType("text/pdf");
+                Downloader downloader = new Downloader();
+                downloader.DownloadFile(request, response, DocumentCreate(request, response, commandName));
                 break;
             }
             case("CreateCsv"):{
 
-                DocumentCreate(request, response, commandName);
-
-                response.setContentType("text/csv");
+                Downloader downloader = new Downloader();
+                downloader.DownloadFile(request, response, DocumentCreate(request, response, commandName));
                 break;
             }
             case("CreateXls"):{
 
-                DocumentCreate(request, response, commandName);
-
-                response.setContentType("text/xls");
+                Downloader downloader = new Downloader();
+                downloader.DownloadFile(request, response, DocumentCreate(request, response, commandName));
                 break;
             }
         }
     }
 
-    protected void DocumentCreate(HttpServletRequest request, HttpServletResponse response, String commandName) throws ServletException, IOException {
+    protected String DocumentCreate(HttpServletRequest request, HttpServletResponse response, String commandName) throws ServletException, IOException {
 
         HttpSession session = request.getSession();
 
         String email = (String)session.getAttribute("userEmail");
 
+        String result = "";
+
         Command command = commandProvider.getCommand(commandName);
         try {
-            command.execute(email + ";Aspirant");
+            result = (String)command.execute(email + ";Aspirant");
         } catch (Exception e) { }
 
         request.getRequestDispatcher("/Aspirant?command=GetAspirant").forward(request, response);
+
+        return result;
     }
 }

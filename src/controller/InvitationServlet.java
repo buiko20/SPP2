@@ -76,32 +76,29 @@ public class InvitationServlet extends HttpServlet {
             }
             case("CreatePdf"):{
 
-                DocumentCreate(request, response, commandName);
-
-                response.setContentType("text/pdf");
+                Downloader downloader = new Downloader();
+                downloader.DownloadFile(request, response, DocumentCreate(request, response, commandName));
                 break;
             }
             case("CreateCsv"):{
 
-                DocumentCreate(request, response, commandName);
-
-                response.setContentType("text/csv");
+                Downloader downloader = new Downloader();
+                downloader.DownloadFile(request, response, DocumentCreate(request, response, commandName));
                 break;
             }
             case("CreateXls"):{
 
-                DocumentCreate(request, response, commandName);
-
-                response.setContentType("text/xls");
+                Downloader downloader = new Downloader();
+                downloader.DownloadFile(request, response, DocumentCreate(request, response, commandName));
                 break;
             }
 
         }
     }
 
-    protected void DocumentCreate(HttpServletRequest request, HttpServletResponse response, String commandName) throws ServletException, IOException {
+    protected String DocumentCreate(HttpServletRequest request, HttpServletResponse response, String commandName) throws ServletException, IOException {
 
-        HttpSession session = request.getSession();
+        String result = "";
 
         String aspirantEmail = request.getParameter("aspirantEmail");
         String careerObjective = request.getParameter("careerObjective");
@@ -110,13 +107,10 @@ public class InvitationServlet extends HttpServlet {
 
         Command command = commandProvider.getCommand(commandName);
         try {
-            command.execute(aspirantEmail + ";" + careerObjective + ";" + jobVacancyName
+            result = (String) command.execute(aspirantEmail + ";" + careerObjective + ";" + jobVacancyName
                     + ";" + companyName + ";Invitation");
         } catch (Exception e) { }
 
-        if((String)session.getAttribute("userEmail") == "actor")
-            request.getRequestDispatcher("/InvitationList?command=GetInvitationListForAspirant").forward(request, response);
-        else
-            request.getRequestDispatcher("/InvitationList?command=GetInvitationListForHRManager").forward(request, response);
+        return result;
     }
 }

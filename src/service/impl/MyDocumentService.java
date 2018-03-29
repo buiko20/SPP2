@@ -34,9 +34,8 @@ import java.io.PrintWriter;
 
 public class MyDocumentService implements DocumentService {
 
-    private static final String LOGO = "logo.PNG";
-    private static final String RUSSIAN_FONT = "D:\\Учёба\\3 курс\\2 семестр\\СПП\\labs\\SPP2\\FreeSans.ttf";
-    private static PdfFont russian;
+    private static final String LOGO = "D:\\Hamelioniya\\university\\3 курс\\СПП(Java)\\Лаб№2-8\\SPP2\\logo.PNG";
+    private static final String RUSSIAN_FONT = "D:\\Hamelioniya\\university\\3 курс\\СПП(Java)\\Лаб№2-8\\SPP2\\FreeSans.ttf";
 
     private CompanyService companyService;
 
@@ -45,10 +44,6 @@ public class MyDocumentService implements DocumentService {
         ArgumentVerificationService.verifyNull(companyService, "companyService");
 
         this.companyService = companyService;
-
-        try {
-            russian = PdfFontFactory.createFont(RUSSIAN_FONT, "Cp1251", true);
-        } catch (Exception ignored) {}
     }
 
     @Override
@@ -61,6 +56,7 @@ public class MyDocumentService implements DocumentService {
         try {
 
             Document document = this.createPdfTemplate(path);
+            PdfFont russian = PdfFontFactory.createFont(RUSSIAN_FONT, "Cp1251", true);
 
             Paragraph paragraph = new Paragraph(resume.getSurname() + " " + resume.getName() + " " + resume.getPatronymic())
                     .setItalic()
@@ -112,6 +108,7 @@ public class MyDocumentService implements DocumentService {
         try {
 
             Document document = this.createPdfTemplate(path);
+            PdfFont russian = PdfFontFactory.createFont(RUSSIAN_FONT, "Cp1251", true);
 
             Paragraph paragraph = new Paragraph("Job vacancy")
                     .setItalic()
@@ -151,6 +148,7 @@ public class MyDocumentService implements DocumentService {
         try {
 
             Document document = this.createPdfTemplate(path);
+            PdfFont russian = PdfFontFactory.createFont(RUSSIAN_FONT, "Cp1251", true);
 
             Paragraph paragraph = new Paragraph(aspirant.getSurname() + " " + aspirant.getName() + " " + aspirant.getPatronymic())
                     .setItalic()
@@ -191,6 +189,7 @@ public class MyDocumentService implements DocumentService {
         try {
 
             Document document = this.createPdfTemplate(path);
+            PdfFont russian = PdfFontFactory.createFont(RUSSIAN_FONT, "Cp1251", true);
 
             Paragraph paragraph = new Paragraph("Invitation")
                     .setItalic()
@@ -200,7 +199,7 @@ public class MyDocumentService implements DocumentService {
                     .setFontSize(40);
             document.add(paragraph);
 
-            paragraph = new Paragraph("Date: " + invitation.getDate())
+            paragraph = new Paragraph("Date: " + invitation.getDate() + "\r\n")
                     .setFont(russian)
                     .setFontSize(20)
                     .add("Address: " + invitation.getAddress() + "\r\n")
@@ -230,6 +229,7 @@ public class MyDocumentService implements DocumentService {
         try {
 
             Document document = this.createPdfTemplate(path);
+            PdfFont russian = PdfFontFactory.createFont(RUSSIAN_FONT, "Cp1251", true);
 
             Company company = this.companyService.getCompanyById(hrManager.getCompanyId());
 

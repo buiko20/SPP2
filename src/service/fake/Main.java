@@ -40,7 +40,8 @@ public class Main {
             HRManager hrManager = new HRManager(0, "пцукпцукпцукп", "123", "123", "123", "123", 0);
 
             MyDocumentService documentService = new MyDocumentService(companyService);
-            documentService.createPdf("1.pdf", resume);
+            documentService.createPdf("D:\\1.pdf", resume);
+            documentService.createPdf("D:\\1.pdf", resume);
            /* documentService.createPdf("1.pdf", jobVacancy);
             documentService.createPdf("1.pdf", aspirant);
             documentService.createPdf("1.pdf", invitation);

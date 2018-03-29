@@ -36,7 +36,7 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="jstl-1.2" level="project" />
-    <orderEntry type="library" name="itext_jars" level="project" />
-    <orderEntry type="library" name="poi-3" level="project" />
+    <orderEntry type="library" name="commons-codec-1.10" level="project" />
+    <orderEntry type="library" name="poi-scratchpad-3.17" level="project" />
   </component>
 </module>

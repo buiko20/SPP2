@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="tan_jobs:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/tan_jobs_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="tan_jobs/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="tan_jobs" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
